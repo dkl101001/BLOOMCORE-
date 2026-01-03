@@ -161,13 +161,4 @@ BLOOMCORE is not here to win popularity contests.
 It exists to make long-horizon work survivable.
 
 If that resonates, welcome.
-If it doesn’t, that’s fine too.
-
-⸻
-
-If you want next:
-	•	A BLOOMCORE landing page README variant (marketing-safe)
-	•	A “Why BLOOMCORE exists” manifesto
-	•	Or a code-level README for /core
-
-Just say the word.
+If it doesn’t, that’s fine too. 
