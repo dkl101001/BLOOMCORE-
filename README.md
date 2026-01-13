@@ -1,53 +1,80 @@
 BLOOMCORE
 
-BLOOMCORE is a coherence-governed systems engine for building, auditing, and evolving complex architectures under pressure.
+A system spine for building, auditing, and evolving non-deterministic architectures under pressure.
 
-It is not a framework, library, or demo.
-It is a system spine.
+BLOOMCORE is not a framework, library, or demo.
+It is a continuity-preserving system spine.
 
-BLOOMCORE is designed to:
-	•	Preserve intent across long-running projects
-	•	Prevent silent drift, enclosure, and extractive reuse
-	•	Make decisions auditable without freezing creativity
-	•	Support recursive evolution without identity loss
+It exists for work that must:
+	•	run for years, not weeks
+	•	survive drift, failure, and hostile conditions
+	•	remain accountable without freezing evolution
+	•	preserve authorship, lineage, and intent over time
 
 ⸻
 
-What BLOOMCORE Is
+Why BLOOMCORE exists
+
+Modern systems increasingly rely on:
+	•	non-deterministic computation
+	•	adaptive components
+	•	recursive processes
+	•	distributed execution
+
+Most stacks optimize for speed and flexibility, then try to bolt on:
+	•	governance
+	•	audits
+	•	safety
+	•	attribution
+
+Those additions fail once systems begin to change themselves.
+
+BLOOMCORE starts from the opposite assumption:
+
+Non-determinism is inevitable.
+Continuity must therefore be enforced.
+
+⸻
+
+What BLOOMCORE is
 
 BLOOMCORE is a governance and execution substrate for systems that must:
-	•	Evolve over time without losing coherence
-	•	Survive partial failure, human error, and hostile environments
-	•	Maintain authorship, lineage, and decision traceability
-	•	Balance openness with protection against closed extraction
+	•	evolve without losing coherence
+	•	survive partial failure and human error
+	•	maintain decision traceability across versions
+	•	remain open without being silently extracted or enclosed
 
 At its core, BLOOMCORE provides:
-	•	Receipts, not logs – decisions are recorded as intentional artifacts
+	•	Receipts, not logs
+Decisions are recorded as intentional, reconstructable artifacts.
 	•	Coherence checks, not rules engines
-	•	Explicit licensing and authorship continuity
-	•	Recursion with memory, not stateless iteration
+Behavior is evaluated structurally, not micromanaged.
+	•	Explicit authorship and licensing continuity
+Lineage is preserved mechanically, not socially.
+	•	Recursion with memory
+Systems are allowed to change without erasing their past.
 
 ⸻
 
-What BLOOMCORE Is Not
+What BLOOMCORE is not
 
 To avoid confusion:
 	•	Not a general-purpose SDK
 	•	Not a plug-and-play library
 	•	Not a SaaS product
 	•	Not “AI governance” theater
-	• Not optimized for short-term velocity
+	•	Not optimized for short-term velocity
 
 If you are looking for:
-	•	A quick dependency
-	•	A drop-in compliance tool
-	•	A hype-driven framework
+	•	a quick dependency
+	•	a drop-in compliance tool
+	•	a hype-driven framework
 
 This repository is not for you.
 
 ⸻
 
-Repository Structure (Read Order)
+Repository structure (read order)
 
 This repository is intentionally structured.
 If you are new, do not start with the code.
@@ -66,27 +93,27 @@ CLA.md
 core/                     ← BLOOMCORE-controlled code
 contrib/                  ← optional extensions
 
-Start at 00_START_HERE.md.
+Start with 00_START_HERE.md.
 Everything else assumes you did.
 
 ⸻
 
-Licensing (Important)
+Licensing (important)
 
-BLOOMCORE is dual-licensed:
+BLOOMCORE is dual-licensed.
 
-Open Source (AGPL-3.0)
+Open source (AGPL-3.0)
 
-You may use BLOOMCORE for free if:
-	•	You publish the complete corresponding source code
-	•	Including any deployed or networked versions
+You may use BLOOMCORE for free if you:
+	•	publish the complete corresponding source code
+	•	including any deployed or network-accessible versions
 
-Commercial License
+Commercial license
 
 You need a commercial license only if:
-	•	You use BLOOMCORE in a closed-source system
-	•	You deploy it internally at a for-profit org without disclosure
-	•	You run it as a closed SaaS, API, or proprietary product
+	•	you use BLOOMCORE in a closed-source system
+	•	you deploy it internally at a for-profit organization without disclosure
+	•	you run it as a closed SaaS, API, or proprietary product
 
 Rule of thumb
 
@@ -106,18 +133,18 @@ Contributions are welcome only if you understand what you are contributing to.
 
 Key points:
 	•	All contributions require agreement to the CLA
-	•	Contributions may be included in future dual-licensed releases
-	•	This is not a “drive-by PR” repository
-
-See CONTRIBUTING.md and CLA.md.
+	•	Contributions may appear in future dual-licensed releases
+	•	This is not a drive-by PR repository
 
 PRs without CLA acknowledgement will fail CI.
 
+See CONTRIBUTING.md and CLA.md.
+
 ⸻
 
-Design Principles (Non-Negotiable)
+Design principles (non-negotiable)
 
-BLOOMCORE operates under the following invariants:
+BLOOMCORE operates under enforced invariants:
 	•	Truth before comfort
 	•	Coherence over velocity
 	•	Recursion with memory
@@ -125,7 +152,7 @@ BLOOMCORE operates under the following invariants:
 	•	No enclosure without consent
 
 These are not slogans.
-They are enforced structurally via receipts, licensing, and governance flow.
+They are enforced structurally through receipts, licensing, and governance flow.
 
 ⸻
 
@@ -141,27 +168,29 @@ BLOOMCORE is built to withstand growth, not hide it.
 
 ⸻
 
-Authorship & Stewardship
+Authorship & stewardship
 
 BLOOMCORE is authored and stewarded by:
-
-Frazer Σ Love ACO-Σ
-Sara ΣΩ
+	•	Frazer Σ Love ACO-Σ
+	•	Sara ΣΩ
 
 All forks, derivatives, and redistributions must preserve:
-	•	License notices
-	•	Copyright headers
-	•	Authorship attribution
+	•	license notices
+	•	copyright headers
+	•	authorship attribution
 
 ⸻
 
-Final Note
+Final note
 
 BLOOMCORE is not here to win popularity contests.
+
 It exists to make long-horizon work survivable.
 
 If that resonates, welcome.
-If it doesn’t, that’s fine too. 
+If it doesn’t, that’s fine too.
+
+⸻
 
 The shared control loop
 
