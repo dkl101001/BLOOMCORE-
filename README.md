@@ -162,3 +162,18 @@ It exists to make long-horizon work survivable.
 
 If that resonates, welcome.
 If it doesn’t, that’s fine too. 
+
+The shared control loop
+
+This repository is one component of a larger control loop designed for non-deterministic systems:
+	•	Computation produces candidate results
+	•	WISECORE decides whether results may be emitted
+	•	Sentinel Lite decides whether actions are permitted to execute
+	•	Continuity Spine records invariant-checked history
+	•	Engines and executors apply force to the world
+
+Each layer is intentionally narrow.
+No layer replaces another.
+No layer is optional once failure cost matters.
+
+The loop allows systems to vary in behavior while remaining auditable, reconstructable, and accountable over time.
