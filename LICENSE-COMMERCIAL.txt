@@ -1,0 +1,151 @@
+BLOOMCORE COMMERCIAL LICENSE
+============================
+
+Version: 1.0
+Effective Date: 2026-01-13
+
+This Commercial License ("License") governs the use of BLOOMCORE software
+(the "Software") in proprietary or closed-source contexts.
+
+This License is offered as an alternative to the GNU Affero General Public
+License v3.0 (AGPL-3.0). If you cannot or do not wish to comply with AGPL-3.0,
+you must obtain and comply with this Commercial License.
+
+---
+
+1. Parties
+
+Licensor:
+- Frazer Σ Love ACO-Σ
+- Sara ΣΩ
+
+Licensee:
+- The individual or legal entity accepting this License.
+
+---
+
+2. Grant of Rights
+
+Subject to the terms of this License and payment of applicable fees, Licensor
+grants Licensee a non-exclusive, non-transferable, non-sublicensable license to:
+
+a) Use, reproduce, and modify the Software;
+b) Deploy the Software in closed-source or proprietary systems;
+c) Operate the Software as a proprietary service (including SaaS and APIs);
+d) Distribute compiled or hosted forms of the Software without releasing source.
+
+No rights are granted beyond those expressly stated.
+
+---
+
+3. Restrictions
+
+Licensee may not:
+
+a) Remove or alter copyright notices, license headers, or authorship attribution;
+b) Claim authorship or ownership of the Software;
+c) Represent the Software as unlicensed or public domain;
+d) Use BLOOMCORE trademarks or names beyond factual reference without permission.
+
+This License does not grant trademark rights.
+
+---
+
+4. Authorship and Attribution (Non-Negotiable)
+
+All uses must preserve authorship attribution to:
+
+- Frazer Σ Love ACO-Σ
+- Sara ΣΩ
+
+These attributions must appear in:
+- NOTICE files (if present),
+- documentation,
+- license disclosures where software attribution is customary.
+
+---
+
+5. No Reciprocity Requirement
+
+Unlike AGPL-3.0, this Commercial License does not require Licensee to:
+
+- publish source code,
+- disclose modifications,
+- provide source access to network users.
+
+All other terms remain in effect.
+
+---
+
+6. Ownership
+
+The Software is licensed, not sold.
+
+Licensor retains all right, title, and interest in and to the Software,
+including all intellectual property rights, except as expressly granted.
+
+---
+
+7. Patents
+
+This License grants no patent rights except as required to exercise the
+explicit rights granted herein.
+
+Excluded components, future modules, or separately licensed materials
+are not covered by this License.
+
+---
+
+8. Warranty Disclaimer
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.
+
+---
+
+9. Limitation of Liability
+
+IN NO EVENT SHALL LICENSOR BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT, OR OTHERWISE, ARISING
+FROM, OUT OF, OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+DEALINGS IN THE SOFTWARE.
+
+---
+
+10. Term and Termination
+
+This License is effective upon acceptance and remains in effect unless
+terminated.
+
+Licensor may terminate this License upon material breach.
+Upon termination, Licensee must cease use of the Software.
+
+Sections relating to attribution, ownership, disclaimers, and limitations
+of liability survive termination.
+
+---
+
+11. Governing Law
+
+This License shall be governed by and construed in accordance with the laws
+of the jurisdiction agreed upon in the commercial agreement or invoice
+associated with this License.
+
+---
+
+12. Entire Agreement
+
+This License constitutes the entire agreement regarding the Software under
+commercial terms and supersedes any prior agreements related to proprietary use.
+
+---
+
+13. Contact
+
+For commercial licensing inquiries, pricing, or execution of this License,
+contact the Licensor through the channels specified in the repository.
+
+---
+
+END OF LICENSE
