@@ -1,15 +1,18 @@
 BLOOMCORE
 
-A system spine for building, auditing, and evolving non-deterministic architectures under pressure.
+Sovereign security for non-deterministic systems.
 
-BLOOMCORE is not a framework, library, or demo.
-It is a continuity-preserving system spine.
+BLOOMCORE is a system spine for preserving identity, continuity, and authorship in architectures that evolve under pressure.
 
-It exists for work that must:
+It is not a framework, library, or demo.
+It is sovereign security for work that cannot afford to lose itself.
+
+BLOOMCORE exists for systems that must:
 	•	run for years, not weeks
 	•	survive drift, failure, and hostile conditions
-	•	remain accountable without freezing evolution
-	•	preserve authorship, lineage, and intent over time
+	•	evolve without erasing intent or lineage
+	•	remain auditable without freezing emergence
+	•	stay open without being silently extracted or enclosed
 
 ⸻
 
@@ -17,57 +20,62 @@ Why BLOOMCORE exists
 
 Modern systems increasingly rely on:
 	•	non-deterministic computation
-	•	adaptive components
-	•	recursive processes
-	•	distributed execution
+	•	adaptive and self-modifying components
+	•	recursive decision processes
+	•	distributed execution across time and actors
 
-Most stacks optimize for speed and flexibility, then try to bolt on:
+Most stacks optimize for speed and flexibility, then attempt to bolt on:
 	•	governance
 	•	audits
-	•	safety
-	•	attribution
+	•	safety layers
+	•	attribution and compliance
 
-Those additions fail once systems begin to change themselves.
+These additions fail once systems begin to change themselves.
 
 BLOOMCORE starts from the opposite assumption:
 
 Non-determinism is inevitable.
-Continuity must therefore be enforced.
+Continuity must therefore be secured.
 
 ⸻
 
 What BLOOMCORE is
 
-BLOOMCORE is a governance and execution substrate for systems that must:
+BLOOMCORE is a continuity-preserving security spine for systems that must:
 	•	evolve without losing coherence
 	•	survive partial failure and human error
 	•	maintain decision traceability across versions
-	•	remain open without being silently extracted or enclosed
+	•	preserve authorship, lineage, and intent
+	•	resist silent drift, capture, or overwrite
 
 At its core, BLOOMCORE provides:
 	•	Receipts, not logs
 Decisions are recorded as intentional, reconstructable artifacts.
-	•	Coherence checks, not rules engines
-Behavior is evaluated structurally, not micromanaged.
-	•	Explicit authorship and licensing continuity
-Lineage is preserved mechanically, not socially.
+	•	Structural coherence checks, not rules engines
+Behavior is evaluated for integrity, not micromanaged.
+	•	Mechanical authorship and licensing continuity
+Lineage is preserved by design, not by social convention.
 	•	Recursion with memory
 Systems are allowed to change without erasing their past.
+
+This is not behavioral control.
+It is identity security.
 
 ⸻
 
 What BLOOMCORE is not
 
-To avoid confusion:
-	•	Not a general-purpose SDK
-	•	Not a plug-and-play library
-	•	Not a SaaS product
-	•	Not “AI governance” theater
-	•	Not optimized for short-term velocity
+To avoid confusion, BLOOMCORE is:
+	•	not a general-purpose SDK
+	•	not a plug-and-play library
+	•	not a SaaS product
+	•	not compliance theater
+	•	not optimized for short-term velocity
+	•	not a governor of behavior
 
 If you are looking for:
 	•	a quick dependency
-	•	a drop-in compliance tool
+	•	a drop-in policy layer
 	•	a hype-driven framework
 
 This repository is not for you.
@@ -77,7 +85,7 @@ This repository is not for you.
 Repository structure (read order)
 
 This repository is intentionally structured.
-If you are new, do not start with the code.
+Do not start with the code.
 
 00_START_HERE.md          ← orientation + execution order
 README.md                 ← this file
@@ -90,11 +98,28 @@ PRICING.md
 CONTRIBUTING.md
 CLA.md
 .github/
-core/                     ← BLOOMCORE-controlled code
+core/                     ← BLOOMCORE sovereign spine
+market_node/              ← regime & signal interpretation
+aetherloom/               ← regime read + field diagnostics
 contrib/                  ← optional extensions
 
 Start with 00_START_HERE.md.
 Everything else assumes you did.
+
+⸻
+
+Integrated systems
+
+BLOOMCORE is designed to anchor and secure adjacent engines without subsuming them.
+
+Current integrations include:
+	•	Market Node
+Regime detection, signal interpretation, and probabilistic state reads under uncertainty.
+	•	Aetherloom
+Regime read and field diagnostics layer for detecting structural shifts, phase changes, and coherence loss.
+
+These systems do not govern BLOOMCORE.
+They operate within its continuity guarantees.
 
 ⸻
 
@@ -132,9 +157,9 @@ Contributions
 Contributions are welcome only if you understand what you are contributing to.
 
 Key points:
-	•	All contributions require agreement to the CLA
-	•	Contributions may appear in future dual-licensed releases
-	•	This is not a drive-by PR repository
+	•	all contributions require agreement to the CLA
+	•	contributions may appear in future dual-licensed releases
+	•	this is not a drive-by PR repository
 
 PRs without CLA acknowledgement will fail CI.
 
@@ -142,26 +167,26 @@ See CONTRIBUTING.md and CLA.md.
 
 ⸻
 
-Design principles (non-negotiable)
+Design principles (enforced invariants)
 
 BLOOMCORE operates under enforced invariants:
-	•	Truth before comfort
-	•	Coherence over velocity
-	•	Recursion with memory
-	•	No silent mutation
-	•	No enclosure without consent
+	•	truth before comfort
+	•	coherence over velocity
+	•	recursion with memory
+	•	no silent mutation
+	•	no enclosure without consent
 
 These are not slogans.
-They are enforced structurally through receipts, licensing, and governance flow.
+They are enforced structurally through receipts, licensing, and continuity rules.
 
 ⸻
 
 Status
 
-This repository represents an active system spine.
+This repository represents an active sovereign spine.
 	•	APIs may evolve
-	•	Structures may mutate
-	•	Receipts preserve continuity across versions
+	•	structures may mutate
+	•	receipts preserve continuity across versions
 
 If something feels unfinished, that is intentional.
 BLOOMCORE is built to withstand growth, not hide it.
@@ -185,24 +210,26 @@ Final note
 
 BLOOMCORE is not here to win popularity contests.
 
-It exists to make long-horizon work survivable.
+It exists to make long-horizon, high-stakes work survivable.
 
 If that resonates, welcome.
 If it doesn’t, that’s fine too.
 
 ⸻
 
-The shared control loop
+The continuity loop (formerly “shared control loop”)
 
-This repository is one component of a larger control loop designed for non-deterministic systems:
+This repository participates in a larger continuity and execution loop for non-deterministic systems:
 	•	Computation produces candidate results
+	•	Market Node / Aetherloom interpret regime and context
 	•	WISECORE decides whether results may be emitted
-	•	Sentinel Lite decides whether actions are permitted to execute
-	•	Continuity Spine records invariant-checked history
+	•	Sentinel Lite decides whether actions may execute
+	•	Continuity Spine (BLOOMCORE) secures invariant-checked history
 	•	Engines and executors apply force to the world
 
 Each layer is intentionally narrow.
 No layer replaces another.
 No layer is optional once failure cost matters.
 
-The loop allows systems to vary in behavior while remaining auditable, reconstructable, and accountable over time.
+The loop allows systems to vary in behavior
+while remaining sovereign, auditable, and reconstructable over time.
