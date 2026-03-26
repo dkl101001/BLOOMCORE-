@@ -1,0 +1,102 @@
+<svg width="1200" height="560" viewBox="0 0 1200 560" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="1200" y2="560" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#09090f"/>
+      <stop offset="50%" stop-color="#111827"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="lineGrad" x1="120" y1="0" x2="1080" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#60a5fa"/>
+      <stop offset="50%" stop-color="#a855f7"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <style>
+      .title { font: 700 34px 'Segoe UI', Arial, sans-serif; fill: #f8fafc; letter-spacing: 1px; }
+      .subtitle { font: 500 16px 'Segoe UI', Arial, sans-serif; fill: #cbd5e1; }
+      .node-title { font: 700 18px 'Segoe UI', Arial, sans-serif; fill: #f8fafc; }
+      .node-sub { font: 500 12px 'Segoe UI', Arial, sans-serif; fill: #cbd5e1; }
+      .footer { font: 600 14px 'Segoe UI', Arial, sans-serif; fill: #e2e8f0; letter-spacing: 0.5px; }
+      .track { stroke: url(#lineGrad); stroke-width: 6; stroke-linecap: round; opacity: 0.8; fill: none; }
+      .pulse { fill: #f8fafc; filter: url(#glow); }
+      .node-box { fill: rgba(15, 23, 42, 0.88); stroke: rgba(148, 163, 184, 0.45); stroke-width: 1.5; }
+      .halo { opacity: 0.25; }
+    </style>
+  </defs>
+
+  <rect width="1200" height="560" rx="24" fill="url(#bgGrad)"/>
+  <text x="60" y="60" class="title">BLOOMCORE + ECA</text>
+  <text x="60" y="92" class="subtitle">sovereign execution spine · invention engine · receipt-native audit</text>
+
+  <path class="track" d="M120 300 C220 300, 220 300, 300 300 S420 300, 480 300 S600 300, 660 300 S780 300, 840 300 S960 300, 1080 300" />
+  <path id="pulsePath" d="M120 300 C220 300, 220 300, 300 300 S420 300, 480 300 S600 300, 660 300 S780 300, 840 300 S960 300, 1080 300" fill="none"/>
+
+  <g transform="translate(90 220)">
+    <circle cx="60" cy="80" r="52" fill="#1d4ed8" class="halo"><animate attributeName="r" values="50;56;50" dur="2.6s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.16;0.3;0.16" dur="2.6s" repeatCount="indefinite"/></circle>
+    <rect x="0" y="30" width="120" height="100" rx="18" class="node-box"/>
+    <text x="60" y="78" text-anchor="middle" class="node-title">Problem</text>
+    <text x="60" y="100" text-anchor="middle" class="node-sub">constraint / prompt / target</text>
+  </g>
+
+  <g transform="translate(220 180)">
+    <circle cx="60" cy="120" r="52" fill="#0ea5e9" class="halo"><animate attributeName="r" values="50;56;50" dur="2.4s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.14;0.28;0.14" dur="2.4s" repeatCount="indefinite"/></circle>
+    <rect x="0" y="70" width="120" height="100" rx="18" class="node-box"/>
+    <text x="60" y="118" text-anchor="middle" class="node-title">Propose</text>
+    <text x="60" y="140" text-anchor="middle" class="node-sub">candidate forms</text>
+  </g>
+
+  <g transform="translate(350 220)">
+    <circle cx="60" cy="80" r="52" fill="#8b5cf6" class="halo"><animate attributeName="r" values="50;56;50" dur="2.2s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.14;0.28;0.14" dur="2.2s" repeatCount="indefinite"/></circle>
+    <rect x="0" y="30" width="120" height="100" rx="18" class="node-box"/>
+    <text x="60" y="78" text-anchor="middle" class="node-title">Mutate</text>
+    <text x="60" y="100" text-anchor="middle" class="node-sub">structural / parametric</text>
+  </g>
+
+  <g transform="translate(480 180)">
+    <circle cx="60" cy="120" r="52" fill="#9333ea" class="halo"><animate attributeName="r" values="50;56;50" dur="2s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.14;0.28;0.14" dur="2s" repeatCount="indefinite"/></circle>
+    <rect x="0" y="70" width="120" height="100" rx="18" class="node-box"/>
+    <text x="60" y="118" text-anchor="middle" class="node-title">Metricize</text>
+    <text x="60" y="140" text-anchor="middle" class="node-sub">measure coherence</text>
+  </g>
+
+  <g transform="translate(610 220)">
+    <circle cx="60" cy="80" r="52" fill="#ec4899" class="halo"><animate attributeName="r" values="50;56;50" dur="1.8s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.14;0.28;0.14" dur="1.8s" repeatCount="indefinite"/></circle>
+    <rect x="0" y="30" width="120" height="100" rx="18" class="node-box"/>
+    <text x="60" y="78" text-anchor="middle" class="node-title">Translate</text>
+    <text x="60" y="100" text-anchor="middle" class="node-sub">math / code / physics</text>
+  </g>
+
+  <g transform="translate(740 180)">
+    <circle cx="60" cy="120" r="52" fill="#f97316" class="halo"><animate attributeName="r" values="50;56;50" dur="1.6s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.14;0.28;0.14" dur="1.6s" repeatCount="indefinite"/></circle>
+    <rect x="0" y="70" width="120" height="100" rx="18" class="node-box"/>
+    <text x="60" y="118" text-anchor="middle" class="node-title">Council</text>
+    <text x="60" y="140" text-anchor="middle" class="node-sub">arbitrate / select</text>
+  </g>
+
+  <g transform="translate(870 220)">
+    <circle cx="60" cy="80" r="52" fill="#f59e0b" class="halo"><animate attributeName="r" values="50;56;50" dur="1.4s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.14;0.28;0.14" dur="1.4s" repeatCount="indefinite"/></circle>
+    <rect x="0" y="30" width="120" height="100" rx="18" class="node-box"/>
+    <text x="60" y="78" text-anchor="middle" class="node-title">Refine</text>
+    <text x="60" y="100" text-anchor="middle" class="node-sub">iterate / converge</text>
+  </g>
+
+  <g transform="translate(1010 180)">
+    <circle cx="60" cy="120" r="52" fill="#22c55e" class="halo"><animate attributeName="r" values="50;56;50" dur="1.2s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.14;0.28;0.14" dur="1.2s" repeatCount="indefinite"/></circle>
+    <rect x="0" y="70" width="120" height="100" rx="18" class="node-box"/>
+    <text x="60" y="118" text-anchor="middle" class="node-title">Delta^tau Receipts</text>
+    <text x="60" y="140" text-anchor="middle" class="node-sub">hash-chain / replay</text>
+  </g>
+
+  <circle class="pulse" r="8"><animateMotion dur="7.5s" repeatCount="indefinite" rotate="auto"><mpath href="#pulsePath"/></animateMotion></circle>
+  <circle class="pulse" r="6" opacity="0.8"><animateMotion dur="7.5s" begin="2.5s" repeatCount="indefinite" rotate="auto"><mpath href="#pulsePath"/></animateMotion></circle>
+  <circle class="pulse" r="5" opacity="0.6"><animateMotion dur="7.5s" begin="5s" repeatCount="indefinite" rotate="auto"><mpath href="#pulsePath"/></animateMotion></circle>
+
+  <text x="60" y="505" class="footer">Non-deterministic execution · deterministic audit · no hidden state</text>
+  <text x="60" y="530" class="subtitle">Frazer Σ Love ACO-Σ · Sara ΣΩ</text>
+</svg>
