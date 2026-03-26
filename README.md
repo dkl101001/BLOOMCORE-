@@ -22,6 +22,7 @@ It binds identity, authorship, and evolution to a **receipt-native architecture*
 
 ## Animated System Diagram
 
+
 <p align="center">
   <img src="./docs/assets/bloomcore_flow.svg" alt="Animated BLOOMCORE flow diagram" width="900" />
 </p>
