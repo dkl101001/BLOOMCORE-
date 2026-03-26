@@ -14,7 +14,7 @@
 
 BLOOMCORE is a sovereign execution, continuity, and audit spine for non-deterministic systems.
 
-It binds identity, authorship, and evolution to a **receipt-native architecture**, where every mutation, observation, and decision is emitted as a **hash-anchored, reconstructable event (Î^Ï)**.
+It binds identity, authorship, and evolution to a **receipt-native architecture**, where every mutation, observation, and decision is emitted as a **hash-anchored, reconstructable event (Delta^tau)**.
 
 **Non-deterministic execution. Deterministic audit. No hidden state.**
 
@@ -22,17 +22,22 @@ It binds identity, authorship, and evolution to a **receipt-native architecture*
 
 ## Animated System Diagram
 
+<p align="center">
+  <a href="https://raw.githubusercontent.com/dkl101001/BLOOMCORE-/main/docs/assets/bloomcore_flow.svg">
+    <img src="https://raw.githubusercontent.com/dkl101001/BLOOMCORE-/main/docs/assets/bloomcore_flow.svg" alt="BLOOMCORE flow diagram" width="900" />
+  </a>
+</p>
 
 <p align="center">
-  <img src="./docs/assets/bloomcore_flow.svg" alt="Animated BLOOMCORE flow diagram" width="900" />
+  <a href="https://raw.githubusercontent.com/dkl101001/BLOOMCORE-/main/docs/assets/bloomcore_flow.svg">Open SVG directly</a>
 </p>
 
 ---
 
-## ECA â Invention Engine
+## ECA - Invention Engine
 
 ```text
-propose â mutate â metricize â translate â council â refine
+propose -> mutate -> metricize -> translate -> council -> refine
 ```
 
 ECA transforms problems into evolving, receipt-bound systems through:
@@ -48,7 +53,7 @@ All stages are **replayable, auditable, and contradiction-aware**.
 
 - **Repo:** [github.com/dkl101001/BLOOMCORE-](https://github.com/dkl101001/BLOOMCORE-)
 - **Architecture README:** [README.md](./README.md)
-- **Animated Diagram:** [docs/assets/bloomcore_flow.svg](./docs/assets/bloomcore_flow.svg)
+- **Animated Diagram:** [raw SVG](https://raw.githubusercontent.com/dkl101001/BLOOMCORE-/main/docs/assets/bloomcore_flow.svg)
 - **Profile README:** [README_profile.md](./README_profile.md)
 
 ---
@@ -89,11 +94,11 @@ python -m eca_dualpack_repo.private.orin_invention_engine.orin_engine.orchestrat
 
 ---
 
-## Example Receipt (Î^Ï)
+## Example Receipt
 
 ```json
 {
-  "receipt_type": "Î^Ï::OBS_TRIPLET.v1",
+  "receipt_type": "Delta^tau::OBS_TRIPLET.v1",
   "system_root": "BLOOMCORE",
   "engine": "swimcore",
   "authors": [
@@ -107,7 +112,7 @@ python -m eca_dualpack_repo.private.orin_invention_engine.orin_engine.orchestrat
 
 ## Live Metrics Badge Slots
 
-These are ready to swap to dynamic endpoints later if you expose them from CI, GitHub Actions, or a receipts counter.
+These are placeholder badges for now. They can later be wired to GitHub Actions, Shields, or your own receipts counter.
 
 ```markdown
 [![Receipts](https://img.shields.io/badge/Receipts-live%20counter-blueviolet)](https://github.com/dkl101001/BLOOMCORE-)
@@ -123,7 +128,7 @@ These are ready to swap to dynamic endpoints later if you expose them from CI, G
 ```markdown
 [![Open Repo](https://img.shields.io/badge/Open-GitHub-black?logo=github)](https://github.com/dkl101001/BLOOMCORE-)
 [![Run Local](https://img.shields.io/badge/Run-Local-informational)](#minimal-run)
-[![View Diagram](https://img.shields.io/badge/View-Animated%20Diagram-orange)](./docs/assets/bloomcore_flow.svg)
+[![View Diagram](https://img.shields.io/badge/View-Animated%20Diagram-orange)](https://raw.githubusercontent.com/dkl101001/BLOOMCORE-/main/docs/assets/bloomcore_flow.svg)
 ```
 
 ---
@@ -139,5 +144,5 @@ Nothing is untraceable.
 
 ## Authors
 
-Frazer Î£ Love ACO-Î£  
-Sara Î£Î©
+Frazer Σ£ Love ACO-Σ  
+Sara ΣΩ
