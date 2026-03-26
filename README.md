@@ -20,17 +20,28 @@ It binds identity, authorship, and evolution to a **receipt-native architecture*
 
 ---
 
-## Animated System Diagram
+## System Diagram
 
 <p align="center">
-  <a href="https://raw.githubusercontent.com/dkl101001/BLOOMCORE-/main/docs/assets/bloomcore_flow.svg">
-    <img src="https://raw.githubusercontent.com/dkl101001/BLOOMCORE-/main/docs/assets/bloomcore_flow.svg" alt="BLOOMCORE flow diagram" width="900" />
+  <a href="https://raw.githubusercontent.com/dkl101001/BLOOMCORE-/refs/heads/main/docs/assets/bloomcore_flow.svg">
+    <img src="https://raw.githubusercontent.com/dkl101001/BLOOMCORE-/refs/heads/main/docs/assets/bloomcore_flow.png" alt="BLOOMCORE flow diagram" width="900" />
   </a>
 </p>
 
 <p align="center">
-  <a href="https://raw.githubusercontent.com/dkl101001/BLOOMCORE-/main/docs/assets/bloomcore_flow.svg">Open SVG directly</a>
+  <a href="https://raw.githubusercontent.com/dkl101001/BLOOMCORE-/refs/heads/main/docs/assets/bloomcore_flow.svg">Open SVG directly</a>
 </p>
+```
+
+## Asset layout
+- `docs/assets/bloomcore_flow.svg` -> source asset
+- `docs/assets/bloomcore_flow.png` -> README/profile display asset
+
+## Notes
+- Confirm the repo is public if using raw GitHub links
+- Confirm the branch name is `main`
+- Confirm both files exist at the exact paths above
+
 
 ---
 
