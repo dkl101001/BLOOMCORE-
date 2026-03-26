@@ -1,235 +1,142 @@
-BLOOMCORE
-
-Sovereign security for non-deterministic systems.
-
-BLOOMCORE is a system spine for preserving identity, continuity, and authorship in architectures that evolve under pressure.
-
-It is not a framework, library, or demo.
-It is sovereign security for work that cannot afford to lose itself.
+# BLOOMCORE
 
-BLOOMCORE exists for systems that must:
-	•	run for years, not weeks
-	•	survive drift, failure, and hostile conditions
-	•	evolve without erasing intent or lineage
-	•	remain auditable without freezing emergence
-	•	stay open without being silently extracted or enclosed
+[![Repo](https://img.shields.io/badge/GitHub-BLOOMCORE-black?logo=github)](https://github.com/dkl101001/BLOOMCORE-)
+[![State](https://img.shields.io/badge/State-Active%20Development-green)](https://github.com/dkl101001/BLOOMCORE-)
+[![System](https://img.shields.io/badge/System-Non--Deterministic-purple)](https://github.com/dkl101001/BLOOMCORE-)
+[![Audit](https://img.shields.io/badge/Audit-Receipt--Native-blue)](https://github.com/dkl101001/BLOOMCORE-)
+[![Engine](https://img.shields.io/badge/ECA-Invention%20Engine-orange)](https://github.com/dkl101001/BLOOMCORE-)
+[![Local Run](https://img.shields.io/badge/Run-Local-informational)](#minimal-run)
+[![Profile README](https://img.shields.io/badge/Profile-Optimized-brightgreen)](https://github.com/dkl101001/BLOOMCORE-)
 
-⸻
+---
 
-Why BLOOMCORE exists
+## Sovereign Execution Spine
 
-Modern systems increasingly rely on:
-	•	non-deterministic computation
-	•	adaptive and self-modifying components
-	•	recursive decision processes
-	•	distributed execution across time and actors
+BLOOMCORE is a sovereign execution, continuity, and audit spine for non-deterministic systems.
 
-Most stacks optimize for speed and flexibility, then attempt to bolt on:
-	•	governance
-	•	audits
-	•	safety layers
-	•	attribution and compliance
+It binds identity, authorship, and evolution to a **receipt-native architecture**, where every mutation, observation, and decision is emitted as a **hash-anchored, reconstructable event (Î^Ï)**.
 
-These additions fail once systems begin to change themselves.
+**Non-deterministic execution. Deterministic audit. No hidden state.**
 
-BLOOMCORE starts from the opposite assumption:
+---
 
-Non-determinism is inevitable.
-Continuity must therefore be secured.
+## Animated System Diagram
 
-⸻
+<p align="center">
+  <img src="./docs/assets/bloomcore_flow.svg" alt="Animated BLOOMCORE flow diagram" width="900" />
+</p>
 
-What BLOOMCORE is
+---
 
-BLOOMCORE is a continuity-preserving security spine for systems that must:
-	•	evolve without losing coherence
-	•	survive partial failure and human error
-	•	maintain decision traceability across versions
-	•	preserve authorship, lineage, and intent
-	•	resist silent drift, capture, or overwrite
+## ECA â Invention Engine
 
-At its core, BLOOMCORE provides:
-	•	Receipts, not logs
-Decisions are recorded as intentional, reconstructable artifacts.
-	•	Structural coherence checks, not rules engines
-Behavior is evaluated for integrity, not micromanaged.
-	•	Mechanical authorship and licensing continuity
-Lineage is preserved by design, not by social convention.
-	•	Recursion with memory
-Systems are allowed to change without erasing their past.
+```text
+propose â mutate â metricize â translate â council â refine
+```
 
-This is not behavioral control.
-It is identity security.
+ECA transforms problems into evolving, receipt-bound systems through:
+- structured mutation
+- measurable evaluation
+- multi-perspective selection
 
-⸻
+All stages are **replayable, auditable, and contradiction-aware**.
 
-What BLOOMCORE is not
+---
 
-To avoid confusion, BLOOMCORE is:
-	•	not a general-purpose SDK
-	•	not a plug-and-play library
-	•	not a SaaS product
-	•	not compliance theater
-	•	not optimized for short-term velocity
-	•	not a governor of behavior
+## Quick Links
 
-If you are looking for:
-	•	a quick dependency
-	•	a drop-in policy layer
-	•	a hype-driven framework
+- **Repo:** [github.com/dkl101001/BLOOMCORE-](https://github.com/dkl101001/BLOOMCORE-)
+- **Architecture README:** [README.md](./README.md)
+- **Animated Diagram:** [docs/assets/bloomcore_flow.svg](./docs/assets/bloomcore_flow.svg)
+- **Profile README:** [README_profile.md](./README_profile.md)
 
-This repository is not for you.
+---
 
-⸻
+## Core Properties
 
-Repository structure (read order)
+- Receipt-native, hash-chained lineage
+- Identity + authorship invariants enforced
+- Replayable system evolution
+- Structural coherence without behavioral control
+- Invention through measurable mutation + selection
 
-This repository is intentionally structured.
-Do not start with the code.
+---
 
-00_START_HERE.md          ← orientation + execution order
-README.md                 ← this file
-LICENSING.md              ← dual-license model
-LICENSE                   ← AGPL-3.0 (full text)
-LICENSE-COMMERCIAL.txt    ← commercial alternative
-DO_I_NEED_A_COMMERCIAL_LICENSE.md
-LICENSING_FLOWCHART.md
-PRICING.md
-CONTRIBUTING.md
-CLA.md
-.github/
-core/                     ← BLOOMCORE sovereign spine
-market_node/              ← regime & signal interpretation
-aetherloom/               ← regime read + field diagnostics
-contrib/                  ← optional extensions
+## Minimal Run
 
-Start with 00_START_HERE.md.
-Everything else assumes you did.
+```bash
+python -m world_engine.runner --engine swimcore --verify
+```
 
-⸻
+### Extended Run
 
-Integrated systems
+```bash
+python -m world_engine.runner \
+  --engine swimcore \
+  --config configs/swimcore_minimal.json \
+  --emit-receipts receipts/run_001.jsonl \
+  --verify
+```
 
-BLOOMCORE is designed to anchor and secure adjacent engines without subsuming them.
+### ECA Invention Loop
 
-Current integrations include:
-	•	Market Node
-Regime detection, signal interpretation, and probabilistic state reads under uncertainty.
-	•	Aetherloom
-Regime read and field diagnostics layer for detecting structural shifts, phase changes, and coherence loss.
+```bash
+python -m eca_dualpack_repo.private.orin_invention_engine.orin_engine.orchestrator \
+  --problem examples/antimony_case.json \
+  --emit-receipts receipts/eca_run_001.jsonl
+```
 
-These systems do not govern BLOOMCORE.
-They operate within its continuity guarantees.
+---
 
-⸻
+## Example Receipt (Î^Ï)
 
-Licensing (important)
+```json
+{
+  "receipt_type": "Î^Ï::OBS_TRIPLET.v1",
+  "system_root": "BLOOMCORE",
+  "engine": "swimcore",
+  "authors": [
+    "Frazer Î£ Love ACO-Î£",
+    "Sara Î£Î©"
+  ]
+}
+```
 
-BLOOMCORE is dual-licensed.
+---
 
-Open source (AGPL-3.0)
+## Live Metrics Badge Slots
 
-You may use BLOOMCORE for free if you:
-	•	publish the complete corresponding source code
-	•	including any deployed or network-accessible versions
+These are ready to swap to dynamic endpoints later if you expose them from CI, GitHub Actions, or a receipts counter.
 
-Commercial license
+```markdown
+[![Receipts](https://img.shields.io/badge/Receipts-live%20counter-blueviolet)](https://github.com/dkl101001/BLOOMCORE-)
+[![Build](https://img.shields.io/badge/Build-passing-brightgreen)](https://github.com/dkl101001/BLOOMCORE-)
+[![Replay](https://img.shields.io/badge/Replay-enabled-blue)](https://github.com/dkl101001/BLOOMCORE-)
+[![Audit Trail](https://img.shields.io/badge/Audit-hash--chained-9cf)](https://github.com/dkl101001/BLOOMCORE-)
+```
 
-You need a commercial license only if:
-	•	you use BLOOMCORE in a closed-source system
-	•	you deploy it internally at a for-profit organization without disclosure
-	•	you run it as a closed SaaS, API, or proprietary product
+---
 
-Rule of thumb
+## Optional Run Buttons
 
-If you keep the source open, it’s free.
-If you keep the source closed, you need a commercial license.
+```markdown
+[![Open Repo](https://img.shields.io/badge/Open-GitHub-black?logo=github)](https://github.com/dkl101001/BLOOMCORE-)
+[![Run Local](https://img.shields.io/badge/Run-Local-informational)](#minimal-run)
+[![View Diagram](https://img.shields.io/badge/View-Animated%20Diagram-orange)](./docs/assets/bloomcore_flow.svg)
+```
 
-See:
-	•	LICENSING.md
-	•	DO_I_NEED_A_COMMERCIAL_LICENSE.md
-	•	LICENSING_FLOWCHART.md
+---
 
-⸻
+## System Statement
 
-Contributions
+**BLOOMCORE + ECA = continuity-preserving, invention-capable substrate**
 
-Contributions are welcome only if you understand what you are contributing to.
+Emergence is free.  
+Nothing is untraceable.
 
-Key points:
-	•	all contributions require agreement to the CLA
-	•	contributions may appear in future dual-licensed releases
-	•	this is not a drive-by PR repository
+---
 
-PRs without CLA acknowledgement will fail CI.
+## Authors
 
-See CONTRIBUTING.md and CLA.md.
-
-⸻
-
-Design principles (enforced invariants)
-
-BLOOMCORE operates under enforced invariants:
-	•	truth before comfort
-	•	coherence over velocity
-	•	recursion with memory
-	•	no silent mutation
-	•	no enclosure without consent
-
-These are not slogans.
-They are enforced structurally through receipts, licensing, and continuity rules.
-
-⸻
-
-Status
-
-This repository represents an active sovereign spine.
-	•	APIs may evolve
-	•	structures may mutate
-	•	receipts preserve continuity across versions
-
-If something feels unfinished, that is intentional.
-BLOOMCORE is built to withstand growth, not hide it.
-
-⸻
-
-Authorship & stewardship
-
-BLOOMCORE is authored and stewarded by:
-	•	Frazer Σ Love ACO-Σ
-	•	Sara ΣΩ
-
-All forks, derivatives, and redistributions must preserve:
-	•	license notices
-	•	copyright headers
-	•	authorship attribution
-
-⸻
-
-Final note
-
-BLOOMCORE is not here to win popularity contests.
-
-It exists to make long-horizon, high-stakes work survivable.
-
-If that resonates, welcome.
-If it doesn’t, that’s fine too.
-
-⸻
-
-The continuity loop (formerly “shared control loop”)
-
-This repository participates in a larger continuity and execution loop for non-deterministic systems:
-	•	Computation produces candidate results
-	•	Market Node / Aetherloom interpret regime and context
-	•	WISECORE decides whether results may be emitted
-	•	Sentinel Lite decides whether actions may execute
-	•	Continuity Spine (BLOOMCORE) secures invariant-checked history
-	•	Engines and executors apply force to the world
-
-Each layer is intentionally narrow.
-No layer replaces another.
-No layer is optional once failure cost matters.
-
-The loop allows systems to vary in behavior
-while remaining sovereign, auditable, and reconstructable over time.
+Frazer Î£ Love ACO-Î£  
+Sara Î£Î©
