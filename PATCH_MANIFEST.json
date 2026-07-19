@@ -1,0 +1,59 @@
+{
+  "artifact_id": "ECA_PUBLIC_CUSTODY_HARDENING_PATCH",
+  "created_et": "2026-07-18T23:14:42-04:00",
+  "created_utc": "2026-07-19T03:14:42+00:00",
+  "status": "repo_ready_public_custody_hardening_patch",
+  "purpose": "Bind public ECA release to BLOOMCORE field law, anti-inversion safeguards, public/private custody, provenance, and defensive audit.",
+  "files": [
+    {
+      "path": "ANTI_INVERSION_BOUNDARY.md",
+      "bytes": 3638,
+      "sha256": "7465a968d73eea33d61255a38481d9a002ad7a8435e881c6e531b3aace7d0ceb"
+    },
+    {
+      "path": "BLOOMCORE_BINDING.md",
+      "bytes": 2268,
+      "sha256": "b0799ad29c30bc004f1c4da2b136a10117475310519ed71d9b7b98c59021b56a"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "bytes": 1584,
+      "sha256": "885cc00641be6a82e5df920f8cecb211c1932d917f2842cdfff2738e8c4fc823"
+    },
+    {
+      "path": "DEFENSIVE_AUDIT_GUIDE.md",
+      "bytes": 4628,
+      "sha256": "847de25cd456a188a7bc39470ff28bf6bf1fafa0e58a0ca2eee23e8ea052abc2"
+    },
+    {
+      "path": "DISCLAIMER.md",
+      "bytes": 1442,
+      "sha256": "1c6258158dbd1f2bf6dd5b56f719f42f996a375f474511ea358c8609c985a835"
+    },
+    {
+      "path": "MISUSE_REPORTING.md",
+      "bytes": 1768,
+      "sha256": "e912a4a0403b8cc3521bec5a89b816d2afe07ebd9d7f16c982e5af68f257d246"
+    },
+    {
+      "path": "PATCH_README.md",
+      "bytes": 2389,
+      "sha256": "1d8758e9e2c64a59b9aaea42d45defb57758cd01373cae861da9c88b6d255b47"
+    },
+    {
+      "path": "PROVENANCE_AND_CUSTODY.md",
+      "bytes": 2507,
+      "sha256": "ead953967f95314e03493b4a0210b5392fc0b3d4c624c4fab0171624fd041e56"
+    },
+    {
+      "path": "PUBLIC_PRIVATE_BOUNDARY.md",
+      "bytes": 1856,
+      "sha256": "4a56434b4938009d2ae7a11832030512cc24bd1757e141dd702dde21f09444e8"
+    },
+    {
+      "path": "README_LINK_PATCH.md",
+      "bytes": 911,
+      "sha256": "752733b11317de351bc3301bc7904a0dcf7e25964775648c57e3ddf57a7418a3"
+    }
+  ]
+}
