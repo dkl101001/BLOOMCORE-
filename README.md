@@ -10,6 +10,21 @@
 
 ---
 
+BLOOMCORE, the Elemental Coherence Atlas (ECA), and all related systems, writings, architectures, derivatives, and associated contributions by author Frazer Carlson Love are not offered, licensed, or consented to as control systems, weapons, coercive instruments, manipulation frameworks, surveillance architectures, psychological operations tools, or dual-use substrates for institutional domination.
+
+These works were created for accountability through trust, transparency, coherence, non-coercion, and life-preserving field law. Any attempt to invert, extract, adapt, or redeploy BLOOMCORE, ECA, or their associated frameworks for coercive control, behavioral manipulation, military use, exploitative governance, psychological suppression, population targeting, or systems of domination constitutes a direct violation of their purpose, authorship, and ethical boundary.
+
+We do not consent to the dual-use weaponization, institutional capture, coercive adaptation, or control-system inversion of BLOOMCORE, ECA, or any related work.
+
+These systems are not thrones.
+They are accountability architectures.
+
+They are not instruments of command.
+They are safeguards against domination.
+
+They are not permission structures for control.
+They are field laws for truth, custody, transparency, and non-coercive coherence.
+
 ## Sovereign Execution Spine
 
 BLOOMCORE is a sovereign execution, continuity, and audit spine for non-deterministic systems.
