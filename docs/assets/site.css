@@ -1,3 +1,5 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+
 :root {
   color-scheme: dark;
   --ink: #f2f4eb;
@@ -35,6 +37,14 @@ body {
     var(--paper);
   font-family: var(--sans);
   line-height: 1.6;
+}
+
+.hero-sigil {
+  width: clamp(7rem, 14vw, 10rem);
+  height: auto;
+  margin-bottom: 1.25rem;
+  border-radius: 50%;
+  filter: drop-shadow(0 0 2rem rgba(114, 215, 206, 0.3));
 }
 
 a {

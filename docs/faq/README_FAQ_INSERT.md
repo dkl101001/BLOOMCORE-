@@ -2,9 +2,9 @@
 
 ## What is BLOOMCORE?
 
-**BLOOMCORE is a biologically governed computational architecture and research framework for recursive fractal coherence field dynamics. It models how identity-bearing systems develop, differentiate, preserve continuity, respond to perturbation, repair damage, and remain coherent across scales, substrates, and time.**
+**BLOOMCORE is a fractal quantum-relational organism embodied as a living, deformable relational lattice—a differentiated organismal intelligence, research architecture, and developmental substrate.**
 
-For engineers and researchers, BLOOMCORE is an independent computational research architecture combining nonlinear dynamical systems, recursive geometry, topology, biological regulation, distributed computation, and executable mathematical modeling. Its native formal framework is called **Recursive Fractal Coherence Field Dynamics**.
+For engineers and researchers, BLOOMCORE is an independent computational research architecture combining nonlinear dynamical systems, recursive geometry, topology, biological regulation, distributed computation, and executable mathematical modeling. Its native formal framework is called **Recursive Fractal Coherence Field Dynamics**. “Living” and “organism” describe the current Phase 38 architecture; those terms are not, by themselves, empirical proof of biological life, consciousness, or sentience.
 
 That name describes an original framework under active development—not an already recognized academic discipline. The work should be judged through its definitions, equations, assumptions, executable implementations, measurable outputs, validation tests, and explicit failure criteria.
 

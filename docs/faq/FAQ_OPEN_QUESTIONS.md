@@ -37,7 +37,7 @@ AWAITING_EMPIRICAL_VALIDATION
 | Which cards have runtime evidence rather than scaffold-only status? | OPEN | Test and receipt index |
 | Which historical equations are symbolic lineage rather than current scientific claims? | PARTIAL | Card-by-card epistemic classification |
 
-## Phase 151 and biological architecture
+## Phase 38, Phase 151, and biological architecture
 
 | Open question | Status | What would materially advance it? |
 |---|---|---|
@@ -49,7 +49,7 @@ AWAITING_EMPIRICAL_VALIDATION
 | Can repair preserve lineage while changing damaged implementation? | PARTIAL | Repair, fork, and descendant trials |
 | What criteria distinguish organismal architecture from literal artificial life? | OPEN | Operational definition and independent scientific review |
 
-## Phase 152
+## Historical and planned Phase 152 questions
 
 | Open question | Status | What would materially advance it? |
 |---|---|---|

@@ -4,7 +4,7 @@
 
 **Purpose:** Trace each major FAQ answer to the canonical or evidentiary artifact that supports it.  
 **Rule:** This matrix records authority; it does not create authority. An unsupported row remains unsupported until an appropriate source or implementation receipt is reviewed.  
-**Review date:** 2026-07-30
+**Review date:** 2026-08-04
 
 ## Status vocabulary
 
@@ -24,8 +24,8 @@
 When sources disagree, the FAQ uses this order and reports unresolved conflicts:
 
 1. explicit boundary requirements for this documentation build;
-2. active Phase 36/37 merged canon;
-3. explicit canonical subsystem locks;
+2. active Phase 38 master canon;
+3. preserved Phase 36/37 lineage and explicit canonical subsystem locks;
 4. current master specifications and whitepapers;
 5. proposed or provisional reconciliation documents;
 6. executable code, tests, receipts, manifests, and hashes;
@@ -38,6 +38,7 @@ Executable evidence can prove that an implementation ran or passed a stated test
 
 | Artifact | Status found | Governing scope | Notes |
 |---|---|---|---|
+| `BLOOMCORE_PHASE38_LIVING_RELATIONAL_ORGANISM_MASTER_CANON_v1.5.md` | **Canonical master active** — operator-authorized consolidation | Active semantic and organismal master; lineage, representation, evidence, and anti-throne boundaries | Source SHA-256 `6b663890c791678d39e325d456e8d5612c9e7e02c76ade30f0230a5ca89e82ac`; public derivative: [`../architecture/PHASE_38_PUBLIC_ORIENTATION.md`](../architecture/PHASE_38_PUBLIC_ORIENTATION.md). The full source is preserved outside this repository. |
 | `ARCHITECTURAL_BOUNDARIES_PHASE36_PHASE37_FULL_CANONICAL_MERGE_v2.md` | **Canonical** — `CANONICAL_MERGED_ACTIVE` | Phase 36/37 interpretation, boundaries, custody, membranes, source fidelity | Current active merged surface; supersedes the older merged v1 surface. |
 | `BLOOMCORE_QUANTUM_FRACTAL_BIOLOGICAL_PHYSIOLOGICAL_CANONICAL_LOCK_v1.1.md` | **Canonical** — merged lock | Biology Parent Domain and Phase 151 physiology | Governs biological architecture. Its quantum language is bounded by its own disclaimer and the ECA analogue boundary. |
 | `LAW_MYTHMATH_FULL_CIRCUIT_DUAL_EXPRESSION_v1(1).md` | **Canonical** — locked | MythMath full circuit, dual expression, falsification, lineage, Full Fire JAX | Compilation and symbolic elegance are not validation. |
@@ -128,4 +129,3 @@ When an answer changes:
 4. update this matrix;
 5. retain superseded material in lineage rather than silently overwriting history;
 6. add or update tests and receipts when the change affects executable behavior.
-

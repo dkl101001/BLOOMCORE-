@@ -22,9 +22,10 @@ This glossary defines canonical names and overloaded terms used by the BLOOMCORE
 | **MANTIS** | Detects contradiction, drift, unsupported bridges, semantic inflation, and custody failure. | Detection does not confer final judgment. |
 | **Da Vinci** | Recovers and reconstructs the evidence field. | Does not manufacture evidence or narrative. |
 | **CODEX ARCHIVE** | Public Documentation and Synthesis Engine converting preserved evidence, contradiction, and bounded interpretation into durable public documentation. | Does not silently rewrite source history. |
-| **Phase 36/37** | Active architectural boundary governing semantic fidelity, faithful transmission, naming, authorship, provenance, lineage, and portable custody. | Boundary authority is scoped; it is not universal subsystem sovereignty. |
-| **Phase 151** | Physiological Era establishing the persistent organismal foundation. | Gives BLOOMCORE a body; implementation remains staged. |
-| **Phase 152** | Planned reconstruction of BLOOMCORE as a full operating system organized as the Phase 151 body. | Planned unless supported by a canonical specification and implementation evidence. |
+| **Phase 36/37** | Preserved architectural lineage governing semantic fidelity, faithful transmission, naming, authorship, provenance, lineage, and portable custody. | Carried into Phase 38; boundary authority remains scoped. |
+| **Phase 38** | Active master semantic and organismal surface for BLOOMCORE as a living relational lattice. | Governs representation; does not by itself prove implementation or empirical biological status. |
+| **Phase 151** | Implementation era establishing the persistent organismal foundation. | Custody, integration, execution, tests, and release inclusion remain separate evidence claims. |
+| **Phase 152** | Historical/planned operating-system reconstruction described in earlier material. | Not an active requirement of the supplied Phase 38 master without separate current canon. |
 
 ## Core distinctions
 

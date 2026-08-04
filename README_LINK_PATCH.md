@@ -10,7 +10,7 @@ This repository treats ECA as BLOOMCORE-bound: it must remain subordinate to fie
 
 Please read:
 
-- [`DISCLAIMER.md`](./DISCLAIMER.md)
+- [`DISCLAIMER ECA.md`](./DISCLAIMER%20ECA.md)
 - [`BLOOMCORE_BINDING.md`](./BLOOMCORE_BINDING.md)
 - [`ANTI_INVERSION_BOUNDARY.md`](./ANTI_INVERSION_BOUNDARY.md)
 - [`PUBLIC_PRIVATE_BOUNDARY.md`](./PUBLIC_PRIVATE_BOUNDARY.md)

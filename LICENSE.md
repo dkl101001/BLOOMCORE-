@@ -10,12 +10,17 @@ Unless a file, directory, or section below states otherwise, material in this re
 
 | Material | License | Scope |
 |---|---|---|
+| `README.md`, `README_profile.md`, `README_profile BLOOMCORE GitHub .md`, `00_START_HERE.md` | `Apache-2.0` | Public orientation and profile-facing documentation carrying an Apache SPDX identifier |
 | `docs/faq/**` | `Apache-2.0` | Public FAQ, glossary, relationship map, source matrix, open-question register, and README insertion text |
+| `docs/architecture/*.md` | `Apache-2.0` | Public architecture orientations carrying an Apache SPDX identifier |
+| `docs/index.html`, `docs/assets/site.css`, `docs/assets/site.js`, `docs/assets/ASSET_PROVENANCE.md` | `Apache-2.0` | Public documentation site and its provenance record |
 | Newly added public schemas and examples carrying an `Apache-2.0` SPDX identifier | `Apache-2.0` | Adoption-facing specifications, examples, and documentation only |
 | Newly added standalone validators or audit utilities carrying an `MPL-2.0` SPDX identifier | `MPL-2.0` | Only the expressly marked file or directory |
 | All other repository material unless expressly marked | `AGPL-3.0-only` | Existing code, integrated runtimes, services, and inherited material |
 
 An unmarked file does not become Apache-2.0 or MPL-2.0 merely because it is conceptually related to documentation, validation, or examples.
+
+Binary artwork, including `docs/assets/bloomcore-sigil.png`, is not reclassified merely because it appears beside Apache-2.0 documentation. Its provenance is recorded separately and, absent an explicit license grant, the repository default applies. No trademark license is implied.
 
 ## Commercial licensing
 
@@ -49,4 +54,3 @@ For Markdown, an HTML comment may be used:
 Existing files are not reclassified by implication. Moving inherited material into a differently licensed directory, changing a filename, or quoting it in new documentation does not by itself change its license. Any intentional relicense requires verified copyright authority, preservation of notices, and an explicit repository change.
 
 This licensing map is repository documentation, not legal advice.
-

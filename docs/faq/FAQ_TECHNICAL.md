@@ -635,10 +635,11 @@ Those require Unity Nexus contracts above the transport.
 
 | Component | Current defensible status |
 |---|---|
-| Phase 36/37 | Canonical architectural boundary with executable validation lineage |
+| Phase 36/37 | Preserved architectural lineage carried into the Phase 38 master |
+| Phase 38 | Active semantic and organismal master; public orientation is derived and non-authoritative |
 | Biology Parent Domain | Canonical architectural correction |
-| Phase 151 | Canonically specified and partially prototyped; full organismal embodiment incomplete |
-| Phase 152 | Planned; standalone canonical source not yet identified |
+| Phase 151 | Implementation era; full organismal embodiment and reachability remain incomplete |
+| Phase 152 | Historical/planned in earlier material; not active in the supplied Phase 38 master without separate current canon |
 | Full-Circuit MythMath law | Canonical |
 | Rebuilt MythMath corpus | Reported rebuilt; complete source needed for card-level audit |
 | SWIM Brain | Substantial mathematical and code lineage; integrated production status requires repository audit |
