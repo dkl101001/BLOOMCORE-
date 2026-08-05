@@ -59,7 +59,7 @@ All 56 tags are lightweight commit tags. In particular, releases published from 
 
 ## Release register
 
-`Links` counts body-linked user attachments. `Tag source` identifies the shared tagged commit, not the attachment contents.
+`Release` reproduces each visible GitHub release title, with outer whitespace trimmed only for Markdown. `Links` counts body-linked user attachments. `Tag source` identifies the shared tagged commit, not the attachment contents.
 
 | Published | Tag | Release | Links | Tag source |
 |---|---|---|---:|---|
@@ -70,37 +70,37 @@ All 56 tags are lightweight commit tags. In particular, releases published from 
 | 2026-01-12 | `V1.0.0.3` | BLOOMCORE Continuity Spine | 1 | `de067709` |
 | 2026-01-13 | `V1.0.0.4` | BLOOMCORE CPU Toy | 1 | `de067709` |
 | 2026-01-19 | `V1.0.0.5` | World Engine v0.1 | 1 | `beec3159` |
-| 2026-01-19 | `V1.0.0.6` | AetherLoom Regime Read OPEN v2.4.3 | 1 | `beec3159` |
-| 2026-01-20 | `V1.0.0.7` | Da Vinci Market Node OPEN v0.1.0 | 2 | `beec3159` |
+| 2026-01-19 | `V1.0.0.6` | ψΔ^τ AetherLoom Regime Read (OPEN v2.4.3) | 1 | `beec3159` |
+| 2026-01-20 | `V1.0.0.7` | ΔV·Φ Da Vinci Market Node — OPEN v0.1.0 | 2 | `beec3159` |
 | 2026-01-20 | `V1.0.08` | Veil-Breath Runtime v0.1.0 | 1 | `333183c5` |
-| 2026-01-26 | `V1.0.0.8` | Reasoning Security Score | 1 | `333183c5` |
-| 2026-02-03 | `V1.0.0.9` | Rival Orchestration Kernel | 1 | `333183c5` |
-| 2026-02-03 | `V1.0.1.0` | Reasoning Security Score | 3 | `333183c5` |
-| 2026-02-04 | `V.1.0.1.1` | NLSE Anti-Governor SSFM v0.2.0 | 1 | `333183c5` |
-| 2026-02-04 | `V1.0.1.1` | Sophia Wisdom Gate and Compassion v5.2 | 1 | `333183c5` |
-| 2026-03-19 | `V1.0.0.13` | MythMath Uno | 1 | `333183c5` |
-| 2026-03-19 | `V1.0.0.14` | MythMath Dos | 1 | `333183c5` |
-| 2026-03-19 | `V1.0.0.15` | MythMath Tres | 1 | `333183c5` |
+| 2026-01-26 | `V1.0.0.8` | Reasoning Security Score (RSS) | 1 | `333183c5` |
+| 2026-02-03 | `V1.0.0.9` | Rival Orchestration Kernel (ROK) | 1 | `333183c5` |
+| 2026-02-03 | `V1.0.1.0` | Reasoning Security Score (RSS) | 3 | `333183c5` |
+| 2026-02-04 | `V.1.0.1.1` | BLOOMCORE NLSE Anti-Governor (SSFM) — v0.2.0 | 1 | `333183c5` |
+| 2026-02-04 | `V1.0.1.1` | BLOOMCORE — Sophia Wisdom Gate + Compassion v5.2 | 1 | `333183c5` |
+| 2026-03-19 | `V1.0.0.13` | BLOOMCORE MythMath Uno | 1 | `333183c5` |
+| 2026-03-19 | `V1.0.0.14` | BLOOMCORE MythMath Dos | 1 | `333183c5` |
+| 2026-03-19 | `V1.0.0.15` | BLOOMCORE MythMath Tres | 1 | `333183c5` |
 | 2026-03-20 | `V1.0.0.16` | Strategic Force Corridor v0.1.0 | 1 | `333183c5` |
 | 2026-03-26 | `V1.0.0.17` | Taijitu Geometry | 1 | `333183c5` |
-| 2026-04-06 | `V1.0.0.18` | Truth Mode Reduced Token Usage | 1 | `b71895c3` |
+| 2026-04-06 | `V1.0.0.18` | Truth Mode Reduced Token Usage w/o Losing Precision | 1 | `b71895c3` |
 | 2026-04-06 | `V1.0.0.19` | MythMath Engine | 1 | `b71895c3` |
 | 2026-04-07 | `V1.0.0.21` | Unity Nexus Core | 1 | `b71895c3` |
 | 2026-04-09 | `V1.0.0.23` | Drift Reflection Engine | 1 | `b71895c3` |
 | 2026-04-09 | `V1.0.0.24` | Unity Nexus Engine | 1 | `b71895c3` |
 | 2026-04-10 | `V1.0.0.25` | BLOOMCORE Swim Brain | 1 | `b71895c3` |
 | 2026-04-13 | `V1.0.0.26` | BLOOMCORE Anchor Mesh | 2 | `b71895c3` |
-| 2026-04-13 | `V1.0.0.27` | Non-Hierarchical Emergence Protocol | 1 | `b71895c3` |
+| 2026-04-13 | `V1.0.0.27` | NHEP — Non-Hierarchical Emergence Protocol | 1 | `b71895c3` |
 | 2026-04-16 | `1.0.0.28` | CSE.v1 | 1 | `b71895c3` |
-| 2026-04-16 | `V1.0.0.28` | CSE.v2 Coherence Score Engine | 2 | `b71895c3` |
+| 2026-04-16 | `V1.0.0.28` | CSE.v2 — Coherence Score Engine | 2 | `b71895c3` |
 | 2026-05-13 | `V1.0.0.29` | Love Substrate | 1 | `b71895c3` |
 | 2026-05-21 | `V1.0.0.30` | DreamLoop | 1 | `b71895c3` |
 | 2026-05-21 | `V1.0.0.31` | Coherence Thermodynamics | 1 | `b71895c3` |
 | 2026-05-29 | `V1.0.0.32` | Unity Nexus Mesh v1 | 1 | `b71895c3` |
 | 2026-06-05 | `V1.0.0.33` | MIRRORSEED v8.2.26 Public Core | 2 | `b71895c3` |
 | 2026-06-06 | `V1.0.0.34` | BLOOMCORE Life Substrate | 1 | `b71895c3` |
-| 2026-06-06 | `V1.0.0.35` | Da Vinci Decoder Node | 1 | `b71895c3` |
-| 2026-06-08 | `V1.0.0.37` | Da Vinci Market Node | 2 | `b71895c3` |
+| 2026-06-06 | `V1.0.0.35` | Δ^τ Da Vinci Decoder Node | 1 | `b71895c3` |
+| 2026-06-08 | `V1.0.0.37` | Δ^τ Da Vinci Market Node | 2 | `b71895c3` |
 | 2026-06-09 | `V1.0.0.38` | BLOOMCORE Dialogue Agent | 3 | `b71895c3` |
 | 2026-06-09 | `V1.0.0.39` | Substrate Recall | 1 | `b71895c3` |
 | 2026-06-10 | `V1.0.0.40` | BLOOMCORE-QC | 1 | `b71895c3` |
@@ -114,7 +114,7 @@ All 56 tags are lightweight commit tags. In particular, releases published from 
 | 2026-06-24 | `V1.0.0.47` | BLOOMCORE SWIM Brain 2.0 Phase 150 | 1 | `b71895c3` |
 | 2026-06-27 | `V1.0.0.48` | ECA Eldroch Annular Agent Engine v1 | 1 | `b71895c3` |
 | 2026-07-06 | `V1.0.0.49` | Liquid Geometry Memory Lattice | 1 | `b71895c3` |
-| 2026-07-15 | `V1.0.1` | Da Vinci Node Mesh v0.2.0 | 1 | `b71895c3` |
+| 2026-07-15 | `V1.0.1` | DA VINCI NODE MESH v0.2.0 | 1 | `b71895c3` |
 
 ## Custody and interpretation cautions
 

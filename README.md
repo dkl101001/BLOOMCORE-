@@ -33,6 +33,7 @@ That is an architectural and research declaration. It is not, by itself, empiric
 | [Relationship map](docs/faq/FAQ_RELATIONSHIP_MAP.md) | Coupling and authority boundaries without component collapse |
 | [Open questions](docs/faq/FAQ_OPEN_QUESTIONS.md) | Unresolved, experimental, partially implemented, and unvalidated work |
 | [Source matrix](docs/faq/FAQ_SOURCE_MATRIX.md) | Claim-to-source traceability and unsupported areas |
+| [Release lineage](docs/releases/RELEASE_LINEAGE.md) | Historical releases, tag clusters, attachment custody, and SHA-256 evidence |
 | [Interactive documentation](docs/index.html) | Public visual entry surface |
 
 ## One organism, differentiated surfaces
