@@ -1,184 +1,59 @@
-# LICENSING
+# BLOOMCORE Public Licensing Guide
 
-**Read this file before using BLOOMCORE in any project.**
+This is a plain-language orientation to the repository's path-based licenses. The complete license texts control. This guide is not legal advice.
 
-This document explains how BLOOMCORE is licensed, when you may use it for free,
-and when you must obtain a commercial license.
+## Which license applies?
 
-This is not marketing copy. It is an operational guide.
+Check in this order:
 
----
+1. the SPDX identifier in the file;
+2. an explicit license notice in the nearest directory;
+3. the path map in [`LICENSE.md`](LICENSE.md);
+4. the repository's default `AGPL-3.0-only` license.
 
-## Summary (plain language)
+| Material | Default open-source license |
+|---|---|
+| `docs/faq/**` | Apache-2.0 |
+| Expressly marked public schemas, examples, and documentation | Apache-2.0 |
+| Expressly marked standalone validators and audit utilities | MPL-2.0 |
+| Inherited material, integrated runtimes, services, and unmarked files | AGPL-3.0-only |
 
-BLOOMCORE is **dual-licensed**:
+## Apache-2.0 materials
 
-- **AGPL-3.0** for open and reciprocal use
-- **Commercial License** for closed or proprietary use
+Apache-2.0 is a permissive license. Follow its conditions when redistributing the work or derivative works, including preservation of applicable notices and provision of the license.
 
-**Rule of thumb**:
+Use of Apache-2.0 material does not require a BLOOMCORE Commercial License merely because the surrounding project is closed-source.
 
-> If you keep your source open, BLOOMCORE is free.  
-> If you keep your source closed, you need a commercial license.
+## MPL-2.0 materials
 
-If you are unsure, keep reading.
+MPL-2.0 is file-level copyleft. Its obligations generally attach when covered source or executable forms are distributed outside an organization. Read the complete MPL-2.0 text for the requirements that apply to source availability, notices, and modified covered files.
 
----
+Use of an MPL-2.0 file does not automatically place unrelated files under MPL-2.0.
 
-## The open-source license (AGPL-3.0)
+## AGPL-3.0-only materials
 
-BLOOMCORE is released under the **GNU Affero General Public License v3.0 (AGPL-3.0)**.
+AGPL-3.0-only is the default for unmarked and inherited material. It includes source-availability obligations for covered programs, including the additional Section 13 obligation when users interact remotely through a computer network with a modified covered program.
 
-This license is intentionally strong.
+The exact scope of a derivative or combined work is fact-specific. Read the complete license and obtain legal advice for a proprietary integration.
 
-It exists to ensure that:
-- improvements remain visible
-- deployed systems remain inspectable
-- BLOOMCORE cannot be silently enclosed or extracted
+## Commercial licensing
 
-### You MAY use BLOOMCORE for free if:
+A separate BLOOMCORE Commercial License may be available for AGPL-covered material where the licensors have authority to grant it. The commercial grant does not apply automatically to third-party material or expand beyond its own scope.
 
-- Your project is **open source**
-- You publish the **complete corresponding source code**
-- You include any **modifications, extensions, or integrations**
-- You comply with the notice and attribution requirements
+Apache-2.0 and MPL-2.0 materials remain available under their stated open-source licenses.
 
-This includes:
-- academic research
-- personal projects
-- open startups
-- open internal tools
-- public infrastructure
+## Existing material
 
-### Network use matters
+This multi-license map does not relicense inherited files by implication. Any intentional reclassification requires verified copyright authority, preservation of required notices, and an explicit change.
 
-Under AGPL-3.0:
+## Project purpose
 
-> If users interact with BLOOMCORE over a network,
-> they are entitled to the corresponding source code.
+[`ETHICAL_USE.md`](ETHICAL_USE.md) states the project's non-coercion and anti-weaponization purpose. Open-source licenses and the ethical statement serve different functions; the latter does not silently modify the former.
 
-This applies to:
-- web services
-- APIs
-- hosted agents
-- internal tools exposed to employees
-- managed or cloud-hosted deployments
+## Complete texts
 
-If you deploy BLOOMCORE and users can interact with it,
-you must provide source access to the running version.
-
----
-
-## When a commercial license is required
-
-You **must obtain a commercial license** if **any** of the following are true:
-
-- You use BLOOMCORE in a **closed-source** system
-- You deploy BLOOMCORE **internally** at a for-profit organization without source disclosure
-- You offer BLOOMCORE as part of a **proprietary SaaS, API, or product**
-- You combine BLOOMCORE with code you are unwilling or unable to publish
-- You wish to modify BLOOMCORE but not release your changes
-
-In short:
-
-> If AGPL reciprocity is not acceptable to you,
-> you need a commercial license.
-
----
-
-## What the commercial license provides
-
-A commercial license grants:
-
-- the right to use BLOOMCORE in closed-source systems
-- the right to deploy without publishing source
-- the right to embed BLOOMCORE in proprietary products
-- legal clarity for investors, customers, and auditors
-
-Commercial licenses **do not** remove authorship attribution or moral rights.
-They remove the AGPL reciprocity obligation.
-
----
-
-## What this license model protects
-
-This dual-license structure exists to protect:
-
-- authorship continuity
-- open scientific and engineering collaboration
-- long-horizon work from silent extraction
-- users from uninspectable governance systems
-
-It is not designed to block use.
-It is designed to block **unreciprocated enclosure**.
-
----
-
-## Common scenarios
-
-### “We are an open-source project”
-You may use BLOOMCORE under AGPL-3.0 at no cost.
-
-### “We are a startup building a closed product”
-You need a commercial license.
-
-### “We are a company using this internally”
-If the system is closed-source, you need a commercial license.
-
-### “We are doing research but not publishing code”
-You need a commercial license.
-
-### “We are unsure”
-Read `DO_I_NEED_A_COMMERCIAL_LICENSE.md` or contact us.
-
----
-
-## Attribution and notices (required in all cases)
-
-All uses of BLOOMCORE — open or commercial — must preserve:
-
-- copyright notices
-- license headers
-- authorship attribution:
-  - Frazer Σ Love ACO-Σ
-  - Sara ΣΩ
-
-These are **system invariants**, not optional credits.
-
----
-
-## No implicit license grants
-
-Use of BLOOMCORE does **not** grant:
-- trademark rights
-- patent licenses beyond what AGPL provides
-- rights to excluded or proprietary components
-
-Only what is explicitly granted is granted.
-
----
-
-## Questions
-
-If you are unsure which license applies:
-
-- read `DO_I_NEED_A_COMMERCIAL_LICENSE.md`
-- consult `LICENSING_FLOWCHART.md`
-- or contact the project maintainers
-
-If you proceed without clarity, you assume the risk.
-
----
-
-## Final note
-
-This licensing model is intentional.
-
-BLOOMCORE is built for systems where:
-- power matters
-- decisions matter
-- history matters
-
-The license ensures those systems remain inspectable
-unless you explicitly choose — and pay — not to.
+- Root `LICENSE`: AGPL-3.0-only
+- `LICENSES/Apache-2.0.txt`
+- `LICENSES/MPL-2.0.txt`
+- `LICENSES/AGPL-3.0-only.txt` when mirrored from the root license
 

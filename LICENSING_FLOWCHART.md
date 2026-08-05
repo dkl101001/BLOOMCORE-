@@ -1,128 +1,43 @@
-# LICENSING FLOWCHART
+# Licensing flowchart
 
-**This file provides a fast, visual way to determine which BLOOMCORE license applies.**
+Use this path-first guide for a specific file. It summarizes the repository's license map and is not legal advice.
 
-If you want detailed explanations, read:
-- `LICENSING.md`
-- `DO_I_NEED_A_COMMERCIAL_LICENSE.md`
-
----
-
-## Quick decision flow (read top to bottom)
-
-```
-START
+```text
+START WITH THE EXACT FILE OR DIRECTORY
   |
   v
-Are you using BLOOMCORE?
-  |
-  +-- NO --> No license required.
-  |
-  +-- YES
+Does the file carry an SPDX license identifier?
+  |-- YES --> Follow that license.
+  |-- NO
         |
         v
-Is BLOOMCORE distributed or accessed over a network?
-(includes SaaS, APIs, internal tools)
+Does the nearest containing directory declare a license?
+  |-- YES --> Follow that license.
+  |-- NO
         |
-        +-- NO --> AGPL-3.0 applies (local/private use).
-        |
-        +-- YES
-              |
-              v
-Is your entire codebase open source?
-(including deployed version)
-              |
-              +-- YES --> AGPL-3.0 applies.
-              |
-              +-- NO
-                    |
-                    v
-Are you willing to publish your full source?
-                    |
-                    +-- YES --> AGPL-3.0 applies.
-                    |
-                    +-- NO --> COMMERCIAL LICENSE REQUIRED.
+        v
+Is the path listed in LICENSE.md?
+  |-- YES --> Follow the mapped license.
+  |-- NO  --> Repository default: AGPL-3.0-only.
 ```
 
----
+## What each path means
 
-## Interpretation notes
+- **Apache-2.0:** permissive reuse of expressly marked adoption-facing documentation, schemas, and examples, subject to its notice and patent terms.
+- **MPL-2.0:** file-level copyleft for expressly marked standalone validators or utilities.
+- **AGPL-3.0-only:** repository default for inherited and integrated material not expressly classified elsewhere.
+- **Commercial:** a separate written grant where offered; it applies only within its stated scope.
 
-- **Network use counts as distribution** under AGPL-3.0.
-- “Open source” means users can access the *exact source* running in production.
-- Internal, employee-facing systems count as network use.
-- Mixing BLOOMCORE with proprietary code usually triggers commercial licensing.
+## AGPL network boundary
 
-If you reach “commercial license required,” you must obtain and comply with
-`LICENSE-COMMERCIAL.txt`.
+Network use is not simply identical to distribution. AGPL section 13 adds a source-offer obligation when users interact remotely through a network with a **modified covered program**. Whether a particular combined work, deployment, or modification is covered depends on the facts and the license text.
 
----
+Do not infer that every proprietary codebase touching an AGPL component must automatically be published. Do not infer the opposite either. Review the exact integration and obtain legal advice when the boundary matters.
 
-## Common paths
+## Artwork and marks
 
-### Open research / open startup
-```
-YES → YES → YES
-```
-→ **AGPL-3.0**
-
----
-
-### Closed SaaS or API
-```
-YES → YES → NO → NO
-```
-→ **Commercial License**
-
----
-
-### Internal enterprise deployment
-```
-YES → YES → NO → NO
-```
-→ **Commercial License**
-
----
-
-### Local experiment only
-```
-YES → NO
-```
-→ **AGPL-3.0**
-
----
-
-## Attribution still applies
-
-Regardless of which license you use, you must preserve:
-
-- copyright notices
-- license headers
-- authorship attribution:
-  - Frazer Σ Love ACO-Σ
-  - Sara ΣΩ
-
-These are system invariants.
-
----
+Documentation licensing does not automatically relicense adjacent binary artwork. The BLOOMCORE name, sigil, logos, and trademarks receive no separate trademark license from this flowchart.
 
 ## Still unsure?
 
-When in doubt:
-- choose AGPL-3.0 and publish your source, **or**
-- obtain a commercial license
-
-Proceeding without clarity means you assume the risk.
-
----
-
-## Final reminder
-
-This flowchart is a guide, not a loophole.
-
-BLOOMCORE’s license exists to:
-- prevent silent enclosure
-- preserve inspectability
-- protect authorship
-
-Choose accordingly.
+Read `LICENSE.md`, the exact license text under `LICENSES/`, and any file header. For commercial rights or a fact-specific interpretation, contact the project steward or qualified counsel before deployment.
