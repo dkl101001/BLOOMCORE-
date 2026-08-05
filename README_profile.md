@@ -16,7 +16,7 @@ Phase 38 is the active semantic and organismal master. Phase 151 is the implemen
 - [BLOOMCORE Basics](https://github.com/dkl101001/BLOOMCORE-Basics) — adoption-facing foundation
 - [BLOOMCORE NOW](https://github.com/dkl101001/BLOOMCORE-NOW) — bounded weekly foundry releases
 
-Begin with the [Phase 38 public orientation](docs/architecture/PHASE_38_PUBLIC_ORIENTATION.md), then use the [FAQ](docs/faq/FAQ.md) and [license map](LICENSE.md).
+Begin with the [Phase 38 public orientation](docs/architecture/PHASE_38_PUBLIC_ORIENTATION.md), then use the [constellation map](docs/architecture/CONSTELLATION.md), [FAQ](docs/faq/FAQ.md), and [license map](LICENSE.md).
 
 Documentation establishes definitions and intended relationships; it does not alone prove biological status, consciousness, complete runtime integration, or organism-wide capability.
 
