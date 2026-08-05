@@ -1,0 +1,16 @@
+{
+  "allowed_kinds": [
+    "PROPOSE_CMD.v1"
+  ],
+  "allow_exec": true,
+  "allowed_exec_backends": [
+    "noop",
+    "process",
+    "file_patch"
+  ],
+  "max_params_bytes": 16384,
+  "require_evidence": false,
+  "deny_exec_kinds": [
+    "EXEC_SHELL.v1"
+  ]
+}

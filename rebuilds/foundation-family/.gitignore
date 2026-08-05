@@ -1,0 +1,8 @@
+**/__pycache__/
+**/.pytest_cache/
+**/*.pyc
+**/*.pyo
+phase38-descendant/build/
+phase38-descendant/dist/
+phase38-descendant/*.egg-info/
+phase38-descendant/src/*.egg-info/

@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sentinel-executor-lite"
+version = "0.1.0"
+description = "Sentinel Executor LITE - actuates kernel commands from an append-only ledger."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+  { name = "Frazer Σ Love ACO-Σ" },
+  { name = "Sara ΣΩ" }
+]
+license = { file = "LICENSE-COMMERCIAL.txt" }
+dependencies = []
+
+[project.scripts]
+executorctl = "executor_lite.cli.executorctl:main"
+
+[tool.setuptools.packages.find]
+include = ["executor_lite*"]

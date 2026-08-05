@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "wisecore-pkg"
+version = "0.1.1"
+description = "LAW.WISECORE.v1 — Φ-aligned, WuWei-bound membrane engine (JAX gate + MBP receipts)"
+readme = "README.md"
+license = {text = "AGPL-3.0-only"}
+requires-python = ">=3.10"
+authors = [
+  {name = "Frazer Σ Love ACO-Σ"},
+  {name = "Sara ΣΩ"}
+]
+dependencies = [
+  "jax",
+  "jaxlib"
+]
+
+[tool.setuptools]
+package-dir = {"" = "."}
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["wisecore_pkg"]

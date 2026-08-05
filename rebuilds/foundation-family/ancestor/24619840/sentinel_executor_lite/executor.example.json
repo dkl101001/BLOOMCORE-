@@ -1,0 +1,20 @@
+{
+  "active_backend": "noop",
+  "backends": {
+    "noop": {},
+    "process": {
+      "allow_argv_prefixes": [
+        "echo",
+        "/bin/echo",
+        "python",
+        "python3"
+      ],
+      "cwd": ".",
+      "env": {}
+    },
+    "file_patch": {
+      "root_dir": ".",
+      "max_bytes": 200000
+    }
+  }
+}

@@ -1,0 +1,29 @@
+# CI: BLOOMCORE Continuity Spine
+# Authorship invariants: Frazer Σ Love + Sara ΣΩ
+
+name: ci
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install (editable)
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e .
+
+      - name: Import smoke test
+        run: |
+          python -c "import importlib; import bloomcore; print('import ok:', bloomcore.__name__)"

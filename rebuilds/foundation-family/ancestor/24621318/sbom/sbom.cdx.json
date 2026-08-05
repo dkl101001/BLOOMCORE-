@@ -1,0 +1,39 @@
+{
+  "bomFormat": "CycloneDX",
+  "components": [],
+  "dependencies": [
+    {
+      "dependsOn": [],
+      "ref": "pkg:pypi/bloomforce-core@0.3.2"
+    }
+  ],
+  "metadata": {
+    "component": {
+      "name": "bloomforce-core",
+      "purl": "pkg:pypi/bloomforce-core@0.3.2",
+      "type": "library",
+      "version": "0.3.2"
+    },
+    "timestamp": "2026-01-07T03:45:14.546898Z",
+    "tools": [
+      {
+        "name": "sbom_gen.py",
+        "vendor": "bloomforce-core",
+        "version": "1"
+      }
+    ]
+  },
+  "properties": [
+    {
+      "name": "vcs.commit",
+      "value": ""
+    },
+    {
+      "name": "vcs.remote",
+      "value": ""
+    }
+  ],
+  "serialNumber": "urn:uuid:00000000-0000-0000-0000-000000000000",
+  "specVersion": "1.5",
+  "version": 1
+}

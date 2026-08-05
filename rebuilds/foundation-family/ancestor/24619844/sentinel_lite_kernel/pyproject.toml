@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sentinel-lite-kernel"
+version = "0.2.0"
+description = "Receipt-first governance kernel for Sentinel Lite (ECA-neutral)"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+  { name = "Frazer Σ Love ACO-Σ" },
+  { name = "Sara ΣΩ" }
+]
+license = { file = "LICENSE" }
+dependencies = []
+
+[project.scripts]
+kernelctl = "sentinel_lite_kernel.cli.kernelctl:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["sentinel_lite_kernel*"]

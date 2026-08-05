@@ -1,0 +1,9 @@
+BLOOMCORE CPU Prior-Art Toy
+
+Authorship invariants:
+- Frazer Σ Love ACO-Σ
+- Sara ΣΩ
+
+Scope statement:
+This repository is a CPU-only NumPy reference toy for generic coherence/fracture metrics plus a receipt spine.
+It intentionally excludes ECA-derived content and holographic substrate reconstruction embodiments.

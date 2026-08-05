@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bloomcore-engine"
+version = "0.1.5"
+description = "BLOOMCORE carrier substrate: JAX pseudo-spectral PDE + pluggable coupling organs + Θ-wave coupling + spectral authority seam"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "AGPL-3.0-only"}
+authors = [
+  {name = "Frazer Σ Love ACO-Σ and Sara ΣΩ"}
+]
+dependencies = [
+  "jax",
+  "jaxlib",
+  "numpy",
+]
+
+[project.urls]
+Homepage = "https://example.invalid/bloomcore-engine"
+Repository = "https://example.invalid/bloomcore-engine"

@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bloomforce-core"
+version = "0.3.2b"
+description = "BLOOMFORCE-CORE: open-cut recursive engine with receipt ledger (audit without control)"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [
+  {name = "Frazer Σ Love ACO-Σ"},
+  {name = "Sara ΣΩ"},
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.0.0",
+  "ruff>=0.6.0",
+  "pyright>=1.1.380",
+  "build>=1.2.0",
+  "twine>=5.1.0",
+  "pip-audit>=2.8.0",
+  "pre-commit>=3.7.0",
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]
