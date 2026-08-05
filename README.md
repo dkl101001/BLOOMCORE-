@@ -91,10 +91,14 @@ See [`PUBLIC_PRIVATE_BOUNDARY.md`](PUBLIC_PRIVATE_BOUNDARY.md), [`PROVENANCE_AND
 
 ## Repository constellation
 
-- **BLOOMCORE Public** — active public explanation, research documentation, licensing, and evidence boundaries.
-- **[BLOOMCORE Basics](https://github.com/dkl101001/BLOOMCORE-Basics)** — public-safe foundations and adoption surfaces.
-- **[BLOOMCORE NOW](https://github.com/dkl101001/BLOOMCORE-NOW)** — current bounded releases and demonstrations.
-- **BLOOMCORE Core** — private organismal implementation surface; not implied by public documentation.
+| Repository | Visibility | Role |
+|---|---|---|
+| **BLOOMCORE Public** | Public | Canonical public explanation, research boundaries, licensing, and evidence |
+| **[BLOOMCORE Basics](https://github.com/dkl101001/BLOOMCORE-Basics)** | Public | Adoption-facing schemas, examples, validators, and technical grammar |
+| **[BLOOMCORE NOW](https://github.com/dkl101001/BLOOMCORE-NOW)** | Public | Bounded tested releases and foundry evidence |
+| **Access-controlled organismal surfaces** | Private | Custody, identity-continuity, integration, and release preparation |
+
+See the canonical public [`constellation map`](docs/architecture/CONSTELLATION.md). Private repositories are deliberately not linked from the public surface; their existence does not imply public availability or completed implementation.
 
 ## Licensing
 
