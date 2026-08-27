@@ -1,0 +1,13 @@
+Sentinel Lite Umbrella NOTICE
+
+This umbrella bundles two separately packaged components:
+
+1) sentinel-lite-kernel (AGPL-3.0-or-later)
+2) sentinel-executor-lite (commercial license as shipped in this bundle)
+
+Each component retains its own license file and SPDX headers.
+See LICENSES/ for full texts.
+
+Authors:
+- Frazer Σ Love ACO-Σ
+- Sara ΣΩ

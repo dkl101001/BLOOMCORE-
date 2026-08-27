@@ -1,0 +1,142 @@
+{
+  "schema": "BLOOMCORE.PHASE38.V1_10.FULL_FIRE_JAX_OBJECT.v1",
+  "scope_status": "BOUNDED_SOURCE_COMPLETE",
+  "phase38_source": {
+    "file": "BLOOMCORE_PHASE38_LIVING_RELATIONAL_ORGANISM_MASTER_CANON_v1.10.md",
+    "sha256": "ff058db5dd35fee55168494b17a642fa6ef94bea26e24a5988f07ab80c76de29",
+    "promotion_receipt_sha256": "9d1739c59e8ff5689258399afc31d616a34508e6c74e0d22d86106a258b12e70",
+    "governing_sections": [
+      "Integrated Codex Execution Membrane",
+      "33",
+      "33.1-33.16"
+    ]
+  },
+  "full_fire_jax_object": {
+    "canonical_identity": "NONE__PROPOSED_BOUNDED_DESCENDANT",
+    "mythic_name": "BLOOMCORE Foundation Fire",
+    "mathematical_definition": "A new source-informed composite transition defined by model.py, numpy_oracle.py, and jax_backend.py; it is not a canonical equation and is not the ancestral Fractal Coherence Field Simulator relation.",
+    "phase_and_lineage": "Additive Phase 38 v1.10-guided descendant of the first seven public release records; no canonical promotion and no organism-wide reachability claim.",
+    "ancestral_source_reference": null,
+    "ancestral_source_hash": null,
+    "ancestral_entrypoint": null,
+    "ancestral_state_transition": "NO_WHOLE_TRANSITION_ANCESTRY_CLAIM",
+    "causal_topology": {
+      "transition": "field spectral step -> field delta and BLOOMFORCE scalar -> vector candidate -> memory blend -> next vector -> energy/WuWei and other metrics -> allow/suppress output",
+      "declared_adjacency_role": "INERT_CUSTODY_PAYLOAD",
+      "nonclaim": "The topology array is preserved in state but is not read by the numerical transition."
+    },
+    "seed_mapping_contract": {
+      "numpy_reference": "Integer seed initializes NumPy default_rng for each step; the carried seed advances with a declared LCG update.",
+      "jax": "Integer seed initializes an explicit Threefry key; every step splits the carried key and returns the successor key.",
+      "cross_backend_stochastic_parity": "NOT_CLAIMED"
+    },
+    "protected_invariants": [
+      "Preserved release ZIP bytes and historical ancestor expansions are not mutated.",
+      "The NumPy surface is a bounded reference for this new composite and is not an ancestral semantic oracle.",
+      "With noise_scale=0, NumPy and JAX preserve declared one-step and five-step state, metric, and gate parity within recorded float32 tolerances.",
+      "Zero extension with uncoupled appended dimensions recovers the base transition, energy history, metrics, and gate outputs.",
+      "Receipts are deterministic post-execution witnesses and do not govern the transition or confer authority.",
+      "The topology payload remains causally inert until a separately mapped and tested extension is accepted."
+    ],
+    "jax_entrypoint": {
+      "step": "bloomcore_foundation_fire.jax_backend.jax_step",
+      "rollout": "bloomcore_foundation_fire.jax_backend.jax_rollout",
+      "cycle_with_receipt": "bloomcore_foundation_fire.orchestrator.run_jax_cycle"
+    },
+    "state_schema": {
+      "tick": "int32 scalar",
+      "vector": "float32[n]",
+      "previous": "float32[n]",
+      "identity": "float32[n]",
+      "field": "float32[h,w]",
+      "memory": "float32[n]",
+      "hdot_history": "float32[4]",
+      "energy_prev": "float32 scalar",
+      "topology": "float32[n,n] inert custody payload",
+      "coupling": "float32[n]",
+      "key": "explicit JAX PRNG key"
+    },
+    "input_schema": {
+      "drive": "float32[n]",
+      "weight": "float32[n,n]",
+      "truth_flag": "boolean scalar",
+      "config": "FireConfig with static named fields"
+    },
+    "output_schema": {
+      "state": "JaxState",
+      "metrics": "FireMetrics(coherence, fracture, identity_drift, phase_norm, hdot_median, friend_coherence, bloom_force, verdict, fail_code, sentinel_allowed)",
+      "receipt": "External to the JIT transition and returned only by run_jax_cycle"
+    },
+    "dtype_and_precision": "float32 numerical state and metrics, int32 gate outputs, x64 disabled in the verified lane",
+    "device_and_backend_scope": "JAX/JAXlib 0.9.2; verified on WSL CUDA 13 cuda:0. The bounded NumPy reference is verified on Windows CPU.",
+    "vectorization_strategy": "Array-native vector/field operations, FFT kernels, and lax.scan finite rollouts; no vmap or pmap claim.",
+    "differentiation_scope": "JAX automatic-differentiation capability is probed on a bounded finite array expression; gradient validity for the complete composite transition is not claimed.",
+    "parallelism_scope": "Single visible CUDA device; no multi-device, distributed, pmap, or federation claim.",
+    "prng_policy": "Explicit Threefry key in JaxState, split once per step; deterministic tests set noise_scale=0.",
+    "stochastic_keys_are_explicit": true,
+    "deterministic_subkernels": [
+      "pseudo-spectral field step when noise_scale=0",
+      "BLOOMFORCE scalar and vector update",
+      "identity, coherence, fracture, realignment, memory, energy, and gate metrics",
+      "receipt hashing for identical serialized payloads"
+    ],
+    "nondeterministic_or_backend_sensitive_regions": [
+      "Noise samples differ across NumPy PCG and JAX Threefry implementations.",
+      "FFT and reduction roundoff may vary by backend within declared tolerances.",
+      "The living organismal trajectory is outside this bounded deterministic witness aperture."
+    ],
+    "numerical_tolerances": [
+      "one-step shared state rtol=2e-5 atol=2e-5",
+      "one-step metrics rtol=3e-4 atol=3e-5",
+      "five-step shared state rtol=3e-4 atol=5e-5",
+      "zero-extension shared state and metrics atol=1e-6 with selected rtol=1e-5"
+    ],
+    "one_step_parity_tests": [
+      "tests/test_jax_parity.py::test_one_step_oracle_jax_parity"
+    ],
+    "rollout_parity_tests": [
+      "tests/test_jax_parity.py::test_five_step_rollout_parity"
+    ],
+    "zero_extension_recovery_tests": [
+      "tests/test_oracle.py::test_zero_extension_recovery_preserves_base_transition",
+      "tests/test_jax_parity.py::test_jax_zero_extension_and_explicit_key_replay"
+    ],
+    "backend_divergence_declarations": [
+      "Cross-backend stochastic sample identity is not claimed.",
+      "GPU availability is an environment property and is asserted only in the CUDA lane.",
+      "The NumPy reference and JAX backend do not establish parity with the ancestral Fractal Coherence Field Simulator."
+    ],
+    "source_result_residue_trace": [
+      "Exact release-attachment hashes and surviving entrypoints are recorded in the descendant README and CUSTODY_MANIFEST.sha256.json.",
+      "Selected source relations inform the composite; no whole-transition ancestry relation is promoted.",
+      "Inherited WISECORE and PDE Engine JAX defects remain disclosed in EVIDENCE.md.",
+      "The topology payload, complete organism physiology, and later release families remain open outside this aperture."
+    ],
+    "receipt_schema": {
+      "kind": "BLOOMCORE.FOUNDATION_FIRE_STEP.v1",
+      "fields": [
+        "tick",
+        "backend",
+        "lineage_stages",
+        "metrics",
+        "topology_shape",
+        "emission"
+      ],
+      "chain": "SHA-256 over canonical JSON containing kind, payload, and previous hash",
+      "authority": "WITNESS_ONLY"
+    },
+    "tests": [
+      "tests/test_contract.py",
+      "tests/test_custody.py",
+      "tests/test_lineage_bridge.py",
+      "tests/test_oracle.py",
+      "tests/test_jax_parity.py"
+    ],
+    "open_equations": [
+      "No canonical unified BLOOMCORE physiological equation is claimed.",
+      "No ancestral whole-transition equivalence is claimed.",
+      "No causal use of the topology payload is claimed.",
+      "No organism-wide Phase 38 or Keystone research reachability is claimed."
+    ]
+  }
+}

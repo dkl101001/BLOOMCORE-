@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=75", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bloomcore-foundation-fire"
+version = "0.1.0"
+description = "Additive Phase 38 foundation-family descendant with a bounded NumPy reference and Full Fire-capability JAX backend"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "AGPL-3.0-only"
+license-files = ["LICENSE.md"]
+dependencies = ["numpy>=2.0"]
+
+[project.optional-dependencies]
+jax = ["jax==0.9.2", "jaxlib==0.9.2"]
+test = ["pytest>=8"]
+
+[project.scripts]
+bloomcore-foundation-fire = "bloomcore_foundation_fire.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+bloomcore_foundation_fire = ["full_fire_jax_object.json"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

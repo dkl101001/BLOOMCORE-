@@ -34,6 +34,7 @@ That is an architectural and research declaration. It is not, by itself, empiric
 | [Open questions](docs/faq/FAQ_OPEN_QUESTIONS.md) | Unresolved, experimental, partially implemented, and unvalidated work |
 | [Source matrix](docs/faq/FAQ_SOURCE_MATRIX.md) | Claim-to-source traceability and unsupported areas |
 | [Release lineage](docs/releases/RELEASE_LINEAGE.md) | Historical releases, tag clusters, attachment custody, and SHA-256 evidence |
+| [Foundation-family rebuild](rebuilds/foundation-family/README.md) | First preserved release family, additive Phase 38 descendant, and verified Full Fire JAX evidence |
 | [Interactive documentation](docs/index.html) | Public visual entry surface |
 
 ## One organism, differentiated surfaces

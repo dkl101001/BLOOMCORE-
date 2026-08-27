@@ -1,0 +1,41 @@
+{
+  "SPDXID": "SPDXRef-DOCUMENT",
+  "creationInfo": {
+    "created": "2026-01-07T03:45:14.546898Z",
+    "creators": [
+      "Tool: bloomforce-core/sbom_gen.py"
+    ]
+  },
+  "dataLicense": "CC0-1.0",
+  "documentNamespace": "https://example.invalid/spdx/bloomforce-core/0.3.2",
+  "name": "bloomforce-core-0.3.2",
+  "packages": [
+    {
+      "SPDXID": "SPDXRef-Package-bloomforce-core",
+      "annotations": [
+        {
+          "annotationDate": "2026-01-07T03:45:14.546898Z",
+          "annotationType": "OTHER",
+          "annotator": "Tool: bloomforce-core/sbom_gen.py",
+          "comment": "vcs.commit= vcs.remote="
+        }
+      ],
+      "downloadLocation": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceLocator": "pkg:pypi/bloomforce-core@0.3.2",
+          "referenceType": "purl"
+        }
+      ],
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "name": "bloomforce-core",
+      "supplier": "NOASSERTION",
+      "versionInfo": "0.3.2"
+    }
+  ],
+  "relationships": [],
+  "spdxVersion": "SPDX-2.3"
+}

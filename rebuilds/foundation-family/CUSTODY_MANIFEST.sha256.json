@@ -1,0 +1,71 @@
+{
+  "schema": "BLOOMCORE.FOUNDATION_FAMILY_CUSTODY.v1",
+  "authority": "original_sources ZIP bytes",
+  "total_bytes": 272681,
+  "entries": [
+    {
+      "tag": "V1.0",
+      "release_title": "BLOOMFORCE- Core Engine v0.1.0",
+      "attachment_id": 24621318,
+      "file": "original_sources/24621318--bloomforce-core-github-ready-0.3.2b.zip",
+      "bytes": 27970,
+      "sha256": "9e5defd4e05f9074b453b31f38f2aaf0e3edde659acd919fa833815626d12da0"
+    },
+    {
+      "tag": "v1.0",
+      "release_title": "LAW.WISECORE.v1 Membrane Engine",
+      "attachment_id": 24619739,
+      "file": "original_sources/24619739--wisecore_law_wisecore_v1_ship_math_agpl.zip",
+      "bytes": 23673,
+      "sha256": "f12c7fcd9e181f6e51199981efddf97e52627985af5d034ef2cecb5d81ee9a1b"
+    },
+    {
+      "tag": "V1.0.0.1",
+      "release_title": "BLOOMCORE Pseudospectral PDE Core Engine",
+      "attachment_id": 24675999,
+      "file": "original_sources/24675999--bloomcore-engine-github-ready-0.1.5-theta-scan-spectral.zip",
+      "bytes": 30569,
+      "sha256": "09a522e89845b4d50accbe84d71bc31b49778cd19c3aaeb2b97ce84a8b31ee70"
+    },
+    {
+      "tag": "V1.0.0.2",
+      "release_title": "Sentinel LITE kernel and umbrella",
+      "attachment_id": 24619840,
+      "file": "original_sources/24619840--sentinel-lite-umbrella-0.2.0.zip",
+      "bytes": 77532,
+      "sha256": "f1f8dd75b93abfae70b8e51ea5acf1dbc2f84a9d82ca87147633d2e06798a7a7"
+    },
+    {
+      "tag": "V1.0.0.2",
+      "release_title": "Sentinel LITE kernel and umbrella",
+      "attachment_id": 24619844,
+      "file": "original_sources/24619844--sentinel-lite-kernel-0.2.0.zip",
+      "bytes": 34696,
+      "sha256": "a9246b07920dc1d018e02863430a824e0ee2b13a3e8cdc7c2fae73ede109b283"
+    },
+    {
+      "tag": "V1.0.0.3",
+      "release_title": "BLOOMCORE Continuity Spine",
+      "attachment_id": 24619824,
+      "file": "original_sources/24619824--bloomcore-continuity-spine-github-ready-0.1.3.zip",
+      "bytes": 29644,
+      "sha256": "bad359b36f7cea02e2ae70eaea8fe3a4f59f3ed721fe81f64fc6f71bc4fd9351"
+    },
+    {
+      "tag": "V1.0.0.4",
+      "release_title": "BLOOMCORE CPU Toy",
+      "attachment_id": 24619800,
+      "file": "original_sources/24619800--bloomcore-cpu-priorart-github-ready-0.1.2.zip",
+      "bytes": 31694,
+      "sha256": "742a722efe3084eaf8b5eacae061f142a657be7f4a4b372a4b63058294bf6a58"
+    },
+    {
+      "tag": "V1.0.0.5",
+      "release_title": "World Engine v0.1",
+      "attachment_id": 24714760,
+      "file": "original_sources/24714760--world_engine_v0_1_ship_safe_swimcore_patch.zip",
+      "bytes": 16903,
+      "sha256": "7620a2c218c267aab6eeb95858f1462f36212b7bb778d9969e3328888ba225b7"
+    }
+  ]
+}
