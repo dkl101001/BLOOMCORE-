@@ -1,0 +1,19 @@
+\section{Benchmark-Specific Computation Notes}
+\label{app:benchmarks}
+
+\subsection{ALFWorld}
+\textbf{Artifacts:} action sequences, observations, optional planner outputs. \\
+\textbf{Decision Records:} one record per executed action; $t$ is step index. \\
+\textbf{Parent links:} minimal chain to prior decision; optionally link actions to plan nodes. \\
+\textbf{Attribution:} inapplicable in single-agent evaluation. \\
+\textbf{Stability:} compute only with controlled replays.
+
+\subsection{WebArena}
+\textbf{Artifacts:} browser actions, DOM selectors, optional planner outputs. \\
+\textbf{Decision Records:} one record per browser action; store stable action/target representation. \\
+\textbf{Stability:} prefer controlled snapshots for replay comparisons.
+
+\subsection{SWE-bench}
+\textbf{Artifacts:} code diffs, tests, logs. \\
+\textbf{Decision Records:} one record per materially distinct edit and per test execution; link edits and tests via the edit--test loop. \\
+\textbf{Attribution:} applicable in multi-agent variants via per-agent edit/test attribution.

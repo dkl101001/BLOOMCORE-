@@ -1,0 +1,1 @@
+"""Benchmark adapters: convert native logs to RSS trace schema."""

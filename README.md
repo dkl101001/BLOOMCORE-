@@ -35,6 +35,7 @@ That is an architectural and research declaration. It is not, by itself, empiric
 | [Source matrix](docs/faq/FAQ_SOURCE_MATRIX.md) | Claim-to-source traceability and unsupported areas |
 | [Release lineage](docs/releases/RELEASE_LINEAGE.md) | Historical releases, tag clusters, attachment custody, and SHA-256 evidence |
 | [Foundation-family rebuild](rebuilds/foundation-family/README.md) | First preserved release family, additive Phase 38 descendant, and verified Full Fire JAX evidence |
+| [Identity-and-governance rebuild](rebuilds/identity-governance-family/README.md) | Second preserved release family, bounded expression-audit descendant, and JAX GPU evidence |
 | [Interactive documentation](docs/index.html) | Public visual entry surface |
 
 ## One organism, differentiated surfaces

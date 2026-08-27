@@ -1,0 +1,26 @@
+\section{Problem Definition: Reasoning Security}
+As agentic systems operate over longer horizons, adapt across episodes, and interact with complex environments, evaluation increasingly requires more than outcome-based metrics. Traditional performance measures assess whether an agent succeeds at a task, but they provide limited insight into the \emph{structure} of the reasoning process that led to that outcome. In particular, they do not capture whether an agent’s decisions can be causally reconstructed, attributed, or analyzed after execution.
+
+We define \emph{reasoning security} as the degree to which an agent’s decision process is \emph{reconstructable and analyzable post hoc} using available traces, logs, or artifacts. Reasoning security concerns structural properties of reasoning---such as causal linkage, temporal continuity, explicit adaptation, and attribution---rather than behavioral quality or desirability. An agent may exhibit high reasoning security while performing poorly, or low reasoning security while achieving high task success.
+
+This framing intentionally separates reasoning security from several adjacent concepts. Reasoning security is \emph{not} a measure of intelligence, optimality, or general capability. It is also distinct from safety, alignment, or policy compliance: it does not prescribe constraints on agent behavior, enforce objectives, or evaluate normative outcomes. Instead, reasoning security addresses a narrower but increasingly important question: \emph{can we understand and reconstruct how an agent arrived at a decision, given the information it exposes?}
+
+\subsection{Reconstructability as a First-Class Evaluation Property}
+At the core of reasoning security is \emph{reconstructability}. A decision process is reconstructable if a third party---human or automated---can, after execution, trace actions back through intermediate decisions, contextual factors, and prior states in a coherent manner. Reconstructability does not require access to internal model parameters or hidden activations; it relies on externally observable decision records, such as action logs, tool calls, state updates, or artifacts produced during execution.
+
+Importantly, reconstructability is graded rather than binary. Partial traces may allow reconstruction of immediate causes but obscure longer-term dependencies or adaptations. Reasoning security therefore admits continuous measurement rather than categorical classification.
+
+\subsection{Orthogonality to Architecture and Training}
+Reasoning security is defined independently of agent architecture, learning paradigm, or training regime. A rule-based agent, a reinforcement learning agent, and a large language model--based planner may all exhibit high or low reasoning security depending on how decisions are recorded and linked over time. This architectural neutrality is intentional: reasoning security evaluates \emph{what can be reconstructed}, not \emph{how decisions were generated internally}.
+
+Consequently, reasoning security can be assessed post hoc without modifying training objectives, inference procedures, or benchmark protocols. This property enables retrospective analysis of existing agents and benchmarks, as well as forward compatibility with future agent designs.
+
+\subsection{Single-Agent and Multi-Agent Considerations}
+In single-agent settings, reasoning security focuses on causal traceability across time: whether actions can be linked to prior decisions, whether adaptations are explicit, and whether behavior is stable under replay or perturbation. In multi-agent systems, additional challenges arise. Decisions may be distributed across agents, coordination mechanisms may be implicit, and responsibility for outcomes may be ambiguous.
+
+Reasoning security therefore extends naturally to multi-agent contexts by incorporating attribution as a first-class concern. A multi-agent system exhibits higher reasoning security when it preserves information about which agent contributed to which decision and how inter-agent interactions influenced outcomes, even when collective behavior is emergent.
+
+\subsection{Reasoning Security as Diagnostic Infrastructure}
+We emphasize that reasoning security is a \emph{diagnostic property}, not a control mechanism. Measuring reasoning security does not constrain agent behavior, intervene in execution, or impose objectives. Instead, it provides infrastructure for analysis---enabling researchers and practitioners to examine failure modes, compare reasoning structures, and understand behavioral changes over time.
+
+This diagnostic framing is particularly important as agentic systems are deployed in settings where post hoc analysis, debugging, and accountability matter, even when agents are otherwise unconstrained. By making reasoning structure observable without prescribing behavior, reasoning security complements performance-based evaluation while avoiding assumptions about desired outcomes.

@@ -1,0 +1,6 @@
+{"schema_version": "v1", "ts": "2026-01-31T21:00:00.000+00:00", "event": "kernel.start", "role": null, "payload": {"task": "fixture", "override": false}}
+{"schema_version": "v1", "ts": "2026-01-31T21:00:00.010+00:00", "event": "role.planner", "role": "planner", "payload": {"plan": {"task": "fixture", "steps": ["verification step"], "assumptions": ["a", "b"], "constraints": ["c"], "revision": 0}}}
+{"schema_version": "v1", "ts": "2026-01-31T21:00:00.020+00:00", "event": "role.critic", "role": "critic", "payload": {"critique": {"veto": false, "reasons": [], "risks": [], "objections": [], "requested_changes": [], "risk_score": 0.2, "notes": null}}}
+{"schema_version": "v1", "ts": "2026-01-31T21:00:00.030+00:00", "event": "kernel.decision", "role": "decision", "payload": {"decision": {"allow_execute": true, "override": false, "final_revision": 0, "reason": "Cleared by policy.", "reason_codes": []}}}
+{"schema_version": "v1", "ts": "2026-01-31T21:00:00.040+00:00", "event": "role.executor", "role": "executor", "payload": {"output": {"ok": true}}}
+{"schema_version": "v1", "ts": "2026-01-31T21:00:00.050+00:00", "event": "kernel.end", "role": null, "payload": {"status": "ok"}}

@@ -1,0 +1,17 @@
+\section{Metrics for Reasoning Security}
+Reasoning security is operationalized through a set of metrics that quantify structural properties of agent decision processes. These metrics are designed to be architecture-agnostic, computable post hoc, and applicable across heterogeneous benchmarks.
+
+\subsection{Traceability}
+Traceability measures the extent to which an agent’s actions can be causally reconstructed from available Decision Records, emphasizing coverage, causal linkage, and bounded effective depth of decision ancestry.
+
+\subsection{Lineage Integrity}
+Lineage integrity evaluates whether decision ancestry remains coherent across time, penalizing unexplained resets and fragmentation and rewarding stable continuity of causal context in long-horizon execution.
+
+\subsection{Adaptation Visibility}
+Adaptation visibility measures whether changes in behavior are explicit and inspectable via adaptation annotations, selector/policy identifiers, or other observable markers, distinguishing intentional updates from silent drift.
+
+\subsection{Attribution Fidelity}
+Attribution fidelity applies in multi-agent settings and measures whether responsibility for decisions can be assigned accurately and consistently based on Decision Records, emphasizing identifiability, consistency, and completeness of attribution.
+
+\subsection{Counterfactual Stability}
+Counterfactual stability measures whether decision structure remains consistent across replays or controlled perturbations, emphasizing replay consistency, sensitivity isolation, and trace survivability under comparison.

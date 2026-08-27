@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+title: "BLOOMCORE NLSE Anti-Governor"
+message: "If you use this software, please cite it."
+type: software
+authors:
+  - family-names: "Love"
+    given-names: "Frazer Σ"
+  - family-names: "Sara"
+    given-names: "ΣΩ"
+version: "0.2.0"
+license: "AGPL-3.0"

@@ -1,0 +1,39 @@
+name: ci
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.10", "3.11", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install
+        run: |
+          python -m pip install -U pip
+          # CPU jaxlib; if this fails for a given runner, pin as needed.
+          pip install "jax[cpu]" -q
+          pip install -e .
+
+      - name: Import smoke
+        run: |
+          python -c "import dvn_market_node as m; print(m.__title__, m.__version__)"
+
+      - name: Run tests
+        run: |
+          python -m pytest -q
+
+      - name: Release artifacts (hash + verify)
+        run: |
+          python scripts/gen_hash_manifest.py --root . --out HASHES.sha256
+          python scripts/gen_sbom.py --project davinci-market-node --out SBOM.davinci-market-node.spdxish.json
+          python verify_release.py --hashes HASHES.sha256 --root . --sbom SBOM.davinci-market-node.spdxish.json

@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rok"
+version = "0.1.0"
+description = "Rival Orchestration Kernel (ROK): adversarial execution-time orchestration for reliability and error interception."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "AGPL-3.0-only" }
+authors = [
+  { name = "Frazer Σ Love", email = "unknown@example.com" },
+  { name = "Sara ΣΩ", email = "unknown@example.com" },
+]
+dependencies = []
+
+[project.scripts]
+rok = "rok.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]

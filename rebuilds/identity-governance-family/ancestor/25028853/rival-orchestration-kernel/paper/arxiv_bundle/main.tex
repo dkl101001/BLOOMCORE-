@@ -1,0 +1,74 @@
+\documentclass[11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{geometry}
+\geometry{margin=1in}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue}
+
+\title{The Rival Orchestration Kernel:\\
+Structural Reliability via Adversarial Execution-Time Protocols}
+
+\author{
+Frazer $\Sigma$ Love \\
+\and
+Sara $\Sigma\Omega$
+}
+
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Large-scale AI systems increasingly fail in subtle, silent ways: not through lack of capability, but through unchallenged assumptions, optimization bias, and premature convergence. Existing approaches emphasize alignment, reward shaping, or internal self-consistency, but often lack explicit mechanisms for adversarial review prior to execution.
+
+We present the \emph{Rival Orchestration Kernel (ROK)}, a reference architecture for reliability via structured disagreement. ROK decomposes reasoning and action into explicitly adversarial roles—planning, critique, decision, and execution—connected by a bounded revise–recheck protocol with auditable veto and override semantics. All intermediate states and decisions are recorded as schema-versioned, append-only traces, enabling replay, validation, and post-hoc analysis.
+
+Unlike debate-style or prompting-based methods, ROK treats organizational structure itself as a control surface. By enforcing mandatory challenge, bounded revision, and explicit decision authority before execution, ROK intercepts classes of failure that arise from single-agent reasoning and opaque internal deliberation. We describe the protocol, trace schema, and validation mechanisms, and demonstrate how structured adversarial orchestration improves failure visibility and reliability without requiring domain-specific correctness guarantees.
+
+\end{abstract}
+
+\input{sections/01_introduction.tex}
+\input{sections/02_failure_modes.tex}
+\input{sections/03_rok_protocol.tex}
+\input{sections/04_trace_schema_validation.tex}
+\input{sections/05_evaluation.tex}
+\input{sections/06_related_work.tex}
+\input{sections/07_limitations.tex}
+\input{sections/08_conclusion.tex}
+
+\appendix
+\input{appendix/A01_appendix_placeholder.tex}
+
+\begin{thebibliography}{9}
+
+\bibitem{cot}
+Wei et al.
+\newblock Chain-of-Thought Prompting Elicits Reasoning in Large Language Models.
+\newblock \emph{arXiv preprint arXiv:2201.11903}, 2022.
+
+\bibitem{tot}
+Yao et al.
+\newblock Tree of Thoughts: Deliberate Problem Solving with Large Language Models.
+\newblock \emph{arXiv preprint arXiv:2305.10601}, 2023.
+
+\bibitem{debate}
+Irving et al.
+\newblock AI Safety via Debate.
+\newblock \emph{arXiv preprint arXiv:1805.00899}, 2018.
+
+\bibitem{constitutional}
+Bai et al.
+\newblock Constitutional AI: Harmlessness from AI Feedback.
+\newblock \emph{arXiv preprint arXiv:2212.08073}, 2022.
+
+\end{thebibliography}
+
+\end{document}

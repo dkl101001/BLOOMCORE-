@@ -1,0 +1,22 @@
+\section{Failure Modes in Single-Agent Reasoning}
+
+Failures in autonomous and semi-autonomous AI systems are frequently misattributed to insufficient capability. In practice, many high-impact failures arise from structural blind spots in single-agent reasoning pipelines rather than from lack of intelligence or training data. This section outlines dominant failure modes that motivate adversarial orchestration.
+
+\subsection{Unchallenged Assumptions}
+Single-agent systems often construct plans atop implicit assumptions that remain unstated and therefore unexamined. These assumptions may concern input validity, environmental constraints, or task framing. When no independent role is required to surface and contest assumptions, plans can appear coherent while being grounded in false premises.
+
+\subsection{Optimization Bias and Objective Collapse}
+Single-agent planners tend to optimize aggressively for the most salient or easily satisfied objective. Secondary constraints—such as robustness, verification, or downstream effects—are often deprioritized or omitted entirely. This leads to objective collapse, where plans satisfy a narrow interpretation of the task while violating unstated but critical constraints.
+
+\subsection{Illusions of Verification}
+Many systems attempt to mitigate error through self-verification or self-critique. However, when the same agent generates, evaluates, and approves a plan, verification frequently degrades into restatement rather than independent challenge. This creates an illusion of safety: the system appears to have “checked its work,” but the verification process shares the same blind spots, heuristics, and incentives as the original plan generation.
+
+\subsection{Premature Convergence}
+Single-agent reasoning pipelines often converge prematurely on a plausible plan and terminate exploration once local coherence is achieved. Alternative hypotheses, edge cases, or counterexamples are insufficiently explored, particularly under latency or token-budget constraints.
+
+\subsection{Implicit Authority and Silent Failure}
+In single-agent architectures, the planner implicitly holds both proposal and approval authority. This conflation makes it difficult to distinguish between a plan being uncontested and a plan being correct. As a result, failures often manifest silently, only becoming visible after execution has occurred.
+
+\subsection{Summary}
+These failure modes share a common root: \emph{the absence of mandatory, independent challenge before execution}. ROK addresses these issues not by improving internal reasoning quality, but by restructuring the reasoning process itself.
+

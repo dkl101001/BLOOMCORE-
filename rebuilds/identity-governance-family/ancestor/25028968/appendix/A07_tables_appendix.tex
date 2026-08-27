@@ -1,0 +1,85 @@
+\section{Tables Appendix}
+\label{app:tables}
+
+\subsection{Canonical RSS Reporting Table}
+
+\begin{table}[t]
+\centering
+\begin{tabular}{l l l c c c c c c}
+\toprule
+Agent & Benchmark & Instrumentation &
+Trace & Lineage & Adapt. & Attrib. & Stab. & RSS \\
+\midrule
+Agent A & ALFWorld & Action logs
+& 0.78 & 0.74 & 0.32 & -- & 0.61 & 0.61 \\
+Agent B & WebArena & Browser traces
+& 0.69 & 0.58 & 0.45 & -- & 0.49 & 0.55 \\
+Agent C & SWE-bench & Code diffs + tests
+& 0.86 & 0.81 & 0.67 & 0.72 & 0.79 & 0.77 \\
+\bottomrule
+\end{tabular}
+\caption{Canonical \RSS\ reporting table. ``Adapt.'' denotes adaptation visibility, ``Attrib.'' attribution fidelity, and ``Stab.'' counterfactual stability. Dashes indicate inapplicable metrics.}
+\label{tab:rss_full}
+\end{table}
+
+\subsection{Benchmark-Specific Metric Instantiation}
+
+\begin{table}[t]
+\centering
+\begin{tabular}{l l l l}
+\toprule
+Benchmark & Primary Artifacts & Strongest Metrics & Limited Metrics \\
+\midrule
+ALFWorld
+& Action sequences, observations
+& Traceability, lineage integrity
+& Adaptation visibility, stability \\
+WebArena
+& Browser actions, DOM selectors
+& Traceability, adaptation visibility
+& Counterfactual stability \\
+SWE-bench
+& Code diffs, tests, logs
+& Lineage, stability, attribution
+& -- \\
+\bottomrule
+\end{tabular}
+\caption{Typical mapping from benchmark artifacts to reasoning security metrics. Limitations reflect artifact availability rather than agent capability.}
+\label{tab:benchmark_subscores}
+\end{table}
+
+\subsection{Multi-Agent Attribution Reporting}
+
+\begin{table}[t]
+\centering
+\begin{tabular}{l l c c c}
+\toprule
+System & Agents & Identifiable & Consistent & Attrib. Score \\
+\midrule
+System X & 2 & Yes & Yes & 0.81 \\
+System Y & 4 & Partial & No & 0.46 \\
+System Z & 3 & Yes & Partial & 0.63 \\
+\bottomrule
+\end{tabular}
+\caption{Example attribution fidelity reporting for multi-agent systems. Scores reflect identifiability, consistency, and completeness of agent attribution in Decision Records.}
+\label{tab:attribution}
+\end{table}
+
+\subsection{Table Usage Guidance}
+When reporting \RSS, authors should (i) include a decomposition table, (ii) indicate inapplicable metrics, (iii) describe instrumentation concisely, and (iv) avoid comparing absolute \RSS\ values across benchmarks with substantially different artifact richness.
+
+% ----------------------------
+% References (placeholder)
+% ----------------------------
+\begin{thebibliography}{9}
+\bibitem{react} % placeholder
+ReAct and related tool-using agent frameworks (placeholder reference).
+\bibitem{alfworld} % placeholder
+ALFWorld benchmark (placeholder reference).
+\bibitem{webarena} % placeholder
+WebArena benchmark (placeholder reference).
+\bibitem{swebench} % placeholder
+SWE-bench benchmark (placeholder reference).
+\end{thebibliography}
+
+\end{document}
