@@ -32,7 +32,8 @@ def initial_jax_state(*, vector, field, topology=None, seed: int = 151) -> JaxSt
         if topology is None
         else jnp.asarray(topology, dtype=jnp.float32)
     )
-    energy = jnp.mean(field32 * field32) + 0.5 * jnp.mean(vector32 * vector32)
+    # Match the NumPy reference and keep energy invariant under zero padding.
+    energy = jnp.mean(field32 * field32) + 0.5 * jnp.sum(vector32 * vector32)
     return JaxState(
         tick=jnp.asarray(0, dtype=jnp.int32),
         vector=vector32,
@@ -124,7 +125,7 @@ def jax_step(
     memory = (1.0 - config.memory_alpha) * state.memory + config.memory_alpha * candidate
     next_vector = (1.0 - config.dream_gamma) * candidate + config.dream_gamma * memory
 
-    energy = jnp.mean(next_field * next_field) + 0.5 * jnp.mean(next_vector * next_vector)
+    energy = jnp.mean(next_field * next_field) + 0.5 * jnp.sum(next_vector * next_vector)
     hdot = energy - state.energy_prev
     hdot_history = jnp.concatenate((state.hdot_history[1:], jnp.asarray([hdot], dtype=jnp.float32)))
     hdot_median = jnp.median(hdot_history)

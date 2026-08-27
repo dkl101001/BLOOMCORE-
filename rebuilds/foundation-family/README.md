@@ -8,10 +8,11 @@ This is the first additive rebuild of the BLOOMCORE public release lineage. It j
 
 - `original_sources/` contains the eight release-body ZIP payloads byte-for-byte. These archives are the custody authority for this rebuild.
 - `ancestor/<attachment-id>/` contains reviewable expansions of those archives. Generated Python and pytest caches are deliberately excluded; the expanded trees are not substitutes for the ZIPs.
-- `phase38-descendant/` is new AGPL-3.0-only work. It supplies an ancestral NumPy oracle and a separately executable Full Fire JAX backend.
+- `phase38-descendant/` is new AGPL-3.0-only work. It supplies a bounded NumPy reference for its new composite transition and a separately executable Full Fire-capability JAX backend. It does not claim ancestral semantic-oracle status.
 - `CUSTODY_MANIFEST.sha256.json` binds release identity, attachment identity, byte length, and SHA-256.
 - `LICENSE_DISPOSITION.md` records what may be integrated and what remains custody-only.
 - `EVIDENCE.md` states what has actually been executed and what remains outside the verified aperture.
+- `PHASE38_V1_10_REVIEW.md` binds the bounded review to the exact active canon hash and records the Full Fire, ancestry, topology, and Keystone dispositions.
 
 ## Family order
 

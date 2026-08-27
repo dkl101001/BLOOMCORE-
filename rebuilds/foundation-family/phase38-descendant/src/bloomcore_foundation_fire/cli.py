@@ -21,7 +21,7 @@ def main() -> int:
     weight = np.eye(vector.size, dtype=np.float32)
     chain = ReceiptChain()
     last = None
-    environment = {"backend": "ancestral-numpy-oracle"}
+    environment = {"backend": "bounded-numpy-reference"}
     if args.backend == "oracle":
         state = initial_oracle_state(vector=vector, field=field)
         for _ in range(args.steps):
@@ -42,7 +42,7 @@ def main() -> int:
 
         state = initial_jax_state(vector=vector, field=field)
         environment = {
-            "backend": "full-fire-jax",
+            "backend": "bounded-full-fire-jax",
             "jax": jax.__version__,
             "platform": jax.default_backend(),
             "devices": [str(device) for device in jax.devices()],

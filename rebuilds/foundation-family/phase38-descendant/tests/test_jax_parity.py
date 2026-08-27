@@ -25,9 +25,43 @@ def fixture():
     return vector, field, topology
 
 
+def assert_shared_state_close(fire, oracle, *, rtol=3e-4, atol=5e-5):
+    assert int(np.asarray(fire.tick)) == oracle.tick
+    for name in (
+        "vector",
+        "previous",
+        "identity",
+        "field",
+        "memory",
+        "hdot_history",
+        "energy_prev",
+        "topology",
+        "coupling",
+    ):
+        np.testing.assert_allclose(
+            np.asarray(getattr(fire, name)),
+            np.asarray(getattr(oracle, name)),
+            rtol=rtol,
+            atol=atol,
+        )
+
+
+def assert_metrics_close(fire, oracle, *, rtol=3e-4, atol=3e-5):
+    np.testing.assert_allclose(
+        np.asarray(fire[:-3], dtype=np.float32),
+        np.asarray(oracle[:-3], dtype=np.float32),
+        rtol=rtol,
+        atol=atol,
+    )
+    np.testing.assert_array_equal(
+        np.asarray(fire[-3:], dtype=np.int32),
+        np.asarray(oracle[-3:], dtype=np.int32),
+    )
+
+
 def test_one_step_oracle_jax_parity():
     vector, field, topology = fixture()
-    config = FireConfig(phi_min=0.0, require_wuwei=False, noise_scale=0.0)
+    config = FireConfig(phi_min=0.0, require_wuwei=True, noise_scale=0.0)
     oracle = initial_oracle_state(vector=vector, field=field, topology=topology)
     fire = initial_jax_state(vector=vector, field=field, topology=topology)
     drive = np.asarray([0.0, 0.01, -0.02, 0.0], dtype=np.float32)
@@ -38,15 +72,8 @@ def test_one_step_oracle_jax_parity():
     fire_next, fire_metrics = jax_step(
         fire, jnp.asarray(drive), jnp.asarray(weight), jnp.asarray(True), config
     )
-    np.testing.assert_allclose(np.asarray(fire_next.vector), oracle_next.vector, rtol=2e-5, atol=2e-5)
-    np.testing.assert_allclose(np.asarray(fire_next.field), oracle_next.field, rtol=2e-5, atol=2e-5)
-    np.testing.assert_allclose(
-        np.asarray(fire_metrics[:-3], dtype=np.float32),
-        np.asarray(oracle_metrics[:-3], dtype=np.float32),
-        rtol=3e-4,
-        atol=3e-5,
-    )
-    np.testing.assert_array_equal(np.asarray(fire_next.topology), topology)
+    assert_shared_state_close(fire_next, oracle_next, rtol=2e-5, atol=2e-5)
+    assert_metrics_close(fire_metrics, oracle_metrics)
 
 
 def test_five_step_rollout_parity():
@@ -71,10 +98,21 @@ def test_five_step_rollout_parity():
         jnp.asarray(truths),
         config,
     )
-    np.testing.assert_allclose(np.asarray(fire.vector), oracle.vector, rtol=3e-4, atol=5e-5)
-    np.testing.assert_allclose(np.asarray(fire.field), oracle.field, rtol=3e-4, atol=5e-5)
-    assert np.asarray(fire_metrics.verdict).shape == (5,)
-    assert len(oracle_metrics) == 5
+    assert_shared_state_close(fire, oracle)
+    oracle_metric_matrix = np.asarray(oracle_metrics)
+    fire_metric_matrix = np.column_stack(
+        [np.asarray(value) for value in fire_metrics]
+    )
+    np.testing.assert_allclose(
+        fire_metric_matrix[:, :-3],
+        oracle_metric_matrix[:, :-3],
+        rtol=3e-4,
+        atol=5e-5,
+    )
+    np.testing.assert_array_equal(
+        fire_metric_matrix[:, -3:].astype(np.int32),
+        oracle_metric_matrix[:, -3:].astype(np.int32),
+    )
 
 
 def test_jax_zero_extension_and_explicit_key_replay():
@@ -91,17 +129,34 @@ def test_jax_zero_extension_and_explicit_key_replay():
     np.testing.assert_array_equal(np.asarray(base_next.field), np.asarray(replay_next.field))
     assert not np.array_equal(np.asarray(base_next.field), np.asarray(different_next.field))
 
-    deterministic = FireConfig(phi_min=0.0, require_wuwei=False, noise_scale=0.0)
+    deterministic = FireConfig(phi_min=0.0, require_wuwei=True, noise_scale=0.0)
     extended = zero_extend_jax(base, 2)
-    base_det, _ = jax_step(base, drive, weight, jnp.asarray(True), deterministic)
-    ext_det, _ = jax_step(
-        extended,
-        jnp.zeros(6, dtype=jnp.float32),
-        jnp.pad(weight, ((0, 2), (0, 2))),
-        jnp.asarray(True),
-        deterministic,
-    )
-    np.testing.assert_allclose(np.asarray(ext_det.vector[:4]), np.asarray(base_det.vector), atol=1e-6)
+    base_det = base
+    ext_det = extended
+    for _ in range(5):
+        base_det, base_metrics = jax_step(
+            base_det, drive, weight, jnp.asarray(True), deterministic
+        )
+        ext_det, ext_metrics = jax_step(
+            ext_det,
+            jnp.zeros(6, dtype=jnp.float32),
+            jnp.pad(weight, ((0, 2), (0, 2))),
+            jnp.asarray(True),
+            deterministic,
+        )
+        for name in ("vector", "previous", "identity", "memory", "coupling"):
+            np.testing.assert_allclose(
+                np.asarray(getattr(ext_det, name)[:4]),
+                np.asarray(getattr(base_det, name)),
+                atol=1e-6,
+            )
+        for name in ("field", "hdot_history", "energy_prev"):
+            np.testing.assert_allclose(
+                np.asarray(getattr(ext_det, name)),
+                np.asarray(getattr(base_det, name)),
+                atol=1e-6,
+            )
+        assert_metrics_close(ext_metrics, base_metrics, rtol=1e-5, atol=1e-6)
     np.testing.assert_array_equal(np.asarray(ext_det.topology[:4, :4]), topology)
 
 

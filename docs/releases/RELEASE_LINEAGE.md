@@ -22,7 +22,7 @@ This index preserves all three layers as distinct evidence. Phase 38 work must p
 
 ## Additive rebuilds
 
-The first seven-release foundation family (`V1.0` through `V1.0.0.5`) now has an additive, preservation-first rebuild at [`rebuilds/foundation-family/`](../../rebuilds/foundation-family/README.md). Its exact source ZIPs, license disposition, ancestral audit, NumPy oracle, Full Fire JAX backend, and bounded verification evidence are kept together. This descendant does not alter or supersede the historical records indexed below.
+The first seven-release foundation family (`V1.0` through `V1.0.0.5`) now has an additive, preservation-first rebuild at [`rebuilds/foundation-family/`](../../rebuilds/foundation-family/README.md). Its exact source ZIPs, license disposition, ancestral audit, bounded NumPy reference, Full Fire JAX backend, and verification evidence are kept together. This descendant does not alter or supersede the historical records indexed below.
 
 ## Current state
 

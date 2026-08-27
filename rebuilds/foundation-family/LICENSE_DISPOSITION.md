@@ -12,7 +12,7 @@ This is a provenance and implementation record, not legal advice. Historical fil
 | Sentinel LITE kernel | `AGPL-3.0-or-later` | preserved and contract-tested; allow/suppress semantics represented in descendant |
 | Sentinel Executor LITE | commercial placeholder / all rights reserved | custody-only; never imported, executed, or copied into descendant |
 | Continuity Spine | `AGPL-3.0-only` | preserved and reachability-tested; descendant emits compatible bounded telemetry facts rather than copying the package |
-| CPU Toy | `AGPL-3.0-only` | preserved and tested; numerical behavior serves as the ancestral oracle basis |
+| CPU Toy | `AGPL-3.0-only` | preserved and tested; selected numerical operators inform the descendant mapping without establishing whole-transition ancestry parity |
 | World Engine | no license declaration found in the payload root or `pyproject.toml` | preserved and reachability-tested only; license status unclear; no source copied into descendant |
 | Phase 38 descendant | `AGPL-3.0-only` under the repository default | new additive code |
 

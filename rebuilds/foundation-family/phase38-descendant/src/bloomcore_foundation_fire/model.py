@@ -78,7 +78,9 @@ def initial_oracle_state(
         topology32 = np.eye(n, dtype=np.float32)
     else:
         topology32 = np.asarray(topology, dtype=np.float32)
-    energy = np.float32(np.mean(field32 * field32) + 0.5 * np.mean(vector32 * vector32))
+    # The vector term is a sum so appending uncoupled zero dimensions does not
+    # alter the base energy or the WuWei-facing energy derivative.
+    energy = np.float32(np.mean(field32 * field32) + 0.5 * np.sum(vector32 * vector32))
     return OracleState(
         tick=0,
         vector=vector32.copy(),

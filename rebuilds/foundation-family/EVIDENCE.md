@@ -2,8 +2,14 @@
 
 # Rebuild Evidence
 
-**Verification date:** 2026-08-05
+**Verification dates:** 2026-08-05 initial capture; 2026-08-26 review repair; 2026-08-27 Phase 38 v1.10 reconciliation
 **Verified aperture:** one bounded foundation-family transition and finite rollouts; not a claim of full BLOOMCORE organism physiology.
+
+## Phase 38 v1.10 governance binding
+
+The bounded review is bound to active Phase 38 v1.10 SHA-256 `ff058db5dd35fee55168494b17a642fa6ef94bea26e24a5988f07ab80c76de29` and promotion-receipt SHA-256 `9d1739c59e8ff5689258399afc31d616a34508e6c74e0d22d86106a258b12e70`. The complete execution membrane and complete Section 33 governed the pass. See `PHASE38_V1_10_REVIEW.md` for the source-binding ledger and bounded requirement dispositions.
+
+Keystone v1.3 is recognized as optional governed noncanonical research but remains outside this PR's accepted implementation aperture. This build therefore makes no source-faithful Keystone or DSK claim.
 
 ## Custody
 
@@ -30,36 +36,37 @@ Historical payloads were not edited to hide these defects. Repairs live only in 
 
 | Property | Proof |
 |---|---|
-| ancestral behavior | shared NumPy oracle transition |
-| one-step JAX parity | NumPy and JAX state/metrics compared at float32 tolerance |
-| rollout parity | five-step deterministic NumPy/JAX rollout comparison |
+| source mapping | exact archive hashes and surviving entrypoints mapped in the descendant README; the new composite is not labeled an ancestral oracle |
+| packaged v1.10 contract | machine-readable declaration supplies every Section 33.8 field and is verified from installed package resources |
+| one-step JAX parity | every shared NumPy/JAX state field and every metric/gate output compared at float32 tolerance |
+| rollout parity | five-step deterministic comparison of every shared final-state field and every metric/gate series |
 | explicit stochasticity | JAX PRNG key carried in state and split at every step |
 | replay | equal keys produce byte-equal stochastic fields |
 | divergence | different keys produce different stochastic fields |
-| zero-extension recovery | uncoupled appended dimensions preserve the base transition |
-| causal topology | topology is carried unchanged and base adjacency survives extension |
+| zero-extension recovery | five-step NumPy and JAX tests show uncoupled appended dimensions preserve shared state, energy history, metrics, and gate outputs |
+| topology payload boundary | topology is carried unchanged and base adjacency survives extension; tests and documentation explicitly show it is not yet causal input |
 | receipt custody | deterministic SHA-256 chain verifies independently of transition authority |
-| inherited reachability | BLOOMFORCE, CPU Toy, Sentinel kernel, Continuity Spine, and World Engine surfaces imported and exercised |
+| inherited reachability | BLOOMFORCE, CPU Toy, Sentinel kernel, Continuity Spine, and World Engine surfaces imported and exercised without claiming whole-transition equivalence |
 | Full Fire device | test asserts JAX default backend and first device platform are `gpu` |
 
 Results:
 
-- Windows NumPy/oracle lane: **6 passed, 1 JAX module skipped**; two inherited `datetime.utcnow()` deprecation warnings from World Engine.
-- WSL Full Fire lane: **10 passed** on GPU; the same two inherited World Engine deprecation warnings.
+- Windows NumPy/reference lane: **8 passed, 1 JAX module skipped**; two inherited `datetime.utcnow()` deprecation warnings from World Engine.
+- WSL Full Fire-capability lane: **12 passed** on GPU; the same two inherited World Engine deprecation warnings.
 - Oracle CLI: receipt chain verified.
 - JAX CLI: receipt chain verified and reported `jax=0.9.2`, `platform=gpu`, `devices=[cuda:0]`.
-- An isolated PEP 517 build produced both sdist and wheel from the sdist. The wheel was installed into a fresh Windows virtual environment and its console entry point completed with a verified receipt chain.
+- An isolated PEP 517 build produced both sdist and wheel from the sdist. The wheel was installed into a fresh Python 3.13 Windows virtual environment; the packaged v1.10 contract was loaded and hash-checked through `importlib.resources`, and the console entry point completed with a verified receipt chain.
 
 Build witnesses (artifacts are generated outside the repository and are not custody sources):
 
 | Artifact | SHA-256 |
 |---|---|
-| `bloomcore_foundation_fire-0.1.0-py3-none-any.whl` | `62d5ebc78013333c3695fd761f586947a12bd82c0ce004102b5dc10ebd8d152a` |
-| `bloomcore_foundation_fire-0.1.0.tar.gz` | `7f169e056da46d7dc2adc7f43acc0533438c7fce2662d608fa8738e342857afa` |
+| `bloomcore_foundation_fire-0.1.0-py3-none-any.whl` | `6ecab182bcc1d3f702de140870b6616b7a63f4fb03491b2e35fcfacaa8d9c6cb` |
+| `bloomcore_foundation_fire-0.1.0.tar.gz` | `4e31a60092249f8fcabec906039f05b1c3c3e9fd5bb1a0ba9c270c6c1e80896f` |
 
 ## Full Fire environment
 
-The verified environment is a dedicated WSL virtual environment with JAX 0.9.2, jaxlib 0.9.2, CUDA 13 plugin wheels, and an NVIDIA GeForce RTX 4050 Laptop GPU exposed as `cuda:0`.
+The verified environment remains installed at `~/.venvs/bloomcore-full-fire-jax-0.9.2`. It contains JAX 0.9.2, jaxlib 0.9.2, `jax-cuda13-plugin` 0.9.2, `jax-cuda13-pjrt` 0.9.2, and pytest 9.1.1. WSL exposes the NVIDIA GeForce RTX 4050 Laptop GPU as `cuda:0` through the Windows driver.
 
 `scripts/probe_full_fire.py` returned:
 
@@ -78,6 +85,10 @@ The verified environment is a dedicated WSL virtual environment with JAX 0.9.2, 
 
 The CUDA runtime also emitted a non-fatal kernel-driver version parsing warning. JIT FFT, autodiff, the CLI, and all tests still completed successfully on the GPU. This warning is disclosed rather than treated as proof of failure or silently omitted.
 
+## Validation scope
+
+`git diff --check` passes for the authored descendant, custody, and navigation surfaces. A whole-branch invocation also inspects byte-preserved ancestor expansions and reports their historical trailing spaces and blank final lines. Those bytes match the authoritative ZIPs and are intentionally not rewritten; the preservation exception is disclosed instead of claiming an unqualified whole-branch pass.
+
 ## Evidence boundary
 
-This rebuild proves a runnable and parity-checked foundation-family descendant. It does not prove organism-wide Phase 38 coupling, federation, self-modification, canonical promotion of proposed names, or integration of later release families. Receipts witness executions; they do not confer authority.
+This rebuild proves a runnable and parity-checked new foundation-family composite with a packaged bounded Phase 38 v1.10 execution declaration. It does not prove ancestral whole-transition equivalence, causal use of the topology payload, organism-wide Phase 38 coupling, federation, self-modification, Keystone/DSK implementation, canonical promotion of proposed names, or integration of later release families. Receipts witness executions; they do not confer authority.

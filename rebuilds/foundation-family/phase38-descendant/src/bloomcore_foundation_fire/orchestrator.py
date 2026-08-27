@@ -16,8 +16,8 @@ LINEAGE_STAGES = (
     "BLOOMCORE pseudo-spectral carrier",
     "Sentinel LITE allowlist decision",
     "Continuity Spine telemetry boundary",
-    "CPU Toy identity/coherence/fracture oracle",
-    "World Engine receipt persistence",
+    "CPU Toy identity/coherence/fracture reference surface",
+    "independent receipt witness",
 )
 
 
@@ -48,7 +48,7 @@ def run_oracle_cycle(
         "BLOOMCORE.FOUNDATION_FIRE_STEP.v1",
         {
             "tick": int(next_state.tick),
-            "backend": "ancestral-numpy-oracle",
+            "backend": "bounded-numpy-reference",
             "lineage_stages": list(LINEAGE_STAGES),
             "metrics": metrics_payload(metrics),
             "topology_shape": list(next_state.topology.shape),
@@ -67,7 +67,7 @@ def run_jax_cycle(
     chain: ReceiptChain,
     config: FireConfig = FireConfig(),
 ):
-    """Run one Full Fire step while keeping receipts outside the JIT boundary."""
+    """Run one bounded Full Fire-capability step with an external receipt."""
 
     from .jax_backend import jax_step
 
@@ -76,7 +76,7 @@ def run_jax_cycle(
         "BLOOMCORE.FOUNDATION_FIRE_STEP.v1",
         {
             "tick": int(next_state.tick.item()),
-            "backend": "full-fire-jax",
+            "backend": "bounded-full-fire-jax",
             "lineage_stages": list(LINEAGE_STAGES),
             "metrics": metrics_payload(metrics),
             "topology_shape": list(next_state.topology.shape),

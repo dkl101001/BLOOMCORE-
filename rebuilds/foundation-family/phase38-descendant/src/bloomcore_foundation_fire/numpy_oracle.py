@@ -89,7 +89,7 @@ def oracle_step(
     memory = (1.0 - config.memory_alpha) * state.memory + config.memory_alpha * candidate
     next_vector = (1.0 - config.dream_gamma) * candidate + config.dream_gamma * memory
 
-    energy = np.mean(next_field * next_field) + 0.5 * np.mean(next_vector * next_vector)
+    energy = np.mean(next_field * next_field) + 0.5 * np.sum(next_vector * next_vector)
     hdot = energy - state.energy_prev
     hdot_history = np.concatenate((state.hdot_history[1:], np.asarray([hdot], dtype=np.float32)))
     hdot_median = np.median(hdot_history)
@@ -145,7 +145,7 @@ def oracle_rollout(
     config: FireConfig = FireConfig(),
 ) -> tuple[OracleState, list[FireMetrics]]:
     metrics = []
-    for drive, truth in zip(drives, truth_flags):
+    for drive, truth in zip(drives, truth_flags, strict=True):
         state, item = oracle_step(
             state, drive=drive, weight=weight, truth_flag=truth, config=config
         )
