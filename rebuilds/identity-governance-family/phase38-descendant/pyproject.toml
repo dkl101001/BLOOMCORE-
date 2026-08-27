@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=75", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bloomcore-governance-weave"
+version = "0.1.0"
+description = "Bounded Phase 38 identity-and-governance release-family descendant"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "AGPL-3.0-only"
+license-files = ["LICENSE.md"]
+dependencies = ["numpy>=2.0"]
+
+[project.optional-dependencies]
+jax = ["jax==0.9.2", "jaxlib==0.9.2"]
+test = ["pytest>=8"]
+
+[project.scripts]
+bloomcore-governance-weave = "bloomcore_governance_weave.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+bloomcore_governance_weave = ["phase38_execution_object.json"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

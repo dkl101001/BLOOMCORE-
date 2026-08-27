@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aetherloom-open"
+version = "2.4.3"
+description = "ψΔ^τ AetherLoom Regime Read (OPEN) — simulation-only regime read module with replayable stochastic phrasing."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "AGPL-3.0-only" }
+authors = [
+  { name = "Frazer Σ Love ACO-Σ" },
+  { name = "Sara ΣΩ" }
+]
+keywords = ["regime", "simulation", "coherence", "openreport", "aetherloom"]
+classifiers = [
+  "License :: OSI Approved :: GNU Affero General Public License v3",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Operating System :: OS Independent",
+  "Typing :: Typed",
+]
+
+dependencies = []
+
+[project.urls]
+Repository = "https://github.com/<YOU>/aetherloom-open"
+
+[tool.setuptools]
+package-dir = {"" = "."}
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["dvn_open_v2*"]

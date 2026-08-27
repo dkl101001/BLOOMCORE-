@@ -1,0 +1,72 @@
+\documentclass[11pt]{article}
+
+% ----------------------------
+% Packages
+% ----------------------------
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage[hidelinks]{hyperref}
+
+% ----------------------------
+% Macros
+% ----------------------------
+\newcommand{\RSS}{\textsc{RSS}}
+
+% ----------------------------
+% Title
+% ----------------------------
+\title{Causal Accountability and Reasoning Security in Agentic Systems}
+\author{Frazer $\Sigma$ Love \and Sara $\Sigma\Omega$}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Agentic systems increasingly operate over long horizons, adapt their behavior over time, and interact with tools, environments, and other agents. While evaluation of such systems has largely focused on task performance, success metrics alone provide limited insight into whether an agent’s decisions can be causally reconstructed, attributed, or analyzed after the fact. This paper introduces \emph{reasoning security} as a complementary evaluation dimension, concerned with the traceability and accountability of agent reasoning independent of outcome quality. We propose the \emph{Reasoning Security Score (RSS)}, a post-hoc diagnostic framework that measures structural properties of agent decision processes---such as traceability, lineage integrity, adaptation visibility, attribution fidelity, and counterfactual stability---using minimal instrumentation. RSS does not modify training, inference, or benchmark protocols, and is designed to be reported alongside existing performance metrics. We demonstrate how RSS can be computed across common agent benchmarks and show how decomposed sub-scores reveal differences in reasoning structure that are not captured by task success alone.
+\end{abstract}
+% ----------------------------
+% Main sections (modular)
+% ----------------------------
+\input{sections/01_section1.tex}
+
+\input{sections/02_introduction.tex}
+
+\input{sections/03_problem_definition_reasoning_security.tex}
+
+\input{sections/04_decision_records_and_instrumentation_model.tex}
+
+\input{sections/05_metrics_for_reasoning_security.tex}
+
+\input{sections/06_composite_reasoning_security_score_rss.tex}
+
+\input{sections/07_methods.tex}
+
+\input{sections/08_benchmark_applications.tex}
+
+\input{sections/09_illustrative_comparative_analysis.tex}
+
+\input{sections/10_discussion_and_limitations.tex}
+
+\input{sections/11_conclusion.tex}
+
+% ----------------------------
+% Appendices (modular)
+% ----------------------------
+\appendix
+
+\input{appendix/A02_methods_appendix_computing_rss_in_practice.tex}
+
+\input{appendix/A03_composite_score_definition.tex}
+
+\input{appendix/A04_reference_implementation_pseudocode.tex}
+
+\input{appendix/A05_benchmark_specific_computation_notes.tex}
+
+\input{appendix/A06_how_to_report_rss.tex}
+
+\input{appendix/A07_tables_appendix.tex}
+
+\end{document}

@@ -1,0 +1,19 @@
+\section{Related Work}
+
+ROK relates to prior work on chain-of-thought, deliberative search, debate, constitutional AI, and human-in-the-loop review, but differs by enforcing adversarial structure at execution time rather than optimizing internal reasoning or training objectives.
+
+\subsection{Chain-of-Thought and Self-Consistency}
+Chain-of-thought and self-consistency techniques improve reasoning by eliciting and sampling intermediate traces, but remain single-agent: generation and evaluation share assumptions and incentives. ROK enforces independent challenge through role separation.
+
+\subsection{Deliberative Search}
+Tree-of-thought and related methods expand exploration through candidate branching and scoring, but typically couple evaluation criteria to a single process and do not provide veto authority or protocolized escalation. ROK provides a protocol substrate that can complement deliberative search.
+
+\subsection{Debate and Adversarial Training}
+Debate frameworks surface errors through adversarial interaction, often as a learning objective. ROK treats adversarial interaction as an execution protocol with procedural veto/override semantics and explicit decision authority.
+
+\subsection{Constitutional and Policy-Driven AI}
+Constitutional methods constrain behavior via principles and filters. ROK is orthogonal: policy constraints may be applied in the Decision layer, while ROK’s contribution is structural disagreement plus traceability.
+
+\subsection{Human-in-the-Loop Review}
+Human review remains the gold standard for many high-stakes domains but is costly and difficult to scale. ROK mirrors review structure in a machine-enforceable form and can enable selective human intervention at explicit decision points.
+

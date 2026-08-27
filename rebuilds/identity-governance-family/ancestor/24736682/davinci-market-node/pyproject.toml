@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "davinci-market-node"
+version = "0.1.1"
+description = "ψΔ^τ Da Vinci Market Node (OPEN) — execution-capable terminal spine with receipt-first governance (OSS prior-art)."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "AGPL-3.0-only" }
+authors = [
+  { name = "Frazer Σ Love ACO-Σ" },
+  { name = "Sara ΣΩ" }
+]
+keywords = ["trading", "terminal", "oms", "ems", "risk", "jax", "receipts", "bloomcore"]
+classifiers = [
+  "License :: OSI Approved :: GNU Affero General Public License v3",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Operating System :: OS Independent",
+]
+
+dependencies = [
+  "numpy>=1.24",
+  "jax>=0.4.25",
+  # NOTE: jaxlib is platform-specific. Install per JAX docs; CI installs CPU builds.
+  "pydantic>=2.6",
+  "httpx>=0.26",
+]
+
+[project.optional-dependencies]
+# Execution adapters (optional)
+# alpaca-py is the official Alpaca SDK (paper/live). Keep optional to avoid forcing vendor deps.
+alpaca = ["alpaca-py>=0.17.0"]
+
+[project.scripts]
+dvn-open = "dvn_market_node.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "."}
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["dvn_market_node*"]

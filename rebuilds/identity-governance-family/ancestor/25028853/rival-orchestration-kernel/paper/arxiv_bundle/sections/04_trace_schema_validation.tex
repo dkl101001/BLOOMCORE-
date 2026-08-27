@@ -1,0 +1,22 @@
+\section{Trace Schema and Validation Model}
+
+ROK treats traceability as a first-class design requirement. All protocol interactions emit structured, append-only trace events that conform to an explicit, versioned schema.
+
+\subsection{Append-Only Trace Model}
+Each run produces a sequence of JSONL events. The append-only property supports streaming ingestion, partial recovery from crashes, and deterministic replay without requiring in-memory aggregation.
+
+\subsection{Schema Versioning}
+Every trace event includes a required top-level \texttt{schema\_version} field. Breaking changes require a new schema version, preventing silent incompatibility and enabling replay integrity checks.
+
+\subsection{Event Contracts}
+Events include required fields \texttt{schema\_version}, \texttt{ts}, \texttt{event}, \texttt{role}, and \texttt{payload}. Event types are explicitly enumerated and include at minimum \texttt{kernel.start}, \texttt{role.planner}, \texttt{role.critic}, \texttt{kernel.revise}, \texttt{kernel.decision}, \texttt{role.executor}, and \texttt{kernel.end}. Each event type defines a stable payload contract within a schema version.
+
+\subsection{Strict Validation}
+Validation enforces schema stability and protocol completeness. Non-strict mode permits partial runs; strict mode requires \texttt{kernel.end}, forbids unknown event types, and enforces schema version consistency.
+
+\subsection{Replay and Aggregation}
+Replay reconstructs outcomes, revision counts, veto frequencies, override rates, and reason-code distributions without re-executing the original task. Streaming replay emits one summarized JSON object per run for scalable analytics.
+
+\subsection{Summary}
+Schema versioning, strict validation, and replay tooling render ROK runs auditable and analyzable over time.
+

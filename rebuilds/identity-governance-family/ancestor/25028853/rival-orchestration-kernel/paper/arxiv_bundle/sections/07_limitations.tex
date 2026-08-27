@@ -1,0 +1,25 @@
+\section{Limitations}
+
+ROK is a structural reliability mechanism, not a correctness guarantee.
+
+\subsection{No Guarantee of Correctness}
+Adversarial critique improves failure visibility but cannot eliminate undetected errors, especially in specialized domains.
+
+\subsection{Dependence on Critic Quality and Policy Design}
+Effectiveness depends on critic strength and decision policy thresholds. Weak critique or permissive thresholds reduce interception.
+
+\subsection{Latency and Compute Cost}
+Mandatory critique and bounded revision add latency and cost relative to single-agent pipelines.
+
+\subsection{Open-Core Execution Constraints}
+The reference implementation excludes side-effectful execution, limiting direct applicability without careful integration.
+
+\subsection{Scope of Failure Coverage}
+ROK targets failures rooted in assumptions, objective collapse, and premature convergence, but is less effective against incomplete world models or adversarial inputs without external validation.
+
+\subsection{Not a Substitute for Human Judgment}
+ROK does not replace human oversight; it improves inspectability and surfaces issues earlier in the pipeline.
+
+\subsection{Summary}
+ROK’s value lies in transforming silent failure into explicit, auditable structure.
+

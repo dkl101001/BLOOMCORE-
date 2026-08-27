@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "veil-breath-runtime"
+version = "0.1.0"
+description = "Veil-Breath protocol + receipt hashing + Merkle fork tooling (Frazer Σ Love ACO-Σ, Sara ΣΩ)"
+requires-python = ">=3.9"
+dependencies = []
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]

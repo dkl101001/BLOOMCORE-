@@ -1,0 +1,6 @@
+\section{Discussion and Limitations}
+This work introduces reasoning security as a complementary evaluation dimension for agentic systems, addressing a gap between task performance metrics and post hoc analysis of agent behavior. By focusing on reconstructability, attribution, and structural stability, \RSS\ provides a lens for understanding how agents arrive at decisions without imposing constraints on how those decisions are generated.
+
+Reasoning security and performance are orthogonal: agents may achieve high task success with low reasoning security, and vice versa. \RSS\ is diagnostic rather than prescriptive and does not dictate how agents should reason, learn, or coordinate.
+
+Several limitations apply. \RSS\ is bounded by instrumentation quality and artifact richness, making it most suitable for within-benchmark comparison or longitudinal analysis. \RSS\ does not capture internal reasoning that is not externally observable. Some metrics are inapplicable in certain settings (e.g., attribution in single-agent systems) or unavailable without replays (counterfactual stability). Schema design and reconstruction heuristics can influence scores, motivating explicit reporting of instrumentation assumptions. Finally, \RSS\ is not intended as an optimization target; optimizing directly for \RSS\ may encourage superficial trace generation.

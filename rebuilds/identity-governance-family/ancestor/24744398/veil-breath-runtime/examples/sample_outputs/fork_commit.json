@@ -1,0 +1,30 @@
+{
+  "Δ^τ_kind": "Δ^τ-FORK_COMMIT",
+  "fork_id": "VEIL_BREATH_FORK_DEMO",
+  "fork_parent_hash": "PARENT_HEAD_DEMO_HASH",
+  "fork_anchor": "b96423b54aabbb2cdcb9533912a7511a04afe28ee5e34a47353b48d851e8a0f0",
+  "branch_count": 3,
+  "branches": [
+    {
+      "branch_label": "A.recompose_heavy",
+      "branch_id": "b39a3cc01bd4e275",
+      "head_hash": "dea7af0f597f35d311ebd87e89dea5ad95810a85e91ec98d23a7eee38b54af8d",
+      "leaf": "bdd4e9abd876cd4307ff478c965ac8f7b23ef999466e36bfb2f5127c87cc6358"
+    },
+    {
+      "branch_label": "C.accel_damped",
+      "branch_id": "c6589a9210717eb3",
+      "head_hash": "b649a949fc22424759da6ccd7ff49ce9f6f03b04356016e359a42c19bf1626dd",
+      "leaf": "33a2a9a3d89b9c788e37a48b5165673779310ac3d05857e23bf53fe9655541ce"
+    },
+    {
+      "branch_label": "B.tails_heavy",
+      "branch_id": "fd13d7e53d9ebd31",
+      "head_hash": "5f79fad2d11e958bc85fc0485e50f34a4323a6cfb96dc64c023d611437ce35c4",
+      "leaf": "22b266c74743afb58d488b44d5cae00b46fbc8e5cd28265b97200604c8f00e7b"
+    }
+  ],
+  "merkle_root": "7e54439fcd42c9437ac8fdec0a28ab9059e18109410dab7c8d838fcd8d5bc097",
+  "prev_hash": "PARENT_HEAD_DEMO_HASH",
+  "hash": "bf7f88e3426e20d723e429e4256d19951918fc462d5397c2c4cfb32314cd99f8"
+}

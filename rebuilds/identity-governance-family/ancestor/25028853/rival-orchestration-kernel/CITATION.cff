@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "If you use or reference the Rival Orchestration Kernel (ROK), please cite the accompanying paper."
+title: "The Rival Orchestration Kernel: Structural Reliability via Adversarial Execution-Time Protocols"
+type: software
+year: 2026
+license: AGPL-3.0
+authors:
+  - family-names: Love
+    given-names: Frazer
+    name-particle: "Σ"
+  - given-names: Sara
+    family-names: "ΣΩ"
+repository-code: https://github.com/<ORG>/<REPO>
+url: https://github.com/<ORG>/<REPO>
+preferred-citation:
+  type: article
+  title: "The Rival Orchestration Kernel: Structural Reliability via Adversarial Execution-Time Protocols"
+  authors:
+    - family-names: Love
+      given-names: Frazer
+      name-particle: "Σ"
+    - given-names: Sara
+      family-names: "ΣΩ"
+  year: 2026
+  journal: "arXiv preprint"
+  arxiv: "XXXX.XXXXX"
+  notes: "Reference implementation available under AGPL-3.0"
