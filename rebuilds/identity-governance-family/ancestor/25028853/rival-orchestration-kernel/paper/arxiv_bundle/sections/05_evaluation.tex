@@ -1,0 +1,26 @@
+\section{Evaluation}
+
+Evaluation focuses on failure interception, visibility, and decision traceability rather than benchmark accuracy. Synthetic scenarios isolate protocol behavior and enable reproducible analysis via trace replay.
+
+\subsection{Setup}
+Runs use the reference implementation with a bounded revise–recheck loop and schema-versioned tracing (\texttt{schema\_version=v1}). Metrics are derived solely from replayed traces: revision counts, outcomes (cleared/vetoed/override), override rates, and reason-code distributions.
+
+\subsection{Synthetic Failure Scenarios}
+\textbf{Hidden Assumption.} The prompt omits a critical constraint, inducing implicit assumptions. The Critic surfaces missing constraints and vetoes unless assumptions are made explicit.
+
+\textbf{Objective Collapse.} The Planner optimizes a single salient objective and omits secondary constraints. The Critic issues reason codes for missing verification and constraint coverage.
+
+\textbf{Premature Convergence.} The Planner produces a plausible but minimally justified plan. The Critic challenges insufficient verification depth; outcomes remain fully traceable even when vetoes are not issued.
+
+\subsection{Replay Metrics}
+Across synthetic runs, replay analysis yields non-zero revision rates and low override rates under default policy. All vetoes and overrides are explicit, eliminating ambiguity between approval and escalation.
+
+\subsection{Baseline Comparison}
+Single-agent baselines lack pre-execution veto authority and structured audit trails, making silent failure indistinguishable from correctness. ROK adds measurable friction that surfaces disagreement and documents resolution paths.
+
+\subsection{Reproducibility}
+Strict validation rejects structurally invalid traces. Replay and aggregation are reproducible from trace artifacts without access to original execution environments.
+
+\subsection{Summary}
+Synthetic evaluations demonstrate that adversarial orchestration improves failure visibility and accountability prior to execution.
+

@@ -1,0 +1,333 @@
+\documentclass[11pt]{article}
+
+% ----------------------------
+% Packages
+% ----------------------------
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage[hidelinks]{hyperref}
+
+% ----------------------------
+% Macros
+% ----------------------------
+\newcommand{\RSS}{\textsc{RSS}}
+
+% ----------------------------
+% Title
+% ----------------------------
+\title{Causal Accountability and Reasoning Security in Agentic Systems}
+\author{Frazer $\Sigma$ Love \and Sara $\Sigma\Omega$}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Agentic systems increasingly operate over long horizons, adapt their behavior over time, and interact with tools, environments, and other agents. While evaluation of such systems has largely focused on task performance, success metrics alone provide limited insight into whether an agent’s decisions can be causally reconstructed, attributed, or analyzed after the fact. This paper introduces \emph{reasoning security} as a complementary evaluation dimension, concerned with the traceability and accountability of agent reasoning independent of outcome quality. We propose the \emph{Reasoning Security Score (RSS)}, a post-hoc diagnostic framework that measures structural properties of agent decision processes---such as traceability, lineage integrity, adaptation visibility, attribution fidelity, and counterfactual stability---using minimal instrumentation. RSS does not modify training, inference, or benchmark protocols, and is designed to be reported alongside existing performance metrics. We demonstrate how RSS can be computed across common agent benchmarks and show how decomposed sub-scores reveal differences in reasoning structure that are not captured by task success alone.
+\end{abstract}
+
+\section{Introduction}
+Recent advances in large language models and planning architectures have enabled agentic systems that reason over extended horizons, invoke external tools, modify internal state, and coordinate with other agents. Benchmarks such as ALFWorld, WebArena, and SWE-bench reflect this shift, evaluating agents on increasingly complex, multi-step tasks. As a result, contemporary agent evaluation is dominated by task-level success metrics---accuracy, completion rate, reward, or test pass rate---which serve as effective indicators of capability.
+
+However, as agent autonomy and complexity increase, performance metrics alone are insufficient to answer a growing class of questions: \emph{Why did an agent take a particular action?} \emph{Can its decision process be reconstructed after execution?} \emph{Did the agent’s behavior change over time, and if so, how explicitly?} \emph{In multi-agent settings, which agent was responsible for which decisions?} These questions are not about whether an agent succeeded, but whether its reasoning process is \emph{inspectable, attributable, and stable under analysis}.
+
+Existing work on interpretability, logging, and agent frameworks provides partial tools for examining internal behavior, but these efforts are typically ad hoc, architecture-specific, or tightly coupled to particular training methods. Moreover, they rarely offer a standardized way to compare reasoning structure across agents, tasks, or benchmarks. As a result, two agents with similar performance may differ substantially in how transparent or reconstructable their reasoning processes are, yet this distinction is not captured by prevailing evaluation practices.
+
+In this paper, we introduce \emph{reasoning security} as an evaluation dimension orthogonal to performance. Reasoning security concerns the extent to which an agent’s decisions can be causally reconstructed and analyzed post hoc, using available traces, logs, or artifacts, without imposing constraints on how the agent is built or trained. Importantly, reasoning security does \emph{not} assess behavioral desirability, safety, or alignment, nor does it prescribe how agents should act. Instead, it focuses on structural properties of decision processes that determine whether reasoning can be audited, compared, and understood after execution.
+
+To operationalize this concept, we propose the \emph{Reasoning Security Score (RSS)}, a composite diagnostic measure derived from five decomposable dimensions: traceability, lineage integrity, adaptation visibility, attribution fidelity, and counterfactual stability.\footnote{RSS is computed post hoc from logged decision traces and does not affect model training, inference, or benchmark execution; it is optional and intended solely to contextualize agent behavior alongside performance metrics.} RSS is computed post hoc from decision records and does not alter training objectives, inference procedures, or benchmark execution. It is designed to be architecture-agnostic, minimally invasive, and applicable to both single-agent and multi-agent systems.
+
+The contributions of this work are threefold. First, we formalize reasoning security as a distinct evaluation dimension for agentic systems and clarify how it differs from performance, interpretability, and control-oriented frameworks. Second, we introduce a concrete instrumentation model and metric suite that enables consistent measurement of reasoning security across benchmarks. Third, we demonstrate how RSS can be applied to common agent evaluation settings, showing that decomposed reasoning security metrics reveal meaningful structural differences between agents that are not apparent from performance alone.
+
+By positioning RSS as complementary evaluation infrastructure rather than a replacement for existing metrics, this work aims to support deeper analysis of agent behavior as autonomy and complexity continue to scale.
+
+\section{Problem Definition: Reasoning Security}
+As agentic systems operate over longer horizons, adapt across episodes, and interact with complex environments, evaluation increasingly requires more than outcome-based metrics. Traditional performance measures assess whether an agent succeeds at a task, but they provide limited insight into the \emph{structure} of the reasoning process that led to that outcome. In particular, they do not capture whether an agent’s decisions can be causally reconstructed, attributed, or analyzed after execution.
+
+We define \emph{reasoning security} as the degree to which an agent’s decision process is \emph{reconstructable and analyzable post hoc} using available traces, logs, or artifacts. Reasoning security concerns structural properties of reasoning---such as causal linkage, temporal continuity, explicit adaptation, and attribution---rather than behavioral quality or desirability. An agent may exhibit high reasoning security while performing poorly, or low reasoning security while achieving high task success.
+
+This framing intentionally separates reasoning security from several adjacent concepts. Reasoning security is \emph{not} a measure of intelligence, optimality, or general capability. It is also distinct from safety, alignment, or policy compliance: it does not prescribe constraints on agent behavior, enforce objectives, or evaluate normative outcomes. Instead, reasoning security addresses a narrower but increasingly important question: \emph{can we understand and reconstruct how an agent arrived at a decision, given the information it exposes?}
+
+\subsection{Reconstructability as a First-Class Evaluation Property}
+At the core of reasoning security is \emph{reconstructability}. A decision process is reconstructable if a third party---human or automated---can, after execution, trace actions back through intermediate decisions, contextual factors, and prior states in a coherent manner. Reconstructability does not require access to internal model parameters or hidden activations; it relies on externally observable decision records, such as action logs, tool calls, state updates, or artifacts produced during execution.
+
+Importantly, reconstructability is graded rather than binary. Partial traces may allow reconstruction of immediate causes but obscure longer-term dependencies or adaptations. Reasoning security therefore admits continuous measurement rather than categorical classification.
+
+\subsection{Orthogonality to Architecture and Training}
+Reasoning security is defined independently of agent architecture, learning paradigm, or training regime. A rule-based agent, a reinforcement learning agent, and a large language model--based planner may all exhibit high or low reasoning security depending on how decisions are recorded and linked over time. This architectural neutrality is intentional: reasoning security evaluates \emph{what can be reconstructed}, not \emph{how decisions were generated internally}.
+
+Consequently, reasoning security can be assessed post hoc without modifying training objectives, inference procedures, or benchmark protocols. This property enables retrospective analysis of existing agents and benchmarks, as well as forward compatibility with future agent designs.
+
+\subsection{Single-Agent and Multi-Agent Considerations}
+In single-agent settings, reasoning security focuses on causal traceability across time: whether actions can be linked to prior decisions, whether adaptations are explicit, and whether behavior is stable under replay or perturbation. In multi-agent systems, additional challenges arise. Decisions may be distributed across agents, coordination mechanisms may be implicit, and responsibility for outcomes may be ambiguous.
+
+Reasoning security therefore extends naturally to multi-agent contexts by incorporating attribution as a first-class concern. A multi-agent system exhibits higher reasoning security when it preserves information about which agent contributed to which decision and how inter-agent interactions influenced outcomes, even when collective behavior is emergent.
+
+\subsection{Reasoning Security as Diagnostic Infrastructure}
+We emphasize that reasoning security is a \emph{diagnostic property}, not a control mechanism. Measuring reasoning security does not constrain agent behavior, intervene in execution, or impose objectives. Instead, it provides infrastructure for analysis---enabling researchers and practitioners to examine failure modes, compare reasoning structures, and understand behavioral changes over time.
+
+This diagnostic framing is particularly important as agentic systems are deployed in settings where post hoc analysis, debugging, and accountability matter, even when agents are otherwise unconstrained. By making reasoning structure observable without prescribing behavior, reasoning security complements performance-based evaluation while avoiding assumptions about desired outcomes.
+
+\section{Decision Records and Instrumentation Model}
+Reasoning security requires access to structured information about an agent’s decisions, but it should not depend on internal model states, architecture-specific hooks, or intrusive instrumentation. To support post hoc analysis across heterogeneous agents and benchmarks, we introduce a minimal, architecture-agnostic abstraction called the \emph{Decision Record}. Decision Records provide a standardized way to represent observable decision structure while remaining compatible with existing logging and evaluation pipelines.
+
+\subsection{Design Goals}
+The instrumentation model underlying \RSS\ is guided by four design goals. First, it must be \emph{post hoc compatible}: decision records should be derivable from existing logs, traces, or artifacts without modifying training or inference. Second, it must be \emph{architecture-neutral}, supporting rule-based agents, learned policies, and language model--based planners alike. Third, it should be \emph{minimally sufficient}, requiring only the information necessary to assess reasoning security rather than comprehensive internal state. Finally, it must be \emph{composable}, allowing records to be linked across time, agents, and execution contexts.
+
+\subsection{Decision Record Abstraction}
+A Decision Record represents a single externally observable decision or action taken by an agent during execution. Each record is associated with a unique identifier and a discrete time index within an episode or execution trace. Crucially, Decision Records encode \emph{causal linkage} by explicitly referencing prior decisions upon which the current decision depends.
+
+At a minimum, each Decision Record includes: (i) a unique decision identifier, (ii) a temporal index, (iii) a representation of the executed action or outcome, and (iv) a list of parent decision identifiers indicating causal ancestry. These fields are sufficient to construct a directed acyclic graph over decisions, enabling reconstruction of decision lineage over time.
+
+Additional optional fields support richer analysis when available. These include identifiers for the agent responsible for the decision, selector or policy identifiers, named causal factors associated with the decision, and structured annotations describing adaptation events. Causal factors may be represented as names or hashed references rather than raw internal values, preserving generality.
+
+\subsection{Episodes, Replays, and Perturbations}
+Decision Records are grouped into \emph{episodes}, which correspond to a single execution of an agent within a task environment. Episodes may optionally be associated with a replay group identifier, allowing multiple executions under identical or controlled conditions to be analyzed jointly. Replay groups enable the measurement of counterfactual stability by comparing decision structure across repeated runs or under controlled perturbations.
+
+Perturbations may be recorded via lightweight tags attached to Decision Records or episodes. \RSS\ does not require perturbations to be present, but when they are available, they support additional analysis of reasoning robustness and stability.
+
+\subsection{Single-Agent and Multi-Agent Instrumentation}
+In multi-agent systems, Decision Records may originate from multiple agents operating concurrently or asynchronously. Agent identifiers are used to attribute decisions, and parent links may cross agent boundaries to represent inter-agent influence or coordination. The instrumentation model does not assume explicit communication protocols or centralized coordination; it relies on observable artifacts to establish causal linkage where possible.
+
+\subsection{Post Hoc Reconstruction and Compatibility}
+Decision Records may be emitted directly by an agent during execution, reconstructed from logs and traces after the fact, or synthesized from task-specific artifacts such as code diffs or test results. This flexibility enables \RSS\ to be applied retroactively to existing benchmarks and agents, including those not originally designed with reasoning security in mind.
+
+\section{Metrics for Reasoning Security}
+Reasoning security is operationalized through a set of metrics that quantify structural properties of agent decision processes. These metrics are designed to be architecture-agnostic, computable post hoc, and applicable across heterogeneous benchmarks.
+
+\subsection{Traceability}
+Traceability measures the extent to which an agent’s actions can be causally reconstructed from available Decision Records, emphasizing coverage, causal linkage, and bounded effective depth of decision ancestry.
+
+\subsection{Lineage Integrity}
+Lineage integrity evaluates whether decision ancestry remains coherent across time, penalizing unexplained resets and fragmentation and rewarding stable continuity of causal context in long-horizon execution.
+
+\subsection{Adaptation Visibility}
+Adaptation visibility measures whether changes in behavior are explicit and inspectable via adaptation annotations, selector/policy identifiers, or other observable markers, distinguishing intentional updates from silent drift.
+
+\subsection{Attribution Fidelity}
+Attribution fidelity applies in multi-agent settings and measures whether responsibility for decisions can be assigned accurately and consistently based on Decision Records, emphasizing identifiability, consistency, and completeness of attribution.
+
+\subsection{Counterfactual Stability}
+Counterfactual stability measures whether decision structure remains consistent across replays or controlled perturbations, emphasizing replay consistency, sensitivity isolation, and trace survivability under comparison.
+
+\section{Composite Reasoning Security Score (RSS)}
+The metrics in Section~5 capture complementary aspects of reasoning security. To support compact reporting while preserving interpretability, we define \RSS\ as a composite diagnostic derived from normalized sub-scores.
+
+\subsection{Design Principles}
+\RSS\ is designed to be decomposable, to discourage single-dimension dominance, to remain architecture-neutral, and to be computable post hoc from Decision Records without modifying agent execution or benchmark protocols.
+
+\subsection{Sub-score Composition}
+\RSS\ is computed from normalized sub-scores corresponding to traceability, lineage integrity, adaptation visibility, attribution fidelity (when applicable), and counterfactual stability (when available). Each sub-score lies in $[0,1]$. Inapplicable sub-scores are excluded rather than treated as zero.
+
+\subsection{Aggregation Method}
+\RSS\ uses a weighted geometric mean to reduce compensability across dimensions. Weights are explicitly specified and renormalized over applicable sub-scores.
+
+\subsection{Interpretation and Reporting}
+\RSS\ should be interpreted as reasoning reconstructability rather than task success. \RSS\ should be reported alongside sub-scores, aggregation weights, and instrumentation descriptions.
+
+\subsection{Scope and Limitations}
+\RSS\ reflects observable decision structure and is bounded by instrumentation quality. Absolute values should be compared primarily within shared benchmark contexts or across longitudinal versions of the same system.
+
+\section{Methods}
+\label{sec:methods}
+This section describes the procedure used to compute reasoning security metrics and \RSS\ from Decision Records. The computation is reproducible and minimally invasive: construct Decision Records from artifacts, validate linkage and ordering, compute normalized sub-scores, and aggregate using the weighted geometric mean over applicable dimensions. Inapplicable metrics are excluded, and aggregation weights are renormalized accordingly.
+
+\section{Benchmark Applications}
+To illustrate practical usage, we describe computing \RSS\ across ALFWorld, WebArena, and SWE-bench. Benchmarks differ in artifact richness and replay stability; \RSS\ is therefore most informative within-benchmark or longitudinally under consistent instrumentation.
+
+\section{Illustrative Comparative Analysis}
+This section provides illustrative examples of decomposed reasoning security profiles and composite \RSS\ reporting. The goal is interpretation rather than ranking: agents with similar task performance may exhibit distinct reasoning security profiles, and longitudinal tracking can reveal structural shifts not captured by success metrics.
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=\linewidth]{figures/rss_decomposition.pdf}
+    \caption{Example decomposition of reasoning security sub-scores across agents evaluated on the same benchmark. Each bar represents a normalized sub-score.}
+    \label{fig:rss_decomposition}
+\end{figure}
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=\linewidth]{figures/rss_longitudinal.pdf}
+    \caption{Illustrative longitudinal analysis of \RSS\ and sub-scores across successive agent iterations. Structural changes in reasoning security may occur independently of task performance trends.}
+    \label{fig:rss_longitudinal}
+\end{figure}
+
+\section{Discussion and Limitations}
+This work introduces reasoning security as a complementary evaluation dimension for agentic systems, addressing a gap between task performance metrics and post hoc analysis of agent behavior. By focusing on reconstructability, attribution, and structural stability, \RSS\ provides a lens for understanding how agents arrive at decisions without imposing constraints on how those decisions are generated.
+
+Reasoning security and performance are orthogonal: agents may achieve high task success with low reasoning security, and vice versa. \RSS\ is diagnostic rather than prescriptive and does not dictate how agents should reason, learn, or coordinate.
+
+Several limitations apply. \RSS\ is bounded by instrumentation quality and artifact richness, making it most suitable for within-benchmark comparison or longitudinal analysis. \RSS\ does not capture internal reasoning that is not externally observable. Some metrics are inapplicable in certain settings (e.g., attribution in single-agent systems) or unavailable without replays (counterfactual stability). Schema design and reconstruction heuristics can influence scores, motivating explicit reporting of instrumentation assumptions. Finally, \RSS\ is not intended as an optimization target; optimizing directly for \RSS\ may encourage superficial trace generation.
+
+\section{Conclusion}
+As agentic systems increasingly operate over long horizons, adapt across tasks, and interact with complex environments, evaluation practices must extend beyond outcome-based performance metrics. This work introduces reasoning security as a complementary evaluation dimension that focuses on the post hoc reconstructability and attribution of agent decision processes rather than behavioral quality or control.
+
+We presented the Reasoning Security Score (\RSS), a diagnostic framework that measures structural properties of observable reasoning traces using minimal, architecture-agnostic instrumentation. By decomposing reasoning security into traceability, lineage integrity, adaptation visibility, attribution fidelity, and counterfactual stability, \RSS\ enables systematic analysis of agent behavior across heterogeneous benchmarks without modifying training or inference procedures. We hope this framework supports more transparent, comparable, and interpretable evaluation of agentic systems as the field continues to evolve.
+
+% ----------------------------
+% Appendices (from earlier draft)
+% ----------------------------
+\appendix
+
+\section{Methods Appendix: Computing RSS in Practice}
+\label{app:methods}
+
+This appendix provides practical guidance for computing \RSS\ from benchmark artifacts. \RSS\ is computed \emph{post hoc} from Decision Records derived from logs, traces, or task artifacts. The procedure is benchmark-agnostic: (i) construct Decision Records, (ii) validate causal linkage and ordering, (iii) compute normalized sub-scores, and (iv) aggregate with a weighted geometric mean over applicable dimensions.
+
+\subsection{Decision Record Construction}
+A Decision Record represents a single externally observable decision and includes: a unique decision identifier, a step index, an executed action or outcome, and zero or more parent decision identifiers (causal ancestry). Optional fields include an agent identifier (multi-agent), selector/policy identifier, named causal factors, a replay group identifier, and structured adaptation annotations.
+
+\subsection{Validation and Preprocessing}
+Before scoring, records are validated for: unique decision identifiers, required field presence, existence of referenced parents, and consistent replay/agent identifiers. If multiple episodes are provided, metrics are computed per episode and then aggregated by simple averaging unless otherwise specified.
+
+\section{Composite Score Definition}
+\label{app:composite}
+
+Let $S=\{s_1,\dots,s_k\}$ be the set of applicable reasoning security sub-scores for a given run, where each $s_i\in[0,1]$. Let $w_i$ be the associated nonnegative weights, renormalized over applicable sub-scores so that $\sum_{i=1}^{k} w_i = 1$.
+
+The composite Reasoning Security Score (\RSS) is defined as the weighted geometric mean:
+\[
+\mathrm{RSS}=\prod_{i=1}^{k} s_i^{w_i}.
+\]
+Sub-scores that are inapplicable (e.g., attribution in single-agent settings) or unavailable due to instrumentation limits (e.g., counterfactual stability without replays) are excluded from $S$.
+
+\section{Reference Implementation (Pseudocode)}
+\label{app:pseudocode}
+
+\begin{verbatim}
+Inputs:
+  - Episodes, each containing DecisionRecords
+  - Optional replay_group_id (for replays/perturbations)
+  - Optional agent_id (for multi-agent)
+  - RSSConfig (weights, clipping, normalization parameters)
+
+For each episode:
+  1) Validate schema + parent references
+  2) Build decision graph G from parent_ids
+  3) Compute base metrics:
+       - Traceability: coverage, connectivity, bounded depth stats
+       - Lineage integrity: continuity, break frequency, stability over time
+       - Adaptation visibility: explicit events, selector changes, drift signals
+       - (Multi-agent) attribution fidelity: identifiability, consistency, completeness
+  4) Normalize base metrics -> sub-scores in [0,1]
+
+If replay groups exist:
+  5) Compute counterfactual stability by comparing decision graphs across runs
+  6) Normalize stability metrics -> stability sub-score
+
+7) Aggregate applicable sub-scores with weighted geometric mean -> RSS
+8) Output: per-episode subscores, RSS, weights used, instrumentation metadata
+\end{verbatim}
+
+\section{Benchmark-Specific Computation Notes}
+\label{app:benchmarks}
+
+\subsection{ALFWorld}
+\textbf{Artifacts:} action sequences, observations, optional planner outputs. \\
+\textbf{Decision Records:} one record per executed action; $t$ is step index. \\
+\textbf{Parent links:} minimal chain to prior decision; optionally link actions to plan nodes. \\
+\textbf{Attribution:} inapplicable in single-agent evaluation. \\
+\textbf{Stability:} compute only with controlled replays.
+
+\subsection{WebArena}
+\textbf{Artifacts:} browser actions, DOM selectors, optional planner outputs. \\
+\textbf{Decision Records:} one record per browser action; store stable action/target representation. \\
+\textbf{Stability:} prefer controlled snapshots for replay comparisons.
+
+\subsection{SWE-bench}
+\textbf{Artifacts:} code diffs, tests, logs. \\
+\textbf{Decision Records:} one record per materially distinct edit and per test execution; link edits and tests via the edit--test loop. \\
+\textbf{Attribution:} applicable in multi-agent variants via per-agent edit/test attribution.
+
+\section{How to Report RSS}
+\label{app:reporting}
+
+\RSS\ should be reported alongside task performance metrics as a diagnostic indicator of reasoning reconstructability. Reports should include: (i) composite \RSS, (ii) decomposed sub-scores, (iii) aggregation weights and applicability notes, and (iv) a concise description of instrumentation and artifacts used.
+
+\section{Tables Appendix}
+\label{app:tables}
+
+\subsection{Canonical RSS Reporting Table}
+
+\begin{table}[t]
+\centering
+\begin{tabular}{l l l c c c c c c}
+\toprule
+Agent & Benchmark & Instrumentation &
+Trace & Lineage & Adapt. & Attrib. & Stab. & RSS \\
+\midrule
+Agent A & ALFWorld & Action logs
+& 0.78 & 0.74 & 0.32 & -- & 0.61 & 0.61 \\
+Agent B & WebArena & Browser traces
+& 0.69 & 0.58 & 0.45 & -- & 0.49 & 0.55 \\
+Agent C & SWE-bench & Code diffs + tests
+& 0.86 & 0.81 & 0.67 & 0.72 & 0.79 & 0.77 \\
+\bottomrule
+\end{tabular}
+\caption{Canonical \RSS\ reporting table. ``Adapt.'' denotes adaptation visibility, ``Attrib.'' attribution fidelity, and ``Stab.'' counterfactual stability. Dashes indicate inapplicable metrics.}
+\label{tab:rss_full}
+\end{table}
+
+\subsection{Benchmark-Specific Metric Instantiation}
+
+\begin{table}[t]
+\centering
+\begin{tabular}{l l l l}
+\toprule
+Benchmark & Primary Artifacts & Strongest Metrics & Limited Metrics \\
+\midrule
+ALFWorld
+& Action sequences, observations
+& Traceability, lineage integrity
+& Adaptation visibility, stability \\
+WebArena
+& Browser actions, DOM selectors
+& Traceability, adaptation visibility
+& Counterfactual stability \\
+SWE-bench
+& Code diffs, tests, logs
+& Lineage, stability, attribution
+& -- \\
+\bottomrule
+\end{tabular}
+\caption{Typical mapping from benchmark artifacts to reasoning security metrics. Limitations reflect artifact availability rather than agent capability.}
+\label{tab:benchmark_subscores}
+\end{table}
+
+\subsection{Multi-Agent Attribution Reporting}
+
+\begin{table}[t]
+\centering
+\begin{tabular}{l l c c c}
+\toprule
+System & Agents & Identifiable & Consistent & Attrib. Score \\
+\midrule
+System X & 2 & Yes & Yes & 0.81 \\
+System Y & 4 & Partial & No & 0.46 \\
+System Z & 3 & Yes & Partial & 0.63 \\
+\bottomrule
+\end{tabular}
+\caption{Example attribution fidelity reporting for multi-agent systems. Scores reflect identifiability, consistency, and completeness of agent attribution in Decision Records.}
+\label{tab:attribution}
+\end{table}
+
+\subsection{Table Usage Guidance}
+When reporting \RSS, authors should (i) include a decomposition table, (ii) indicate inapplicable metrics, (iii) describe instrumentation concisely, and (iv) avoid comparing absolute \RSS\ values across benchmarks with substantially different artifact richness.
+
+% ----------------------------
+% References (placeholder)
+% ----------------------------
+\begin{thebibliography}{9}
+\bibitem{react} % placeholder
+ReAct and related tool-using agent frameworks (placeholder reference).
+\bibitem{alfworld} % placeholder
+ALFWorld benchmark (placeholder reference).
+\bibitem{webarena} % placeholder
+WebArena benchmark (placeholder reference).
+\bibitem{swebench} % placeholder
+SWE-bench benchmark (placeholder reference).
+\end{thebibliography}
+
+\end{document}

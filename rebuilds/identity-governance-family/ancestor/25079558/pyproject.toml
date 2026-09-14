@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bloomcore-sophia-compassion"
+version = "0.1.0"
+description = "BLOOMCORE implementation of Sophia Wisdom Gate v1 and Compassion v5.2 (JAX recursion + deterministic receipts)."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "numpy>=1.24",
+  "jax>=0.4.20",
+  "jaxlib>=0.4.20",
+]
+
+[project.scripts]
+bloomcore-sophia = "bloomcore.cli:main"

@@ -1,0 +1,119 @@
+{
+  "schema": "BLOOMCORE.HYBRID.BOUNDED_EXECUTION_OBJECT.v2",
+  "object_version": "0.2.0",
+  "role": "STANDALONE_EXPRESSION_AUDIT_SIMULATION",
+  "selected_reference": {
+    "filename": "HYBRID_TRIAD_OI_LINEAGE_v0.1_CANONICAL.md",
+    "sha256": "46f1592d80963c0129a92f134eff9e9136e4a04f6d300fa98494bbbad87e7f2b",
+    "archive_sha256": "8cef4677a0095aa1bebff7969979a453fa8a07ba7a7163ad5286e1220864907b",
+    "read_scope": "Activation/OI/packaging/K1-K4/execution law/H01-H12; Keystone 30; full implementation map and Phase151 binding. Not full-master or field-science implementation coverage.",
+    "master_binding_sha256": "113ddf6f01849be2f7ec735f1e66d89c57cef174df53f84f8b6ffe0ef87e9e3e"
+  },
+  "parent": {
+    "git_commit": "82939aab7ed3141cbe68f56c6d689515fc07dfea",
+    "path": "rebuilds/identity-governance-family/phase38-descendant",
+    "version": "0.1.0",
+    "legacy_contract": "phase38_execution_object.json",
+    "legacy_contract_role": "HISTORICAL_ONLY_NOT_CURRENT_DECLARATION"
+  },
+  "model_participation": {
+    "model_calls": false,
+    "canonical_native_mode": null,
+    "native_model_zero_operation": "NOT_IMPLEMENTED",
+    "note": "Model absence is observed in this local tool; MODEL_ZERO_NATIVE physiology is not claimed. No new canonical model mode is defined."
+  },
+  "native_state_mutation": false,
+  "native_admission": false,
+  "network_access": false,
+  "canonical_promotion": false,
+  "identity_resolution": "NOT_PERFORMED",
+  "profile_defaults": {
+    "exploration": "NONE",
+    "scheduling": "SYNCHRONOUS_CALLER_ORDER_SINGLE_WRITER",
+    "authority": "NONE_NATIVE_NONE_EXTERNAL_WITNESS_ONLY",
+    "randomness": "NONE",
+    "models": "NONE",
+    "budgets": {
+      "recursive_depth": 0,
+      "recursive_branching": 0,
+      "wall_seconds": null,
+      "memory_bytes": null,
+      "limit_status": "NO_HARD_WALL_OR_MEMORY_LIMIT_IMPLEMENTED; host caller must bound use; not native-safe scheduling",
+      "cancellation": "Caller process interruption; no partial result or native commit; receipt chain is in-memory only"
+    },
+    "unknown_influences": ["OS scheduling", "hardware faults", "concurrent caller mutation unsupported"],
+    "not_observed": ["native physiology", "native learning", "historical whole-transition parity", "native audit noninterference", "scientific validation"]
+  },
+  "profiles": {
+    "weave:evaluate": {
+      "transition": "TOLERANCE_DETERMINISTIC",
+      "recursion": "NONE",
+      "replay": "SAME_PYTHON_CONFIG_INPUT; branch thresholds exact comparisons; no cross-backend decision parity claim",
+      "persistence": "RESULT_ONLY; optional caller-owned witness chain",
+      "mutation": "OPTIONAL_WITNESS_APPEND_ONLY",
+      "equality": "Python float operations; threshold booleans exact within identical environment; no tolerance licenses changing decisions",
+      "failure": "Nonfinite input or arithmetic: suppressed simulation result, null diagnostics plus path-classified residue; invalid Python types may raise; no native action",
+      "boundaries": "Float diagnostics and exact status logic; receipt serialization is separate"
+    },
+    "numpy_backend:numpy_audit": {
+      "transition": "TOLERANCE_DETERMINISTIC", "recursion": "NONE",
+      "replay": "FLOAT32_NUMERICAL_KERNEL_ONLY", "persistence": "RETURNED_ARRAY_ONLY", "mutation": "NONE",
+      "equality": "Five numerical outputs; rtol=2e-6 atol=2e-6 on tested finite inputs; booleans may differ at precision boundaries",
+      "failure": "Wrong shape raises; nonfinite outputs possible; no admission or healthy-status interpretation",
+      "boundaries": "17 scalar inputs; ignores truth_signal and non-default WeaveConfig except risk threshold"
+    },
+    "jax_backend:jax_audit": {
+      "transition": "TOLERANCE_DETERMINISTIC", "recursion": "NONE",
+      "replay": "FLOAT32_BACKEND_DEPENDENT", "persistence": "RETURNED_DEVICE_ARRAY_ONLY", "mutation": "NONE",
+      "equality": "rtol=2e-6 atol=2e-6 on tested finite inputs; no whole evaluate parity",
+      "failure": "JAX errors propagate; caller validates finite output; no native clearance",
+      "scheduling": "JAX_DISPATCH; synchronize before witnessing",
+      "boundaries": "Raw numerical kernel, not a validated proposal interface"
+    },
+    "jax_backend:jitted_jax_audit": {
+      "transition": "TOLERANCE_DETERMINISTIC", "recursion": "NONE",
+      "replay": "JIT_FLOAT32_BACKEND_DEPENDENT", "persistence": "DEVICE_RESULT_AND_JAX_CACHE", "mutation": "JAX_INTERNAL_CACHE_ONLY",
+      "equality": "Same bounded kernel tolerance as jax_audit",
+      "failure": "Compilation/device errors propagate; nonfinite results remain invalid evidence",
+      "scheduling": "JAX_ASYNC_DISPATCH; block_until_ready before witness",
+      "boundaries": "JIT wrapper uses default risk threshold"
+    },
+    "receipts:canonical_json": {
+      "transition": "EXACT_DETERMINISTIC", "recursion": "STRUCTURAL_RECURSIVE",
+      "replay": "EXACT_SAME_JSON_VALUES", "persistence": "RETURNED_STRING_ONLY", "mutation": "NONE",
+      "equality": "UTF-8 sorted keys, compact separators, allow_nan=false; Python JSON representation, not RFC8785",
+      "failure": "Unsupported values, cycles or excessive nesting raise; no append",
+      "budgets": {"recursive_depth": "Python encoder recursion limit", "recursive_branching": "input containers", "wall_seconds": null, "memory_bytes": null, "cancellation": "process interruption; no partial receipt", "limit_status": "No independent time/memory quota"},
+      "boundaries": "Finite JSON tree only"
+    },
+    "receipts:ReceiptChain.append": {
+      "transition": "EXACT_DETERMINISTIC", "recursion": "NONE",
+      "replay": "EXACT_INPUT_AND_PREVIOUS_HEAD", "persistence": "IN_MEMORY_WITNESS_CHAIN", "mutation": "WITNESS_CHAIN_ONLY",
+      "equality": "SHA-256 of strict canonical_json unsigned envelope",
+      "failure": "Serialization fails before append; in-memory single-writer operation is not durable or crash-atomic native commit",
+      "boundaries": "Calls structural JSON serializer; no native write or I/O"
+    },
+    "receipts:ReceiptChain.verify": {
+      "transition": "EXACT_DETERMINISTIC", "recursion": "TEMPORAL_RECURRENT",
+      "replay": "EXACT_STORED_CHAIN", "persistence": "NONE", "mutation": "NONE",
+      "equality": "Previous digest recurrence from zero head; exact equality",
+      "failure": "Mismatch returns false; malformed values may raise; not signature or authority verification",
+      "budgets": {"recursive_depth": 0, "recursive_branching": 0, "steps": "stored receipt count", "wall_seconds": null, "memory_bytes": null, "cancellation": "no result on interruption", "limit_status": "Input-sized; no hard time/memory quota"},
+      "boundaries": "Witness history recurrence is not native learning"
+    },
+    "cli:main": {
+      "transition": "TOLERANCE_DETERMINISTIC", "recursion": "NONE",
+      "replay": "FIXED_SAMPLE_AND_DISCLOSED_ENVIRONMENT", "persistence": "STDOUT_ONLY", "mutation": "LOCAL_EPHEMERAL_WITNESS",
+      "equality": "Evaluation profile plus exact receipt serialization; environment metadata varies",
+      "failure": "Argument/runtime/I/O errors propagate; no external or native action",
+      "boundaries": "Local sample demonstration, not native execution"
+    },
+    "execution:describe_invocation": {
+      "transition": "ENVIRONMENT_COUPLED", "recursion": "NONE",
+      "replay": "RECONSTRUCTIVE_ENVIRONMENT_SNAPSHOT", "persistence": "RETURNED_METADATA_ONLY", "mutation": "NONE",
+      "equality": "Source digests exact; runtime/platform versions captured at observation",
+      "failure": "Unavailable package versions null; file-read failures propagate",
+      "boundaries": "Read-only runtime evidence; no proof a named backend executed"
+    }
+  }
+}

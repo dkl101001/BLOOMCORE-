@@ -1,0 +1,30 @@
+\section{The Rival Orchestration Kernel Protocol}
+
+The Rival Orchestration Kernel (ROK) defines a minimal execution-time protocol for enforcing adversarial review prior to action. Rather than attempting to improve reasoning quality within a single agent, ROK restructures the reasoning process by separating proposal, critique, and authorization into distinct roles with explicit interaction rules.
+
+\subsection{Roles and Responsibilities}
+ROK decomposes execution into four roles, each with a strictly limited scope.
+
+\textbf{Planner.} The Planner proposes a structured plan for a given task, including explicit steps, assumptions, constraints, and a revision identifier. The Planner has no authority to approve or execute its own output.
+
+\textbf{Critic.} The Critic evaluates the plan adversarially, identifying risks, objections, and missing constraints, and may issue a veto against execution. The Critic cannot modify the plan directly.
+
+\textbf{Decision Layer.} The Decision layer applies explicit policy gates and resolves whether execution is permitted, whether a veto halts execution, and whether an override is recorded.
+
+\textbf{Executor.} The Executor performs execution only if explicitly authorized. The open reference implementation produces an execution artifact without side effects.
+
+\subsection{Protocol Flow}
+A run proceeds through initialization (\texttt{kernel.start}), planning (\texttt{role.planner}), critique (\texttt{role.critic}), a bounded revise–recheck loop when vetoed (\texttt{kernel.revise}), a final decision (\texttt{kernel.decision}), optional execution (\texttt{role.executor}), and termination (\texttt{kernel.end}).
+
+\subsection{Veto and Override Semantics}
+Veto authority is first-class. A veto blocks execution unless explicitly overridden. Overrides are allowed but must be deliberate and visible; they are recorded explicitly in the decision trace.
+
+\subsection{Traceability}
+Every phase emits schema-versioned, append-only trace events in JSONL, enabling deterministic replay and post-hoc analysis.
+
+\subsection{Design Rationale}
+ROK treats organizational structure as a control surface. Effectiveness derives from independence, mandatory challenge, bounded escalation, and auditability—not from assuming the Critic is “smarter” than the Planner.
+
+\subsection{Summary}
+ROK defines a minimal, composable protocol for execution-time reliability through adversarial orchestration.
+

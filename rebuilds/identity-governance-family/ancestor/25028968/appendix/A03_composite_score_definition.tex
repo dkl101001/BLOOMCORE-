@@ -1,0 +1,10 @@
+\section{Composite Score Definition}
+\label{app:composite}
+
+Let $S=\{s_1,\dots,s_k\}$ be the set of applicable reasoning security sub-scores for a given run, where each $s_i\in[0,1]$. Let $w_i$ be the associated nonnegative weights, renormalized over applicable sub-scores so that $\sum_{i=1}^{k} w_i = 1$.
+
+The composite Reasoning Security Score (\RSS) is defined as the weighted geometric mean:
+\[
+\mathrm{RSS}=\prod_{i=1}^{k} s_i^{w_i}.
+\]
+Sub-scores that are inapplicable (e.g., attribution in single-agent settings) or unavailable due to instrumentation limits (e.g., counterfactual stability without replays) are excluded from $S$.

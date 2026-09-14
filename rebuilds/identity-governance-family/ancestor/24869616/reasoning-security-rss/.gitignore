@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env
+.venv
+dist/
+build/
+*.egg-info/
+.cache/
+.pytest_cache/
+report*.json
+sbom*.txt
+hashes*.txt

@@ -1,0 +1,17 @@
+\section{Composite Reasoning Security Score (RSS)}
+The metrics in Section~5 capture complementary aspects of reasoning security. To support compact reporting while preserving interpretability, we define \RSS\ as a composite diagnostic derived from normalized sub-scores.
+
+\subsection{Design Principles}
+\RSS\ is designed to be decomposable, to discourage single-dimension dominance, to remain architecture-neutral, and to be computable post hoc from Decision Records without modifying agent execution or benchmark protocols.
+
+\subsection{Sub-score Composition}
+\RSS\ is computed from normalized sub-scores corresponding to traceability, lineage integrity, adaptation visibility, attribution fidelity (when applicable), and counterfactual stability (when available). Each sub-score lies in $[0,1]$. Inapplicable sub-scores are excluded rather than treated as zero.
+
+\subsection{Aggregation Method}
+\RSS\ uses a weighted geometric mean to reduce compensability across dimensions. Weights are explicitly specified and renormalized over applicable sub-scores.
+
+\subsection{Interpretation and Reporting}
+\RSS\ should be interpreted as reasoning reconstructability rather than task success. \RSS\ should be reported alongside sub-scores, aggregation weights, and instrumentation descriptions.
+
+\subsection{Scope and Limitations}
+\RSS\ reflects observable decision structure and is bounded by instrumentation quality. Absolute values should be compared primarily within shared benchmark contexts or across longitudinal versions of the same system.

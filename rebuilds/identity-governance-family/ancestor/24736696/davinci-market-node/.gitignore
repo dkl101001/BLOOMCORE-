@@ -1,0 +1,16 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.venv/
+compendium_out/
+receipts.jsonl
+HASHES.sha256
+SBOM*.json
+*.sig
+*.pem
+*.key
+.DS_Store
+.vscode/
+.idea/

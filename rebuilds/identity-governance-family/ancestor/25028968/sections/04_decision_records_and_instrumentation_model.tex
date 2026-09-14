@@ -1,0 +1,23 @@
+\section{Decision Records and Instrumentation Model}
+Reasoning security requires access to structured information about an agent’s decisions, but it should not depend on internal model states, architecture-specific hooks, or intrusive instrumentation. To support post hoc analysis across heterogeneous agents and benchmarks, we introduce a minimal, architecture-agnostic abstraction called the \emph{Decision Record}. Decision Records provide a standardized way to represent observable decision structure while remaining compatible with existing logging and evaluation pipelines.
+
+\subsection{Design Goals}
+The instrumentation model underlying \RSS\ is guided by four design goals. First, it must be \emph{post hoc compatible}: decision records should be derivable from existing logs, traces, or artifacts without modifying training or inference. Second, it must be \emph{architecture-neutral}, supporting rule-based agents, learned policies, and language model--based planners alike. Third, it should be \emph{minimally sufficient}, requiring only the information necessary to assess reasoning security rather than comprehensive internal state. Finally, it must be \emph{composable}, allowing records to be linked across time, agents, and execution contexts.
+
+\subsection{Decision Record Abstraction}
+A Decision Record represents a single externally observable decision or action taken by an agent during execution. Each record is associated with a unique identifier and a discrete time index within an episode or execution trace. Crucially, Decision Records encode \emph{causal linkage} by explicitly referencing prior decisions upon which the current decision depends.
+
+At a minimum, each Decision Record includes: (i) a unique decision identifier, (ii) a temporal index, (iii) a representation of the executed action or outcome, and (iv) a list of parent decision identifiers indicating causal ancestry. These fields are sufficient to construct a directed acyclic graph over decisions, enabling reconstruction of decision lineage over time.
+
+Additional optional fields support richer analysis when available. These include identifiers for the agent responsible for the decision, selector or policy identifiers, named causal factors associated with the decision, and structured annotations describing adaptation events. Causal factors may be represented as names or hashed references rather than raw internal values, preserving generality.
+
+\subsection{Episodes, Replays, and Perturbations}
+Decision Records are grouped into \emph{episodes}, which correspond to a single execution of an agent within a task environment. Episodes may optionally be associated with a replay group identifier, allowing multiple executions under identical or controlled conditions to be analyzed jointly. Replay groups enable the measurement of counterfactual stability by comparing decision structure across repeated runs or under controlled perturbations.
+
+Perturbations may be recorded via lightweight tags attached to Decision Records or episodes. \RSS\ does not require perturbations to be present, but when they are available, they support additional analysis of reasoning robustness and stability.
+
+\subsection{Single-Agent and Multi-Agent Instrumentation}
+In multi-agent systems, Decision Records may originate from multiple agents operating concurrently or asynchronously. Agent identifiers are used to attribute decisions, and parent links may cross agent boundaries to represent inter-agent influence or coordination. The instrumentation model does not assume explicit communication protocols or centralized coordination; it relies on observable artifacts to establish causal linkage where possible.
+
+\subsection{Post Hoc Reconstruction and Compatibility}
+Decision Records may be emitted directly by an agent during execution, reconstructed from logs and traces after the fact, or synthesized from task-specific artifacts such as code diffs or test results. This flexibility enables \RSS\ to be applied retroactively to existing benchmarks and agents, including those not originally designed with reasoning security in mind.

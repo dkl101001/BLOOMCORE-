@@ -1,0 +1,10 @@
+\section{Methods Appendix: Computing RSS in Practice}
+\label{app:methods}
+
+This appendix provides practical guidance for computing \RSS\ from benchmark artifacts. \RSS\ is computed \emph{post hoc} from Decision Records derived from logs, traces, or task artifacts. The procedure is benchmark-agnostic: (i) construct Decision Records, (ii) validate causal linkage and ordering, (iii) compute normalized sub-scores, and (iv) aggregate with a weighted geometric mean over applicable dimensions.
+
+\subsection{Decision Record Construction}
+A Decision Record represents a single externally observable decision and includes: a unique decision identifier, a step index, an executed action or outcome, and zero or more parent decision identifiers (causal ancestry). Optional fields include an agent identifier (multi-agent), selector/policy identifier, named causal factors, a replay group identifier, and structured adaptation annotations.
+
+\subsection{Validation and Preprocessing}
+Before scoring, records are validated for: unique decision identifiers, required field presence, existence of referenced parents, and consistent replay/agent identifiers. If multiple episodes are provided, metrics are computed per episode and then aggregated by simple averaging unless otherwise specified.

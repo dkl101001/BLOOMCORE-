@@ -1,0 +1,27 @@
+\section{Reference Implementation (Pseudocode)}
+\label{app:pseudocode}
+
+\begin{verbatim}
+Inputs:
+  - Episodes, each containing DecisionRecords
+  - Optional replay_group_id (for replays/perturbations)
+  - Optional agent_id (for multi-agent)
+  - RSSConfig (weights, clipping, normalization parameters)
+
+For each episode:
+  1) Validate schema + parent references
+  2) Build decision graph G from parent_ids
+  3) Compute base metrics:
+       - Traceability: coverage, connectivity, bounded depth stats
+       - Lineage integrity: continuity, break frequency, stability over time
+       - Adaptation visibility: explicit events, selector changes, drift signals
+       - (Multi-agent) attribution fidelity: identifiability, consistency, completeness
+  4) Normalize base metrics -> sub-scores in [0,1]
+
+If replay groups exist:
+  5) Compute counterfactual stability by comparing decision graphs across runs
+  6) Normalize stability metrics -> stability sub-score
+
+7) Aggregate applicable sub-scores with weighted geometric mean -> RSS
+8) Output: per-episode subscores, RSS, weights used, instrumentation metadata
+\end{verbatim}

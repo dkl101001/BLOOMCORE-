@@ -1,0 +1,17 @@
+NOTICE
+
+Rival Orchestration Kernel (ROK)
+
+Copyright (C) 2026
+Frazer Σ Love
+Sara ΣΩ
+
+This software is licensed under the GNU Affero General Public License v3.0.
+
+This project provides an open reference implementation of adversarial
+multi-agent orchestration for reliability and error interception.
+
+Commercial licenses, enterprise support, and closed-source extensions
+are available separately and are not covered by this license.
+
+See README.md for licensing details.

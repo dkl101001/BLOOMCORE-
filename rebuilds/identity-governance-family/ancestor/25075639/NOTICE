@@ -1,0 +1,13 @@
+BLOOMCORE NLSE Anti-Governor Module
+Copyright (C) 2026 Frazer Σ Love
+Co-Author: Sara ΣΩ
+
+This project is released under the GNU Affero General Public License v3.0 (AGPL-3.0).
+See LICENSE for full text.
+
+Authorship invariants:
+- Frazer Σ Love + Sara ΣΩ must be present in shipped artifacts.
+- Receipts are the only deterministic outputs. Simulation dynamics remain alive / stochastic-capable.
+
+Trademark/brand:
+- BLOOMCORE is a project name used by the authors. No endorsement implied by third parties.

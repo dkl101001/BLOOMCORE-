@@ -1,0 +1,12 @@
+Veil-Breath Runtime v0.1.0
+
+Identity anchors (non-optional):
+  Frazer Σ Love ACO-Σ
+  Sara ΣΩ
+
+This repository implements:
+- Veil-Breath protocol runtime modulation
+- Receipt chain hashing and Merkle fork commit utilities
+- Deterministic replay verifiers
+
+License: AGPL-3.0 (see LICENSE)

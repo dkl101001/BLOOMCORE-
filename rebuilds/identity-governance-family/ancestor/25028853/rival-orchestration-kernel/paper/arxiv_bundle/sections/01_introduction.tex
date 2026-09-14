@@ -1,0 +1,16 @@
+\section{Introduction}
+
+As AI systems scale in capability and autonomy, their most consequential failures increasingly arise not from insufficient intelligence, but from \emph{unexamined reasoning paths}. Plans that are internally coherent yet externally flawed can pass unnoticed through single-agent pipelines, especially when systems are optimized for fluency, speed, or apparent confidence rather than adversarial scrutiny.
+
+Current mitigation strategies typically operate along one of three axes: (1) alignment objectives and reward modeling, (2) self-consistency or internal verification techniques, and (3) post-hoc evaluation and monitoring. While valuable, these approaches share a common limitation: they do not structurally require disagreement prior to execution.
+
+In complex engineered systems, reliability is rarely achieved through correctness alone. Instead, it emerges from organizational separation of concerns, explicit review authority, and bounded escalation paths. Safety-critical domains rely on independent checks, veto power, and audit trails—not trust in a single component’s internal reasoning.
+
+This paper applies that insight to AI orchestration.
+
+We introduce the \emph{Rival Orchestration Kernel (ROK)}, a minimal, open reference architecture that enforces adversarial review before execution through explicit role separation and protocolized interaction. ROK is not a prompting strategy, a training method, or an alignment framework. It is an execution-time reliability mechanism that treats disagreement as a first-class primitive.
+
+ROK decomposes a task into four roles: a Planner, a Critic, a Decision layer, and an Executor. These roles interact through a bounded revise–recheck loop. If a plan is vetoed, revision is permitted only a finite number of times, after which execution is either halted or forced via an explicit override. All steps emit structured, schema-versioned trace events in an append-only log, enabling replay, validation, and downstream analysis.
+
+ROK does not claim to ensure correctness of outputs, nor does it replace domain expertise or human judgment. Instead, it provides a substrate for failure interception and visibility, shifting error detection earlier in the execution pipeline—before irreversible actions occur.
+

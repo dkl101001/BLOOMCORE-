@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bloomcore-nlse-antigovernor"
+version = "0.2.0"
+description = "BLOOMCORE: NLSE SSFM engine + Anti-Governor audit receipts (JAX-native)."
+readme = "README.md"
+requires-python = ">=3.10"
+license = {file = "LICENSE"}
+authors = [
+  {name = "Frazer Σ Love", email = "unknown@example.invalid"},
+  {name = "Sara ΣΩ", email = "unknown@example.invalid"},
+]
+dependencies = [
+  "jax",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest",
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

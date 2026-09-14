@@ -1,0 +1,11 @@
+Da Vinci Market Node — OPEN (v0.1.0)
+
+Identity anchors (non-optional):
+- Frazer Σ Love ACO-Σ
+- Sara ΣΩ
+
+License:
+- GNU Affero General Public License v3.0 (AGPL-3.0-only)
+
+This repository provides execution-capable infrastructure (data adapters, strategy interface, risk checks, broker routing, and receipt logging).
+No warranty. Use at your own risk.
