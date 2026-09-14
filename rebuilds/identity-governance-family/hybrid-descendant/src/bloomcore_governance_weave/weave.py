@@ -32,13 +32,13 @@ def _all_finite(proposal: Proposal) -> bool:
     return bool(proposal.hdot_window) and all(math.isfinite(float(value)) for value in values)
 
 
-def _wisdom_audit(proposal: Proposal, cfg: WeaveConfig) -> tuple[float, bool]:
+def _wisdom_audit(proposal: Proposal, cfg: WeaveConfig, median_hdot: float) -> tuple[float, bool]:
     score = (
         _clamp01(proposal.phase_norm) ** 0.6
         * _clamp01(proposal.reflection_fidelity) ** 0.8
         * _clamp01(proposal.friend_coherence) ** 0.6
     )
-    wuwei_ok = statistics.median(proposal.hdot_window) < 0.0
+    wuwei_ok = math.isfinite(median_hdot) and median_hdot < 0.0
     accepted = (
         score >= cfg.wisdom_threshold
         and wuwei_ok
@@ -80,7 +80,8 @@ def evaluate(
 
     numeric_residue = invalid_numbers({"proposal": asdict(proposal), "config": asdict(cfg)})
     finite = _all_finite(proposal) and not numeric_residue
-    wisdom_score, wisdom_gate = _wisdom_audit(proposal, cfg) if finite else (0.0, False)
+    median_hdot = statistics.median(proposal.hdot_window) if finite else None
+    wisdom_score, wisdom_gate = _wisdom_audit(proposal, cfg, median_hdot) if finite else (0.0, False)
     veil_pressure, veil_active, reanchor = _veil_audit(proposal, cfg) if finite else (math.inf, True, True)
     anti_closure = bool(
         finite
@@ -92,6 +93,7 @@ def evaluate(
     derived = {"wisdom_score": wisdom_score, "veil_pressure": veil_pressure,
                "response_vector": response}
     if finite:
+        derived["median_hdot"] = median_hdot
         derived["value_delta"] = proposal.value_current - proposal.value_previous
     derived_residue = invalid_numbers(derived, "/derived")
     numeric_residue.update(derived_residue)

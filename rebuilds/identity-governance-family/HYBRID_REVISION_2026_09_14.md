@@ -2,6 +2,23 @@
 
 # Hybrid reference revision — 2026-09-14
 
+## Merge-review follow-up: median overflow
+
+Review of `e562d5d418e50ae383394d2ec8fafaa772fd4280` found that the median of finite `(-1e308, -1e308)` became negative infinity without entering the derived-value validity check. The audit admitted the simulation with empty residue. The current correction calculates that intermediate once, checks finiteness before the wisdom comparison, and includes it in the numeric-residue check. Positive and negative median overflow are now suppressed and witnessed; a large finite nonoverflowing median remains valid.
+
+Fresh rerun after correction: **32 passed, 1 JAX skip on Windows; 34 passed on WSL JAX/JAXlib 0.9.2**. GPU probe completed on `cuda:0` with finite output; the previously disclosed driver-version warning remains. These suites include custody and selected historical bridge checks. Both overflow signs are covered in strict-JSON round-trip tests and explicit gate/residue tests, plus a nonoverflow control.
+
+Isolated sdist/wheel rebuild and a fresh installed-wheel negative-median regression passed. New artifacts are retained separately in `outputs/hybrid-median-fix-artifacts/`; initial draft artifacts and the evidence below are preserved. Version 0.2.0 remains an unpublished draft version, distinguished here by exact hashes:
+
+| Corrected artifact | SHA-256 |
+|---|---|
+| `bloomcore_governance_weave-0.2.0-py3-none-any.whl` | `d3a9abd9e70052af9d359a266b4cbe71773282fb662c3b41addfd1d9c55f755a` |
+| `bloomcore_governance_weave-0.2.0.tar.gz` | `f41b0ed47166afff0c13bdb5af83a1fd3ea0e6e6a64c9e6ffc5ecb972b3533d4` |
+
+This addresses the reproduced median-overflow finding; it is not an exhaustive numerical-validity proof or merge authorization. No native scope, source binding, historical ancestor, or licensing change is made.
+
+## Initial revision record (before median correction)
+
 Current local revision: `hybrid-descendant/`, distribution version 0.2.0. Parent: commit `82939aab7ed3141cbe68f56c6d689515fc07dfea`, `phase38-descendant/` version 0.1.0. No parent source, historical archive, extracted ancestor, license, or August review/evidence file was rewritten. A navigation paragraph was added to the family README. Nothing was pushed or merged by this revision.
 
 ## Selected source and bounded coverage

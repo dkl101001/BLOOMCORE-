@@ -16,6 +16,8 @@ from bloomcore_governance_weave.weave import evaluate
     {'hdot_window': ()}, {'risk': math.nan}, {'coherence': math.inf},
     {'compassion': -math.inf}, {'rgb_drift': (1e308, 1e308, 1e308)},
     {'value_previous': -1e308, 'value_current': 1e308},
+    {'hdot_window': (-1e308, -1e308)},
+    {'hdot_window': (1e308, 1e308)},
 ])
 def test_invalid_and_overflow_receipts_remain_strict_json(changes):
     proposal = replace(sample_proposal(), **changes)
@@ -38,6 +40,26 @@ def test_input_classification_survives_null_projection():
     result = evaluate(replace(sample_proposal(), risk=math.nan), receipts=chain)
     assert result.numeric_residue['/proposal/risk'] == 'NaN'
     assert chain.receipts[0]['payload']['input_projection']['proposal']['risk'] is None
+
+
+@pytest.mark.parametrize('value, classification', [(-1e308, '-Infinity'), (1e308, '+Infinity')])
+def test_median_overflow_is_witnessed_before_gate(value, classification):
+    chain = ReceiptChain()
+    result = evaluate(replace(sample_proposal(), hdot_window=(value, value)), receipts=chain)
+    assert result.status == 'SUPPRESS_EXPRESSION'
+    assert not result.wisdom_gate
+    assert result.numeric_residue['/derived/median_hdot'] == classification
+    assert 'AUDIT.NONFINITE_DERIVED_VALUE' in result.reason_codes
+    assert chain.receipts[0]['payload']['numeric_residue']['/derived/median_hdot'] == classification
+    assert chain.receipts[0]['payload']['input_projection']['proposal']['hdot_window'] == [value, value]
+    assert chain.verify()
+
+
+def test_large_finite_median_without_overflow_remains_valid():
+    result = evaluate(replace(sample_proposal(), hdot_window=(-1e307, -1e307)))
+    assert result.status == 'ADMIT_EXPRESSION'
+    assert result.wisdom_gate
+    assert result.numeric_residue == {}
 
 
 def test_invalid_configuration_is_not_clearance():
