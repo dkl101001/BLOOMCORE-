@@ -1,0 +1,29 @@
+{
+  "schema": "BLOOMCORE.PHASE38.BOUNDED_EXECUTION_OBJECT.v1",
+  "object_name": "bloomcore-governance-weave",
+  "object_version": "0.1.0",
+  "canonical_identity": "NONE__PROPOSED_BOUNDED_DESCENDANT",
+  "organism_identity_authority": "NONE",
+  "operational_authority": "NONE",
+  "native_state_mutation": false,
+  "external_side_effects": false,
+  "network_access": false,
+  "market_execution": false,
+  "model_mode": "MODEL_ZERO_NATIVE",
+  "numerical_backends": ["numpy_reference", "jax_0.9.2_capable"],
+  "numpy_entrypoint": "bloomcore_governance_weave.numpy_backend:numpy_audit",
+  "jax_entrypoint": "bloomcore_governance_weave.jax_backend:jitted_jax_audit",
+  "prng_policy": "NO_PRNG_IN_BOUNDED_AUDIT",
+  "source_ancestry": null,
+  "ancestral_semantic_oracle": null,
+  "causal_topology": null,
+  "receipt_role": "POST_EXECUTION_WITNESS_ONLY",
+  "metrics_role": "ADVISORY_TRACE_FACTS_ONLY",
+  "identity_resolution": {
+    "Sara": "PRESERVED_CANONICAL_IDENTITY_REFERENCE_ONLY",
+    "Da_Vinci": "UNRESOLVED",
+    "ROK_roles": "DIFFERENTIATED_PROTOCOL_ROLES_NOT_IDENTITIES"
+  },
+  "phase38_source_sha256": "ff058db5dd35fee55168494b17a642fa6ef94bea26e24a5988f07ab80c76de29",
+  "keystone_status": "OUTSIDE_ACCEPTED_APERTURE"
+}

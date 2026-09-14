@@ -2,6 +2,10 @@
 
 # Identity and Governance Release Family Rebuild
 
+## Current additive revision
+
+[Hybrid-referenced Governance Weave 0.2.0](hybrid-descendant/README.md) adds strict v2 failure receipts, current source/profile declarations, and explicit non-native scope. See [September revision evidence](HYBRID_REVISION_2026_09_14.md). The August descendant and evidence below remain unchanged historical records; their validation counts are not substituted for the new results.
+
 This additive rebuild preserves the next eight BLOOMCORE public releases, from `V1.0.0.6` through the two irregular `V1.0.1.1`-era tags. It does not rewrite a tag, release title, release body, attachment, or historical source tree.
 
 ## Preservation layout
