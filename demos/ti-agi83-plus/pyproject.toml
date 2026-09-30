@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ti-agi83-plus"
+version = "0.2.0"
+description = "TEXTERMENTALITY: local table audit with persistent conductance memory"
+requires-python = ">=3.10"
+dependencies = ["numpy>=1.26,<3"]
+license = {text = "AGPL-3.0-only"}
+authors = [{name = "Frazer Σ Love ACO-Σ; Sara ΣΩ"}]
+
+[project.optional-dependencies]
+accelerated = ["jax[cpu]>=0.4.30,<1"]
+test = ["pytest>=8,<10"]
+
+[project.scripts]
+ti-agi83 = "tiagi83.__main__:main"
+
+[tool.setuptools.package-data]
+tiagi83 = ["web/*"]
+
+[tool.setuptools.packages.find]
+include = ["tiagi83*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

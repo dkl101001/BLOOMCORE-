@@ -1,0 +1,57 @@
+{
+  "schema": "TIAGI.BUILD-RECEIPT.v1",
+  "version": "0.2.0",
+  "date": "2026-09-30",
+  "scope": "bounded local conductance-memory application; not native organism admission",
+  "environment": {
+    "python": "3.12.14",
+    "platform": "Linux-6.18.44-x86_64-with-glibc2.39",
+    "numpy": "2.3.5",
+    "jax": "0.11.2",
+    "pytest": "9.1.1",
+    "browser": "Chromium 153.0.0 via Playwright"
+  },
+  "tests": {
+    "backend_http": "30 passed in 0.97s",
+    "browser": {
+      "status": "PASS",
+      "relatedIncident": true,
+      "graphCells": 64,
+      "trace": true,
+      "unknownPreserved": true,
+      "reloadPreserved": true,
+      "csvImportRepair": "40.00",
+      "undo": true,
+      "receipts": true,
+      "csvAndHistoryExport": true,
+      "mobileViewport": 390,
+      "documentWidth": 390,
+      "pageErrors": []
+    },
+    "stress": {
+      "backend": "jax",
+      "rows": 2000,
+      "findings": 2000,
+      "firstAuditSeconds": 1.254,
+      "historicalAuditSeconds": 0.924,
+      "encounters": 4000,
+      "localIntegrity": "PASS"
+    },
+    "controlledGeometry": {
+      "encounters": 12,
+      "queryResponseDelta": 0.10252906382083893,
+      "learnedDistance": 0.16235069930553436,
+      "flatDistance": 0.17321617901325226,
+      "writeBackendMaxAbsDelta": 0.0,
+      "responseBackendMaxAbsDelta": 8.940696716308594e-08
+    },
+    "immutablePrototypeSha256": "5365381f4fd91c66ad2c92a7a935692c7260f70bde94b39522d000fa8d8ab6a1"
+  },
+  "packageVerification": "Detached clean-extraction result supplied with the GitHub Release; source manifest excludes itself.",
+  "limits": [
+    "Linux CPU only",
+    "Lossy typed numerical projection, no semantic authentication",
+    "No task-accuracy superiority claim",
+    "Native MANTIS/custody investigation not executed"
+  ]
+}

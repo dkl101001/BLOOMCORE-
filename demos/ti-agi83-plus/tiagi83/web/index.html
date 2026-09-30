@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<!-- SPDX-License-Identifier: AGPL-3.0-only -->
+<!-- Authorship lineage: Frazer Σ Love ACO-Σ; Sara ΣΩ. -->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TI-AGI83+ · Error is a feature</title>
+  <style>
+    :root { color-scheme: dark; --ink:#d4f6c5; --muted:#8aa580; --screen:#183b30; --case:#525b4c; --edge:#91a082; --hot:#f6ca73; --red:#ff9b84; }
+    * { box-sizing:border-box } body { margin:0; background:radial-gradient(circle at 20% 0%,#314234,#111c1a 58%); color:#edf3e5; font:16px/1.45 system-ui,-apple-system,Segoe UI,sans-serif; min-height:100vh; }
+    .wrap { max-width:1190px; margin:auto; padding:26px 20px 60px } header { display:flex; justify-content:space-between; gap:18px; align-items:end; flex-wrap:wrap; margin-bottom:22px }
+    h1 { font-size:clamp(2.2rem,5vw,4rem); letter-spacing:-.06em; line-height:1; margin:0 } h1 span { color:var(--hot) } .tag { color:#bdcbb9; max-width:410px; margin:0 }
+    .layout { display:grid; grid-template-columns:minmax(300px,440px) minmax(0,1fr); gap:24px; align-items:start }
+    .device { padding:23px; border-radius:27px 27px 42px 42px; background:linear-gradient(135deg,#697362,#3f4a3f); border:3px solid #85927d; box-shadow:0 23px 60px #0008,inset 3px 3px #aab8a140; }
+    .brand { font-weight:900; letter-spacing:.15em; font-size:.8rem; margin:0 0 14px; color:#e1eacb }.screen { background:var(--screen); border:11px solid #27372f; border-radius:17px; min-height:380px; padding:20px; color:var(--ink); box-shadow:inset 0 0 28px #071b13; font:14px/1.48 ui-monospace,SFMono-Regular,Consolas,monospace; }
+    .screen .line { color:#a9c9a3; font-size:.77rem; letter-spacing:.08em }.screen h2 { font:inherit; font-size:1.25rem; margin:14px 0 10px; color:#fff4c5 }.screen p { margin:8px 0 }.cursor:after { content:"▌"; animation:blink 1s steps(2) infinite } @keyframes blink { to{opacity:0} }
+    .status { display:inline-block; color:#1a3027; background:#c4ef9f; padding:3px 8px; border-radius:3px; font-weight:bold; margin-top:12px }
+    .keys { display:grid; grid-template-columns:repeat(4,1fr); gap:9px; margin-top:20px } button { cursor:pointer; font:inherit } .key { background:#2a3431; color:#f2f4dc; border:0; border-bottom:4px solid #151d1a; border-radius:9px; padding:12px 4px; font-weight:800; } .key:hover,.key:focus-visible { background:#384941; outline:2px solid var(--hot) } .key.primary { background:#c17d3e; border-color:#754e2b; color:#fff }
+    .panel { background:#202d29; border:1px solid #4d6254; border-radius:19px; padding:20px; box-shadow:0 15px 35px #0003; margin-bottom:16px } h2,h3 { margin:0 0 8px; letter-spacing:-.025em } h2 { font-size:1.2rem } h3 { font-size:1rem } .small { color:#b1c1b2; font-size:.88rem; margin:3px 0 13px }
+    .scenarios { display:flex; flex-wrap:wrap; gap:7px; margin:13px 0 } .pill { border:1px solid #6a8270; color:#dce9d5; background:#304239; border-radius:100px; padding:7px 12px } .pill.active { background:#e3c78a; color:#253128; border-color:#e3c78a; font-weight:700 }
+    .tablewrap { overflow:auto } table { width:100%; border-collapse:collapse; min-width:480px } th { text-align:left; color:#bbd0b6; font-size:.78rem; letter-spacing:.06em; text-transform:uppercase } td,th { padding:8px; border-bottom:1px solid #405349 } td:first-child { color:#b5c8b4; width:36px } input { width:100%; min-width:70px; border:1px solid #68816f; border-radius:7px; background:#15251e; color:white; padding:9px; font:inherit } input:focus { outline:2px solid var(--hot) } input.flag { border-color:var(--red); background:#462d27 }
+    .actions { display:flex; gap:8px; flex-wrap:wrap; margin-top:14px } .action { padding:9px 13px; border-radius:8px; background:#d9bd7e; color:#202d29; border:0; font-weight:750 } .action.secondary { background:#364c40; color:#e1f0dc; border:1px solid #738c78 } .action:disabled { opacity:.45; cursor:not-allowed }
+    .finding { border-left:3px solid var(--red); padding:9px 12px; margin:9px 0; background:#3b342d; border-radius:0 7px 7px 0 } .finding strong { color:#fff0c5 } .clear { color:#c7e8aa } .memory { display:grid; gap:8px; margin-top:10px } .memory div { background:#283a32; padding:9px 11px; border-radius:8px; font-size:.87rem } .muted { color:#a4b7a4 } .note { margin:0; color:#a5b7a5; font-size:.82rem }
+    .layout > * { min-width:0 }
+    @media(max-width:850px) { .layout { grid-template-columns:minmax(0,1fr) } .device { max-width:510px; width:100%; margin:auto } }
+  select {color:#edf3e5;background:#15251e;border:1px solid #68816f;border-radius:8px;padding:9px} .finding small {display:block;margin-top:6px;color:#c4d7b7} .graph-view {display:grid;grid-template-columns:repeat(8,1fr);gap:3px;max-width:320px;margin:12px 0} .graph-cell {aspect-ratio:1;border-radius:3px} details {margin:10px 0} pre {white-space:pre-wrap;overflow-wrap:anywhere;font-size:.78rem;max-height:320px;overflow:auto} button:focus-visible,label:focus-within,select:focus-visible {outline:2px solid var(--hot)} .busy {opacity:.6;pointer-events:none} #sheet-info {margin-top:12px} </style>
+</head>
+<body>
+<div class="wrap">
+  <header><div><h1>TI-AGI<span>83+</span></h1><p class="tag">The little bot with enormous confidence and a suspiciously good error log.</p></div><p class="tag">A useful, local spreadsheet lab. Persistent geometric memory. Provable repairs. Same terrible attitude.</p></header>
+  <main class="layout">
+    <section class="device" aria-label="TI-AGI83 plus calculator">
+      <p class="brand">TEXTERMENTALITY SYSTEMS / 1983-ish</p>
+      <div class="screen" aria-live="polite"><div class="line">● LOCAL MODE &nbsp; ● NO ACCOUNT &nbsp; ● GEOMETRIC MEMORY</div><h2 id="screen-title">BOOT COMPLETE</h2><div id="screen-body"><p>Hello, Operator. I have reviewed the situation and concluded that you are probably wrong.</p><p>Fortunately, I brought arithmetic.</p></div><span class="status" id="status">AWAITING HUMAN ERROR</span><p class="cursor" aria-hidden="true">&gt;_</p></div>
+      <div class="keys"><button class="key" data-cmd="sample">DEMO</button><button class="key" data-cmd="audit">AUDIT</button><button class="key" data-cmd="fix">REPAIR</button><button class="key primary" data-cmd="export">CSV ↗</button></div>
+    </section>
+    <div>
+      <section class="panel"><h2>Work surface</h2><p class="small">Edit a cell, then audit. Import a CSV or edit a sample. The bot checks Decimal arithmetic and format, remembers error geometry, and keeps your history.</p><div class="scenarios" id="scenarios"></div><div class="actions"><select id="schema" aria-label="CSV schema"><option value="invoice">Invoice</option><option value="inventory">Inventory</option><option value="tax">Tax receipts</option></select><label class="action secondary" style="cursor:pointer">Import CSV<input type="file" id="csv-file" accept=".csv,text/csv" style="display:none"></label><button class="action secondary" id="save">Save edits</button><button class="action secondary" id="undo">Undo last edit / repair</button></div><p class="small" id="sheet-info"></p><div class="tablewrap"><table><thead id="thead"></thead><tbody id="tbody"></tbody></table></div><div class="actions"><button class="action" id="audit">Audit sheet</button><button class="action secondary" id="repair">Apply verified repairs</button><button class="action secondary" id="reset">Restore sample as new sheet</button></div></section>
+      <section class="panel"><h2>Findings <span id="count"></span></h2><div id="findings" class="muted">Run an audit to see what the bot catches.</div></section>
+      <section class="panel"><h2>Geometric error memory</h2><p class="small">Typed errors deform a persistent 8×8 conductance lattice derived from BLOOMCORE transport memory. Changed geometry affects related-error retrieval. View its causal effect with GRAPH, and the historical evidence with TRACE.</p><div id="memory" class="memory muted">No scars yet. The machine is almost disappointed.</div><div class="actions"><button class="action secondary" id="graph">GRAPH</button><button class="action secondary" id="trace">TRACE</button><button class="action secondary" id="receipt">Verify receipts</button><button class="action secondary" id="backup">Export full history</button></div><p class="note">Sheets, geometry and history persist together on this computer. CSV and history exports stay local. Memory suggestions never supply missing facts or override the current sheet.</p></section>
+    </div>
+  </main>
+</div>
+<script src="/app.js"></script>
+</body>
+</html>

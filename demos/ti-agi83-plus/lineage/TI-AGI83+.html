@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TI-AGI83+ · Error is a feature</title>
+  <style>
+    :root { color-scheme: dark; --ink:#d4f6c5; --muted:#8aa580; --screen:#183b30; --case:#525b4c; --edge:#91a082; --hot:#f6ca73; --red:#ff9b84; }
+    * { box-sizing:border-box } body { margin:0; background:radial-gradient(circle at 20% 0%,#314234,#111c1a 58%); color:#edf3e5; font:16px/1.45 system-ui,-apple-system,Segoe UI,sans-serif; min-height:100vh; }
+    .wrap { max-width:1190px; margin:auto; padding:26px 20px 60px } header { display:flex; justify-content:space-between; gap:18px; align-items:end; flex-wrap:wrap; margin-bottom:22px }
+    h1 { font-size:clamp(2.2rem,5vw,4rem); letter-spacing:-.06em; line-height:1; margin:0 } h1 span { color:var(--hot) } .tag { color:#bdcbb9; max-width:410px; margin:0 }
+    .layout { display:grid; grid-template-columns:minmax(300px,440px) minmax(0,1fr); gap:24px; align-items:start }
+    .device { padding:23px; border-radius:27px 27px 42px 42px; background:linear-gradient(135deg,#697362,#3f4a3f); border:3px solid #85927d; box-shadow:0 23px 60px #0008,inset 3px 3px #aab8a140; }
+    .brand { font-weight:900; letter-spacing:.15em; font-size:.8rem; margin:0 0 14px; color:#e1eacb }.screen { background:var(--screen); border:11px solid #27372f; border-radius:17px; min-height:380px; padding:20px; color:var(--ink); box-shadow:inset 0 0 28px #071b13; font:14px/1.48 ui-monospace,SFMono-Regular,Consolas,monospace; }
+    .screen .line { color:#a9c9a3; font-size:.77rem; letter-spacing:.08em }.screen h2 { font:inherit; font-size:1.25rem; margin:14px 0 10px; color:#fff4c5 }.screen p { margin:8px 0 }.cursor:after { content:"▌"; animation:blink 1s steps(2) infinite } @keyframes blink { to{opacity:0} }
+    .status { display:inline-block; color:#1a3027; background:#c4ef9f; padding:3px 8px; border-radius:3px; font-weight:bold; margin-top:12px }
+    .keys { display:grid; grid-template-columns:repeat(4,1fr); gap:9px; margin-top:20px } button { cursor:pointer; font:inherit } .key { background:#2a3431; color:#f2f4dc; border:0; border-bottom:4px solid #151d1a; border-radius:9px; padding:12px 4px; font-weight:800; } .key:hover,.key:focus-visible { background:#384941; outline:2px solid var(--hot) } .key.primary { background:#c17d3e; border-color:#754e2b; color:#fff }
+    .panel { background:#202d29; border:1px solid #4d6254; border-radius:19px; padding:20px; box-shadow:0 15px 35px #0003; margin-bottom:16px } h2,h3 { margin:0 0 8px; letter-spacing:-.025em } h2 { font-size:1.2rem } h3 { font-size:1rem } .small { color:#b1c1b2; font-size:.88rem; margin:3px 0 13px }
+    .scenarios { display:flex; flex-wrap:wrap; gap:7px; margin:13px 0 } .pill { border:1px solid #6a8270; color:#dce9d5; background:#304239; border-radius:100px; padding:7px 12px } .pill.active { background:#e3c78a; color:#253128; border-color:#e3c78a; font-weight:700 }
+    .tablewrap { overflow:auto } table { width:100%; border-collapse:collapse; min-width:480px } th { text-align:left; color:#bbd0b6; font-size:.78rem; letter-spacing:.06em; text-transform:uppercase } td,th { padding:8px; border-bottom:1px solid #405349 } td:first-child { color:#b5c8b4; width:36px } input { width:100%; min-width:70px; border:1px solid #68816f; border-radius:7px; background:#15251e; color:white; padding:9px; font:inherit } input:focus { outline:2px solid var(--hot) } input.flag { border-color:var(--red); background:#462d27 }
+    .actions { display:flex; gap:8px; flex-wrap:wrap; margin-top:14px } .action { padding:9px 13px; border-radius:8px; background:#d9bd7e; color:#202d29; border:0; font-weight:750 } .action.secondary { background:#364c40; color:#e1f0dc; border:1px solid #738c78 } .action:disabled { opacity:.45; cursor:not-allowed }
+    .finding { border-left:3px solid var(--red); padding:9px 12px; margin:9px 0; background:#3b342d; border-radius:0 7px 7px 0 } .finding strong { color:#fff0c5 } .clear { color:#c7e8aa } .memory { display:grid; gap:8px; margin-top:10px } .memory div { background:#283a32; padding:9px 11px; border-radius:8px; font-size:.87rem } .muted { color:#a4b7a4 } .note { margin:0; color:#a5b7a5; font-size:.82rem }
+    @media(max-width:850px) { .layout { grid-template-columns:1fr } .device { max-width:510px; width:100%; margin:auto } }
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <header><div><h1>TI-AGI<span>83+</span></h1><p class="tag">The little bot with enormous confidence and a suspiciously good error log.</p></div><p class="tag">A playful, local spreadsheet lab. Give it bad numbers. Watch it complain. Then make it do the work.</p></header>
+  <main class="layout">
+    <section class="device" aria-label="TI-AGI83 plus calculator">
+      <p class="brand">TEXTERMENTALITY SYSTEMS / 1983-ish</p>
+      <div class="screen" aria-live="polite"><div class="line">● LOCAL MODE &nbsp; ● NO ACCOUNT &nbsp; ● NO UPLOAD</div><h2 id="screen-title">BOOT COMPLETE</h2><div id="screen-body"><p>Hello, Operator. I have reviewed the situation and concluded that you are probably wrong.</p><p>Fortunately, I brought arithmetic.</p></div><span class="status" id="status">AWAITING HUMAN ERROR</span><p class="cursor" aria-hidden="true">&gt;_</p></div>
+      <div class="keys"><button class="key" data-cmd="sample">DEMO</button><button class="key" data-cmd="audit">AUDIT</button><button class="key" data-cmd="fix">REPAIR</button><button class="key primary" data-cmd="export">CSV ↗</button></div>
+    </section>
+    <div>
+      <section class="panel"><h2>Work surface</h2><p class="small">Edit a cell, then audit. Each scenario has a known expected result; the bot checks arithmetic and format without guessing unknown facts.</p><div class="scenarios" id="scenarios"></div><div class="tablewrap"><table><thead id="thead"></thead><tbody id="tbody"></tbody></table></div><div class="actions"><button class="action" id="audit">Audit sheet</button><button class="action secondary" id="repair">Apply verified repairs</button><button class="action secondary" id="reset">Reset sample</button></div></section>
+      <section class="panel"><h2>Findings <span id="count"></span></h2><div id="findings" class="muted">Run an audit to see what the bot catches.</div></section>
+      <section class="panel"><h2>Geometric error memory</h2><p class="small">Each observed error gets a small feature vector: error kind, column, row position, and relative size. Nearby patterns can be recognized across runs. This is a toy research sketch, not native BLOOMCORE memory.</p><div id="memory" class="memory muted">No scars yet. The machine is almost disappointed.</div><div class="actions"><button class="action secondary" id="clear">Forget local memory</button></div><p class="note">This page runs in your browser. Error patterns are saved in this browser’s local storage; CSV export stays on your device.</p></section>
+    </div>
+  </main>
+</div>
+<script>
+(() => {
+  'use strict';
+  const STORE = 'tiagi83plus.memory.v1';
+  const scenarios = [
+    {name:'Invoice ambush', cols:['Item','Qty','Unit price','Line total'], rows:[['Lab gloves','3','12.50','37.50'],['Cables','4','8.00','36.00'],['Labels','2','4.25','8.50']], check:'multiply'},
+    {name:'Inventory goblin', cols:['Part','Starting','Used','Remaining'], rows:[['Connectors','50','12','38'],['Sensors','20','7','14'],['Adapters','16','5','11']], check:'subtract'},
+    {name:'Receipt gremlin', cols:['Expense','Amount','Tax rate','Total'], rows:[['Parts','80.00','0.07','85.60'],['Shipping','25.00','0.00','25.00'],['Tools','40.00','0.07','42.80']], check:'tax'}
+  ];
+  let active = 0, findings = [], auditedSignature = null, memory = loadMemory();
+  const $ = id => document.getElementById(id);
+  function loadMemory() { try { const v=JSON.parse(localStorage.getItem(STORE)||'[]'); return Array.isArray(v)?v.slice(-60):[]; } catch { return []; } }
+  function saveMemory() { try { localStorage.setItem(STORE,JSON.stringify(memory)); } catch {} }
+  function say(title, lines, status) { $('screen-title').textContent=title; $('screen-body').replaceChildren(...lines.map(s=>{const p=document.createElement('p');p.textContent=s;return p})); $('status').textContent=status; }
+  function cell(row,col) { return document.querySelector(`input[data-row="${row}"][data-col="${col}"]`); }
+  function values() { return scenarios[active].rows.map((r,i)=>r.map((_,j)=>cell(i,j).value.trim())); }
+  function signature() { return JSON.stringify({active,rows:values()}); }
+  function exactNumber(s) { if(!/^[+-]?(?:\d+(?:\.\d*)?|\.\d+)$/.test(s)) return null; const n=Number(s);return Number.isFinite(n)?n:null; }
+  function cents(n) { return Math.round((n+Number.EPSILON)*100); }
+  function expected(a,b,type) { if(type==='multiply') return cents(a*b); if(type==='subtract') return cents(a-b); return cents(a*(1+b)); }
+  function vector(kind,col,row,delta,n) { return [kind==='format'?1:0,col/3,row/Math.max(1,n-1),Math.min(1,Math.abs(delta)/Math.max(1,Math.abs(delta)+100))]; }
+  function distance(a,b) { return Math.sqrt(a.reduce((sum,x,i)=>sum+(x-b[i])**2,0)); }
+  function nearest(v) { let best=null; for(const m of memory) { const d=distance(v,m.v); if(!best||d<best.d) best={m,d}; } return best && best.d<0.27?best:null; }
+  function render() {
+    const s=scenarios[active]; findings=[];auditedSignature=null;
+    $('scenarios').replaceChildren(...scenarios.map((x,i)=>{ const b=document.createElement('button');b.className='pill'+(i===active?' active':'');b.textContent=x.name;b.onclick=()=>{active=i;render();say('SCENARIO LOADED',[x.name+'. I am prepared to be insufferable.'],'AWAITING HUMAN ERROR')};return b }));
+    const hr=document.createElement('tr'); for(const h of ['#',...s.cols]) {const th=document.createElement('th');th.textContent=h;hr.append(th)} $('thead').replaceChildren(hr);
+    $('tbody').replaceChildren(...s.rows.map((row,i)=>{const tr=document.createElement('tr'),n=document.createElement('td');n.textContent=String(i+1);tr.append(n);row.forEach((v,j)=>{const td=document.createElement('td'),input=document.createElement('input');input.value=v;input.dataset.row=i;input.dataset.col=j;input.setAttribute('aria-label',`Row ${i+1}, ${s.cols[j]}`);input.addEventListener('input',()=>{auditedSignature=null;input.classList.remove('flag')});td.append(input);tr.append(td)});return tr}));
+    $('findings').textContent='Run an audit to see what the bot catches.';$('count').textContent='';renderMemory();
+  }
+  function audit() {
+    const s=scenarios[active],rows=values(),now=signature();findings=[];
+    document.querySelectorAll('input.flag').forEach(el=>el.classList.remove('flag'));
+    rows.forEach((r,i)=>{
+      const a=exactNumber(r[1]),b=exactNumber(r[2]),got=exactNumber(r[3]);
+      for(const j of [1,2,3]) if(exactNumber(r[j])===null) findings.push({row:i,col:j,kind:'format',message:`${s.cols[j]} in row ${i+1} needs a plain number.`,fix:null,delta:0});
+      if(a===null||b===null||got===null) return;
+      if(s.check==='multiply' && (a<0||!Number.isInteger(a))) findings.push({row:i,col:1,kind:'format',message:`Quantity in row ${i+1} must be a nonnegative whole number.`,fix:null,delta:0});
+      if(s.check==='subtract' && (a<0||b<0||!Number.isInteger(a)||!Number.isInteger(b)||b>a)) findings.push({row:i,col:2,kind:'format',message:`Row ${i+1} needs whole, nonnegative stock values with Used ≤ Starting.`,fix:null,delta:0});
+      if(s.check==='tax' && (b<0||b>1)) findings.push({row:i,col:2,kind:'format',message:`Row ${i+1} tax rate must be a decimal from 0 to 1.`,fix:null,delta:0});
+      if(findings.some(f=>f.row===i&&f.kind==='format')) return;
+      const target=expected(a,b,s.check),actual=cents(got);
+      if(target!==actual) findings.push({row:i,col:3,kind:'arithmetic',message:`Row ${i+1}: ${s.cols[3]} should be ${(target/100).toFixed(2)}, not ${r[3]}.`,fix:(target/100).toFixed(2),delta:(target-actual)/100});
+    });
+    const box=$('findings');box.replaceChildren();
+    if(!findings.length) {const p=document.createElement('p');p.className='clear';p.textContent='All visible rows pass the current scenario checks.';box.append(p);say('AUDIT COMPLETE',['I tried to find fault. The arithmetic has refused to cooperate.','You may enjoy this rare moment.'],'0 VERIFIED ERRORS');}
+    else {
+      findings.forEach(f=>{cell(f.row,f.col).classList.add('flag');const d=document.createElement('div');d.className='finding';const strong=document.createElement('strong');strong.textContent=f.kind.toUpperCase()+' · ';d.append(strong,document.createTextNode(f.message));box.append(d)});
+      say('AUDIT COMPLETE',[`${findings.length} issue${findings.length===1?'':'s'} found. I would say I am surprised, but I value honesty.`,findings.some(f=>f.fix===null)?'Some entries need a human to supply the correct value. I will not invent one.':'Verified arithmetic repairs are ready.'],`${findings.length} ISSUE${findings.length===1?'':'S'} FOUND`);
+    }
+    $('count').textContent=`(${findings.length})`;
+    if(now!==auditedSignature) {for(const f of findings){const v=vector(f.kind,f.col,f.row,f.delta,rows.length),match=nearest(v);memory.push({v,kind:f.kind,scenario:s.name,at:new Date().toISOString(),echo:!!match});} memory=memory.slice(-60);saveMemory();renderMemory();}
+    auditedSignature=now;
+  }
+  function repair() {if(auditedSignature!==signature()) {say('SHEET CHANGED',['Audit the current values before applying repairs.'],'FRESH AUDIT REQUIRED');return} const fixable=findings.filter(f=>f.fix!==null);if(!fixable.length){say('NO SAFE REPAIR',['I need either a verified arithmetic error or your input for a missing value.'],'NOTHING TO APPLY');return}fixable.forEach(f=>{cell(f.row,f.col).value=f.fix});audit();say('REPAIRS APPLIED',[`${fixable.length} computed cell${fixable.length===1?'':'s'} corrected.`,findings.length?'Some issues still need your input.':'The sheet now passes its checks. I remain unbearable.'],findings.length?'HUMAN INPUT NEEDED':'WORK VERIFIED');}
+  function renderMemory() {const box=$('memory');box.replaceChildren();if(!memory.length){box.textContent='No scars yet. The machine is almost disappointed.';return} const counts={};for(const m of memory) counts[m.kind]=(counts[m.kind]||0)+1;const p=document.createElement('div');p.textContent=`${memory.length} observed error patterns · ${counts.arithmetic||0} arithmetic · ${counts.format||0} format`;box.append(p);const recent=memory.slice(-3).reverse();for(const m of recent){const d=document.createElement('div');d.textContent=`${m.scenario}: ${m.kind} ${m.echo?'↳ echoes an earlier pattern':'↳ new pattern'}`;box.append(d)}}
+  function exportCSV() {const s=scenarios[active],esc=x=>'"'+String(x).replaceAll('"','""')+'"',csv=[s.cols,...values()].map(r=>r.map(esc).join(',')).join('\r\n')+'\r\n';const url=URL.createObjectURL(new Blob([csv],{type:'text/csv;charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download=`ti-agi83-${s.name.toLowerCase().replaceAll(' ','-')}.csv`;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);say('CSV EXPORTED',['I have completed the clerical labor.','Please take all the credit.'], 'FILE READY');}
+  $('audit').onclick=audit;$('repair').onclick=repair;$('reset').onclick=()=>{render();say('SAMPLE RESTORED',['Fresh mistakes. A classic.'],'AWAITING HUMAN ERROR')};$('clear').onclick=()=>{memory=[];saveMemory();renderMemory();say('MEMORY CLEARED',['The pattern history is gone. I shall develop a new personality.'],'LOCAL MEMORY EMPTY')};document.querySelectorAll('[data-cmd]').forEach(b=>b.onclick=()=>({sample:()=>{active=(active+1)%scenarios.length;render();say('NEW DEMO',[scenarios[active].name+' loaded.'],'AWAITING HUMAN ERROR')},audit,fix:repair,export:exportCSV})[b.dataset.cmd]());render();
+})();
+</script>
+</body>
+</html>

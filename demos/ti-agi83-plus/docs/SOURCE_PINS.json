@@ -1,0 +1,32 @@
+{
+  "prototype": {
+    "name": "TI-AGI83+.html",
+    "sha256": "5365381f4fd91c66ad2c92a7a935692c7260f70bde94b39522d000fa8d8ab6a1",
+    "bytes": 15836,
+    "role": "ADAPTED"
+  },
+  "hybrid_v1_8": {
+    "name": "HYBRID_TRIAD_KEYSTONE_PARITY_v1.8_CANONICAL.md",
+    "sha256": "51e8e0a0fc49fcd309f46a67534bc8dbb36c319c857487951f1d695d350b3444",
+    "bytes": 321039,
+    "role": "REFERENCE_ONLY"
+  },
+  "r20_archive": {
+    "name": "R20.zip",
+    "sha256": "ffe06708bf463baaba1f0fa107450ad0ff1d89705c670372815d41b633176f71",
+    "bytes": 20903751,
+    "role": "REFERENCE_ONLY"
+  },
+  "conductance_source": {
+    "name": "fields.py",
+    "sha256": "d7e1980550460049f854e754c3ad6d719f32ba0a3529a3117afcd1a810c34060",
+    "bytes": 9323,
+    "role": "ADAPTED"
+  },
+  "project_master": {
+    "name": "BLOOMCORE_PHASE38_LIVING_RELATIONAL_ORGANISM_MASTER_CANON_v1.16.md",
+    "sha256": "825c2464b154ec7764491f97fa0a69ad3fbae99b29f2e0fdd823bca20ea06a87",
+    "bytes": 459947,
+    "role": "REFERENCE_ONLY"
+  }
+}
