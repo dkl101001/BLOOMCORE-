@@ -1,0 +1,47 @@
+{
+  "schema": "TIAGI.RELEASE-VERIFICATION.v1",
+  "version": "0.3.0",
+  "sourceCommit": "fa36e44229149705d60f2d0a55c144d2a4c94b5d",
+  "sourceTree": "4eaa2a069cf2ea822226a191abf3ec9c7efe3a3f",
+  "archive": "ti-agi83-plus-v0.3.0.zip",
+  "archiveSha256": "ebe0054ed8086cc1f6466527a3db9df7a6f1dc3a2d2767ba6d5766364a6843ca",
+  "archiveBytes": 1056095,
+  "manifest": {
+    "status": "PASS",
+    "hashedFiles": 32
+  },
+  "cleanExtraction": {
+    "backendHttp": "40 passed in 1.11s",
+    "gameEngine": "8 passed",
+    "browser": "PASS",
+    "relatedIncident": true,
+    "graphCells": 64,
+    "currentRepair": "40.00",
+    "unknownPreserved": true,
+    "restart": true,
+    "csvImportExport": true,
+    "undo": true,
+    "receipts": true,
+    "historyExport": true,
+    "arcade": {
+      "games": 3,
+      "keyboard": true,
+      "touch": true,
+      "pauseResume": true,
+      "scoreRestart": true,
+      "scoreRetry": true,
+      "workGeometryIsolation": true
+    },
+    "mobileWidth": 390,
+    "pageErrors": []
+  },
+  "installedWheel": {
+    "status": "PASS",
+    "version": "0.3.0",
+    "backend": "numpy",
+    "packagedWebAssets": 4,
+    "cliAuditExpected": "32.00",
+    "dependencyInstallation": "isolated target app install; environment numerical dependencies reused"
+  },
+  "publicationBoundary": "Standalone additive arcade; CRM and Office modules planned. Native admission/semantic-authentication claims unchanged."
+}
