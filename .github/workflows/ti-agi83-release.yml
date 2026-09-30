@@ -1,0 +1,55 @@
+name: TI-AGI83+ verified dual publication
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/ti-agi83-release.yml'
+      - 'release-tools/ti-agi83-plus-v0.2.0/**'
+  workflow_dispatch:
+
+concurrency:
+  group: ti-agi83-plus-v0.2.0-publication
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # official v4
+        with:
+          persist-credentials: false
+      - name: Verify exact archive and extract to a clean workspace
+        run: python3 release-tools/ti-agi83-plus-v0.2.0/verify_package.py "$RUNNER_TEMP/ti-clean"
+      - name: Install isolated test environment
+        run: |
+          python3 -m venv "$RUNNER_TEMP/ti-env"
+          "$RUNNER_TEMP/ti-env/bin/python" -m pip install "$RUNNER_TEMP/ti-clean/ti-agi83-plus-v0.2.0[test,accelerated]"
+      - name: Test backend and actual HTTP service from the extracted archive
+        run: |
+          cd "$RUNNER_TEMP/ti-clean/ti-agi83-plus-v0.2.0"
+          "$RUNNER_TEMP/ti-env/bin/python" -m pytest -q
+      - name: Verify the actual browser workflow
+        run: |
+          npm install --prefix "$RUNNER_TEMP/ti-browser" playwright@1.62.1
+          "$RUNNER_TEMP/ti-browser/node_modules/.bin/playwright" install --with-deps chromium
+          cd "$RUNNER_TEMP/ti-clean/ti-agi83-plus-v0.2.0"
+          NODE_PATH="$RUNNER_TEMP/ti-browser/node_modules" TI_PYTHON="$RUNNER_TEMP/ti-env/bin/python" TI_TEST_STATE="$RUNNER_TEMP/ci-work.sqlite" node tests/browser_smoke.cjs
+  publish:
+    needs: verify
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # official v4
+        with:
+          persist-credentials: false
+      - name: Publish exact source tag, full README and verified assets
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 release-tools/ti-agi83-plus-v0.2.0/publish.py

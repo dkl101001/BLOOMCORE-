@@ -1,0 +1,37 @@
+{
+  "schema": "TIAGI.RELEASE-VERIFICATION.v1",
+  "version": "0.2.0",
+  "sourceCommit": "71349f6eadcb9286789742da462d2ad6112028ca",
+  "sourceTree": "7fd8f6a96e418248d83a83d3a57addd9538f1315",
+  "archive": "ti-agi83-plus-v0.2.0.zip",
+  "archiveSha256": "96fb198f3f5fad321fe5d5da09d0e0bf1986d4bf095b5a5d5753595b4573897a",
+  "archiveBytes": 527666,
+  "manifest": {
+    "status": "PASS",
+    "hashedFiles": 24
+  },
+  "cleanExtraction": {
+    "backendHttp": "30 passed in 1.13s",
+    "browser": "PASS",
+    "relatedIncident": true,
+    "graphCells": 64,
+    "trace": true,
+    "currentRepair": "40.00",
+    "unknownPreserved": true,
+    "restart": true,
+    "csvImportExport": true,
+    "undo": true,
+    "receipts": true,
+    "historyExport": true,
+    "mobileWidth": 390,
+    "pageErrors": []
+  },
+  "installedWheel": {
+    "status": "PASS",
+    "backend": "numpy",
+    "packagedWebAssets": true,
+    "cliAuditExpected": "32.00",
+    "dependencyInstallation": "isolated app venv; system numerical dependencies reused"
+  },
+  "publicationBoundary": "Byte-consistent standalone derivative; no native organism admission or semantic historical authentication."
+}
