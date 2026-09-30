@@ -14,6 +14,9 @@ Authorship lineage: Frazer Σ Love ACO-Σ; Sara ΣΩ.
 | TI-07 · evidence / export | Corrupted chain/grid refusal; CSV and full-history download, receipt verification through GUI |
 | TI-08 · interface | Headless Chromium GUI run, GRAPH/TRACE, restart, import/repair/undo, zero page errors, measured mobile width 390px |
 | TI-09 · package | Deterministic source manifest/archive; clean-extraction verification is published as a separate release asset |
+| TI-11 · games | Original engines; snake collision/win, Blocks bag/rotation/clear, Pong rally/scoring; keyboard/touch, pause and all three choices in real browser |
+| TI-12 · database compatibility | Additive score table, idempotent UUID saves, rollback with receipt event; retained sheets/geometry/incidents/audits compared through mode switch and old database reopening |
+| TI-13 · next expansions | CRM and Office roadmap explicitly labeled planned, with module-specific completion checks |
 | TI-10 · dual publication | Source directory and root entry; release body carries README, immutable tag and standalone package; publication URLs are verified separately |
 
 This is an application review, not execution of the native MANTIS gate or organism admission. No whole-canon compliance, identity-continuity, physical-quantum, consciousness, semantic-authentication, or full R20 claim is made. Numeric retained response and historical incident meanings remain distinct. Protected/private state is excluded. The blocked custody worker was not executed or substituted.

@@ -36,7 +36,7 @@ That is an architectural and research declaration. It is not, by itself, empiric
 | [Release lineage](docs/releases/RELEASE_LINEAGE.md) | Historical releases, tag clusters, attachment custody, and SHA-256 evidence |
 | [Foundation-family rebuild](rebuilds/foundation-family/README.md) | First preserved release family, additive Phase 38 descendant, and verified Full Fire JAX evidence |
 | [Identity-and-governance rebuild](rebuilds/identity-governance-family/README.md) | Second preserved release family, bounded expression-audit descendant, and JAX GPU evidence |
-| [TEXTERMENTALITY™ · TI-AGI83+](demos/ti-agi83-plus/README.md) | Runnable local table auditor with a bounded conductance-memory descendant, geometric ablation, and persistent work history |
+| [TEXTERMENTALITY™ · TI-AGI83+](demos/ti-agi83-plus/README.md) | Runnable local table auditor with geometric memory, persistent history, calculator-era games and a CRM/Office expansion roadmap |
 | [Interactive documentation](docs/index.html) | Public visual entry surface |
 
 ## One organism, differentiated surfaces

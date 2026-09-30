@@ -24,11 +24,12 @@
     .finding { border-left:3px solid var(--red); padding:9px 12px; margin:9px 0; background:#3b342d; border-radius:0 7px 7px 0 } .finding strong { color:#fff0c5 } .clear { color:#c7e8aa } .memory { display:grid; gap:8px; margin-top:10px } .memory div { background:#283a32; padding:9px 11px; border-radius:8px; font-size:.87rem } .muted { color:#a4b7a4 } .note { margin:0; color:#a5b7a5; font-size:.82rem }
     .layout > * { min-width:0 }
     @media(max-width:850px) { .layout { grid-template-columns:minmax(0,1fr) } .device { max-width:510px; width:100%; margin:auto } }
-  select {color:#edf3e5;background:#15251e;border:1px solid #68816f;border-radius:8px;padding:9px} .finding small {display:block;margin-top:6px;color:#c4d7b7} .graph-view {display:grid;grid-template-columns:repeat(8,1fr);gap:3px;max-width:320px;margin:12px 0} .graph-cell {aspect-ratio:1;border-radius:3px} details {margin:10px 0} pre {white-space:pre-wrap;overflow-wrap:anywhere;font-size:.78rem;max-height:320px;overflow:auto} button:focus-visible,label:focus-within,select:focus-visible {outline:2px solid var(--hot)} .busy {opacity:.6;pointer-events:none} #sheet-info {margin-top:12px} </style>
+  select {color:#edf3e5;background:#15251e;border:1px solid #68816f;border-radius:8px;padding:9px} .finding small {display:block;margin-top:6px;color:#c4d7b7} .graph-view {display:grid;grid-template-columns:repeat(8,1fr);gap:3px;max-width:320px;margin:12px 0} .graph-cell {aspect-ratio:1;border-radius:3px} details {margin:10px 0} pre {white-space:pre-wrap;overflow-wrap:anywhere;font-size:.78rem;max-height:320px;overflow:auto} button:focus-visible,label:focus-within,select:focus-visible {outline:2px solid var(--hot)} .busy {opacity:.6;pointer-events:none} #sheet-info {margin-top:12px} [hidden]{display:none!important} .pill[aria-pressed="true"]{background:#e3c78a;color:#253128;border-color:#e3c78a;font-weight:700} .key:disabled{opacity:.4;cursor:not-allowed} #game-canvas{display:block;width:100%;max-width:480px;aspect-ratio:3/2;image-rendering:pixelated;background:#b7cd95;border:8px solid #27372f;border-radius:7px} #game-canvas:focus-visible{outline:2px solid var(--hot)} .arcade-status{font:700 .9rem ui-monospace,monospace;color:var(--ink)} .game-controls button{min-width:48px;min-height:48px;touch-action:none} </style>
 </head>
 <body>
 <div class="wrap">
   <header><div><h1>TI-AGI<span>83+</span></h1><p class="tag">The little bot with enormous confidence and a suspiciously good error log.</p></div><p class="tag">A useful, local spreadsheet lab. Persistent geometric memory. Provable repairs. Same terrible attitude.</p></header>
+  <nav class="scenarios" aria-label="Calculator mode"><button class="pill" id="work-tab" aria-pressed="true">Work</button><button class="pill" id="games-tab" aria-pressed="false">Games</button></nav>
   <main class="layout">
     <section class="device" aria-label="TI-AGI83 plus calculator">
       <p class="brand">TEXTERMENTALITY SYSTEMS / 1983-ish</p>
@@ -36,12 +37,28 @@
       <div class="keys"><button class="key" data-cmd="sample">DEMO</button><button class="key" data-cmd="audit">AUDIT</button><button class="key" data-cmd="fix">REPAIR</button><button class="key primary" data-cmd="export">CSV ↗</button></div>
     </section>
     <div>
+    <div id="work-mode">
       <section class="panel"><h2>Work surface</h2><p class="small">Edit a cell, then audit. Import a CSV or edit a sample. The bot checks Decimal arithmetic and format, remembers error geometry, and keeps your history.</p><div class="scenarios" id="scenarios"></div><div class="actions"><select id="schema" aria-label="CSV schema"><option value="invoice">Invoice</option><option value="inventory">Inventory</option><option value="tax">Tax receipts</option></select><label class="action secondary" style="cursor:pointer">Import CSV<input type="file" id="csv-file" accept=".csv,text/csv" style="display:none"></label><button class="action secondary" id="save">Save edits</button><button class="action secondary" id="undo">Undo last edit / repair</button></div><p class="small" id="sheet-info"></p><div class="tablewrap"><table><thead id="thead"></thead><tbody id="tbody"></tbody></table></div><div class="actions"><button class="action" id="audit">Audit sheet</button><button class="action secondary" id="repair">Apply verified repairs</button><button class="action secondary" id="reset">Restore sample as new sheet</button></div></section>
       <section class="panel"><h2>Findings <span id="count"></span></h2><div id="findings" class="muted">Run an audit to see what the bot catches.</div></section>
       <section class="panel"><h2>Geometric error memory</h2><p class="small">Typed errors deform a persistent 8×8 conductance lattice derived from BLOOMCORE transport memory. Changed geometry affects related-error retrieval. View its causal effect with GRAPH, and the historical evidence with TRACE.</p><div id="memory" class="memory muted">No scars yet. The machine is almost disappointed.</div><div class="actions"><button class="action secondary" id="graph">GRAPH</button><button class="action secondary" id="trace">TRACE</button><button class="action secondary" id="receipt">Verify receipts</button><button class="action secondary" id="backup">Export full history</button></div><p class="note">Sheets, geometry and history persist together on this computer. CSV and history exports stay local. Memory suggestions never supply missing facts or override the current sheet.</p></section>
     </div>
+    <section class="panel" id="arcade-mode" hidden aria-label="Retro arcade">
+      <h2>Extra credit: the pixel department</h2>
+      <p class="small">Three original recreations of calculator-era favorites. 96×64 pixels. Local scores. Enormous confidence.</p>
+      <div class="scenarios" aria-label="Choose game"><button class="pill" data-game="snake" aria-pressed="true">Snake</button><button class="pill" data-game="blocks" aria-pressed="false">Falling Blocks</button><button class="pill" data-game="pong" aria-pressed="false">Pong</button></div>
+      <p id="game-state" class="arcade-status" aria-live="polite">READY</p>
+      <canvas id="game-canvas" width="96" height="64" tabindex="0" aria-label="Game display. Keyboard controls described below.">Your browser needs Canvas support to play.</canvas>
+      <p id="game-score" class="arcade-status"></p><p id="game-best" class="small"></p>
+      <div class="actions"><button class="action" id="game-start">Start game</button><button class="action secondary" id="game-pause" disabled>Pause game</button><button class="action secondary" id="game-restart">Restart game</button><button class="action secondary" id="game-retry" hidden>Retry score save</button></div>
+      <p id="game-help" class="small" style="margin-top:14px"></p>
+      <div class="actions game-controls" aria-label="Touch game controls"><button class="action secondary" data-game-key="left" aria-label="Move left">←</button><button class="action secondary" data-game-key="up" aria-label="Move up">↑</button><button class="action secondary" data-game-key="down" aria-label="Move down">↓</button><button class="action secondary" data-game-key="right" aria-label="Move right">→</button><button class="action secondary" data-game-key="rotate">Rotate</button><button class="action secondary" data-game-key="drop">Drop</button></div>
+      <p class="note" style="margin-top:16px">P pauses/resumes; Escape pauses. Switching to Work pauses the game. Completed games save their scores; restarting abandons an unfinished game. Scores are local, self-reported play records.</p>
+    </section>
+    </div>
   </main>
 </div>
+<script src="/arcade-engine.js"></script>
+<script src="/arcade-ui.js"></script>
 <script src="/app.js"></script>
 </body>
 </html>

@@ -4,6 +4,7 @@ import argparse
 from pathlib import Path
 import webbrowser
 from .server import serve
+from . import __version__
 
 
 def main():
@@ -15,7 +16,7 @@ def main():
     args = parser.parse_args()
     server = serve(args.state,args.port,args.backend)
     url=f"http://127.0.0.1:{server.server_address[1]}"
-    print(f"TI-AGI83+ 0.2.0 — {url}\nState: {Path(args.state).resolve()}\nCtrl+C to stop.",flush=True)
+    print(f"TI-AGI83+ {__version__} — {url}\nState: {Path(args.state).resolve()}\nCtrl+C to stop.",flush=True)
     if args.open: webbrowser.open(url)
     try: server.serve_forever()
     except KeyboardInterrupt: pass

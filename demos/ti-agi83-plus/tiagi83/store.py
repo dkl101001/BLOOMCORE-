@@ -4,6 +4,7 @@
 import json
 import hashlib
 import sqlite3
+import uuid
 from datetime import datetime, timezone
 from pathlib import Path
 from . import geometry
@@ -32,6 +33,7 @@ class Store:
           CREATE TABLE IF NOT EXISTS geometry (scope TEXT PRIMARY KEY, state TEXT NOT NULL, hash TEXT NOT NULL);
           CREATE TABLE IF NOT EXISTS audits (id INTEGER PRIMARY KEY, sheet INTEGER NOT NULL REFERENCES sheets(id), signature TEXT NOT NULL, result TEXT NOT NULL, at TEXT NOT NULL, UNIQUE(sheet,signature));
           CREATE TABLE IF NOT EXISTS incidents (id INTEGER PRIMARY KEY, audit INTEGER NOT NULL REFERENCES audits(id), scope TEXT NOT NULL, finding TEXT NOT NULL, repaired INTEGER NOT NULL DEFAULT 0, at TEXT NOT NULL);
+          CREATE TABLE IF NOT EXISTS game_scores (play_id TEXT PRIMARY KEY, game TEXT NOT NULL, score INTEGER NOT NULL, at TEXT NOT NULL);
           CREATE TABLE IF NOT EXISTS events (id INTEGER PRIMARY KEY, type TEXT NOT NULL, payload TEXT NOT NULL, prior_hash TEXT NOT NULL, hash TEXT NOT NULL, at TEXT NOT NULL);
         ''')
         version = self.db.execute("SELECT value FROM meta WHERE key='schema'").fetchone()
@@ -206,6 +208,30 @@ class Store:
         rows = self.db.execute("SELECT * FROM events ORDER BY id DESC LIMIT 100").fetchall()
         return {"events":[{**dict(r),"payload":json.loads(r["payload"])} for r in rows],"receipt":self.verify(),"window":100}
 
+    def game_scores(self):
+        games = {name: {"best": None, "plays": 0} for name in ("snake", "blocks", "pong")}
+        for row in self.db.execute("SELECT game, max(score) AS best, count(*) AS plays FROM game_scores GROUP BY game"):
+            games[row["game"]] = {"best": row["best"], "plays": row["plays"]}
+        return {"games": games}
+
+    def record_game_score(self, game, score, play_id):
+        if game not in ("snake", "blocks", "pong"):
+            raise ValueError("Unknown game")
+        if type(score) is not int or not 0 <= score <= 1_000_000_000:
+            raise ValueError("Score must be a bounded nonnegative integer")
+        if not isinstance(play_id, str) or len(play_id) != 36 or str(uuid.UUID(play_id)) != play_id:
+            raise ValueError("Canonical play UUID required")
+        with self.db:
+            self.db.execute("BEGIN IMMEDIATE")
+            prior = self.db.execute("SELECT * FROM game_scores WHERE play_id=?", (play_id,)).fetchone()
+            if prior:
+                if prior["game"] != game or prior["score"] != score:
+                    raise ValueError("Play ID already records a different score")
+            else:
+                self.db.execute("INSERT INTO game_scores VALUES (?,?,?,?)", (play_id, game, score, datetime.now(timezone.utc).isoformat()))
+                self.event("game_complete", {"play_id": play_id, "game": game, "score": score})
+        return self.game_scores()
+
     def export(self):
         self.verify()
         return {"schema":"TIAGI.EXPORT.v1", "sheets":self.list(),
@@ -213,4 +239,5 @@ class Store:
                 "events":[dict(r) for r in self.db.execute("SELECT * FROM events ORDER BY id")],
                 "incidents":[dict(r) for r in self.db.execute("SELECT * FROM incidents ORDER BY id")],
                 "audits":[dict(r) for r in self.db.execute("SELECT * FROM audits ORDER BY id")],
+                "game_scores":[dict(r) for r in self.db.execute("SELECT * FROM game_scores ORDER BY at,play_id")],
                 "receipt":self.verify()}

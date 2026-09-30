@@ -1,20 +1,28 @@
 {
   "schema": "TIAGI.BUILD-RECEIPT.v1",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "date": "2026-09-30",
-  "scope": "bounded local conductance-memory application; not native organism admission",
+  "scope": "Additive local arcade and planned Office expansion; conductance-memory application boundary unchanged",
   "environment": {
     "python": "3.12.14",
-    "platform": "Linux-6.18.44-x86_64-with-glibc2.39",
     "numpy": "2.3.5",
     "jax": "0.11.2",
     "pytest": "9.1.1",
-    "browser": "Chromium 153.0.0 via Playwright"
+    "browser": "Chromium 153.0.0 via Playwright 1.62.1"
   },
   "tests": {
-    "backend_http": "30 passed in 0.97s",
+    "backend_http": "40 passed in 0.98s",
+    "game_engine": "8 passed, Node.js 24.19.0",
     "browser": {
       "status": "PASS",
+      "games": 3,
+      "keyboard": true,
+      "touch": true,
+      "pauseResume": true,
+      "scoreRestart": true,
+      "scoreRetry": true,
+      "workGeometryIsolation": true,
+      "verifiedRepair": "32.00",
       "relatedIncident": true,
       "graphCells": 64,
       "trace": true,
@@ -23,35 +31,21 @@
       "csvImportRepair": "40.00",
       "undo": true,
       "receipts": true,
-      "csvAndHistoryExport": true,
+      "historyExport": true,
       "mobileViewport": 390,
       "documentWidth": 390,
       "pageErrors": []
     },
-    "stress": {
-      "backend": "jax",
-      "rows": 2000,
-      "findings": 2000,
-      "firstAuditSeconds": 1.254,
-      "historicalAuditSeconds": 0.924,
-      "encounters": 4000,
-      "localIntegrity": "PASS"
-    },
-    "controlledGeometry": {
-      "encounters": 12,
-      "queryResponseDelta": 0.10252906382083893,
-      "learnedDistance": 0.16235069930553436,
-      "flatDistance": 0.17321617901325226,
-      "writeBackendMaxAbsDelta": 0.0,
-      "responseBackendMaxAbsDelta": 8.940696716308594e-08
-    },
+    "database": "v0.2 schema opens with additive score table and preserved work/evidence",
     "immutablePrototypeSha256": "5365381f4fd91c66ad2c92a7a935692c7260f70bde94b39522d000fa8d8ab6a1"
   },
-  "packageVerification": "Detached clean-extraction result supplied with the GitHub Release; source manifest excludes itself.",
+  "priorGeometryEvidence": "docs/receipts/v0.2.0.json retains prior stress and ablation measurements; existing geometry tests rerun in v0.3.0",
+  "packageVerification": "Detached clean-extraction result supplied with release; source manifest excludes itself",
   "limits": [
-    "Linux CPU only",
-    "Lossy typed numerical projection, no semantic authentication",
-    "No task-accuracy superiority claim",
-    "Native MANTIS/custody investigation not executed"
+    "Linux CPU execution evidence only",
+    "Scores are self-reported local records",
+    "Unfinished games do not survive app reload",
+    "CRM and Office modules are planned, not shipped",
+    "No native organism admission or semantic authentication claim"
   ]
 }

@@ -7,7 +7,7 @@ import sys
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
-PREFIX = "ti-agi83-plus-v0.2.0"
+PREFIX = "ti-agi83-plus-v0.3.0"
 ROOT_FILES = {"README.md", "LICENSE", "pyproject.toml", ".gitignore"}
 SURFACES = {"tiagi83", "tests", "docs", "lineage", "tools"}
 SUFFIXES = {".py", ".js", ".html", ".md", ".json", ".toml", ".cjs", ".png"}

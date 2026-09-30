@@ -7,6 +7,7 @@ from urllib.parse import urlsplit, parse_qs
 import json
 import secrets
 from .store import Store
+from . import __version__
 from .audit import export_csv
 
 WEB = Path(__file__).with_name("web")
@@ -36,13 +37,14 @@ def serve(state, port=8383, backend="auto"):
             url = urlsplit(self.path); q = parse_qs(url.query)
             try:
                 if url.path == "/api/bootstrap":
-                    self.send({"token":token,"sheets":store.list(),"backend":store.backend,"version":"0.2.0"}); return
+                    self.send({"token":token,"sheets":store.list(),"backend":store.backend,"version":__version__}); return
                 if url.path == "/api/memory": self.send(store.memory(q.get("scope",["invoice"])[0])); return
+                if url.path == "/api/games": self.send(store.game_scores()); return
                 if url.path == "/api/history": self.send(store.history()); return
                 if url.path == "/api/export": self.send(store.export()); return
                 if url.path == "/api/csv":
                     s=store.sheet(int(q.get("id",["0"])[0]));self.send(export_csv(s["schema"],s["rows"]).encode(),mime="text/csv; charset=utf-8");return
-                name = {"/":"index.html","/app.js":"app.js"}.get(url.path)
+                name = {"/":"index.html","/app.js":"app.js","/arcade-engine.js":"arcade-engine.js","/arcade-ui.js":"arcade-ui.js"}.get(url.path)
                 if name:
                     self.send((WEB/name).read_bytes(),mime="text/html; charset=utf-8" if name.endswith("html") else "text/javascript; charset=utf-8");return
                 self.send({"error":"Not found"},404)
@@ -64,6 +66,7 @@ def serve(state, port=8383, backend="auto"):
                 elif path=="/api/audit": result=store.run_audit(int(data["id"]))
                 elif path=="/api/repair": result=store.repair(int(data["id"]),int(data["audit_id"]),data["signature"])
                 elif path=="/api/undo": result=store.undo(int(data["id"]),data["signature"])
+                elif path=="/api/game-score": result=store.record_game_score(data["game"],data["score"],data["play_id"])
                 elif path=="/api/import": result=store.import_sheet(data["schema"],data["csv"],data["name"])
                 else: self.send({"error":"Not found"},404);return
                 self.send(result)
